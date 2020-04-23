@@ -1,0 +1,19 @@
+.button{
+
+    -fx-background-color:  #f45d49;
+    -fx-background-radius: 50;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+    -fx-font-size:16;
+    -fx-font-weight:bold;
+    
+}
+
+#anPane
+{
+	 -fx-background-image: url("quiz2.jpg");
+	 -fx-background-size: cover;
+    
+}
+
+
