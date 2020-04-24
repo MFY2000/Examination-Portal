@@ -13,17 +13,10 @@ import static javafx.application.Application.launch;
 
 
 public class Login {
-    public void check(ActionEvent event){
-        System.out.println("Hello world");
-    }
-
-    public void start(Stage stage) throws Exception {
-        AnchorPane root = FXMLLoader.load(getClass().getResource("login.fxml"));
-
-        Scene scene = new Scene(root, 500,500);
-
-        stage.setTitle("FXML Welcome");
-        stage.setScene(scene);
+    public void check() throws Exception{
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        stage.setScene(new Scene(root, 804, 476));
         stage.show();
     }
     public static void display() {
