@@ -42,10 +42,9 @@ public class Login implements Initializable {
             stage.show();
         }
         else {//close the window
-//            stage.close();
+//          stage.close();
             System.out.println("hello");
             stage.hide();
-
         }
     }
 

@@ -1,45 +1,98 @@
 package sample;
+import java.util.Scanner;
 
+class employee{
+    private String firstname;
+    private String lastname;
+    private int ssn;
+    Scanner scan = new Scanner(System.in);
 
-class person{
-    final int rollnumber;
-    public final static int staticMain = 44;
-
-    person() {
-        this.rollnumber = 101;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
-    public void display(final int para){
-//        para += 20; cannot do this
-        System.out.println(rollnumber+" "+para);
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
-    final public void add(){
-        System.out.println("methods which is final");
+
+    public void setSsn(int ssn) {
+        this.ssn = ssn;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public int getSsn() {
+        return ssn;
+    }
+
+    public String getFirstname() {
+        return firstname;
     }
 }
 
-final class teacher extends person{
-    teacher(){
-        super();
-    }
-//    public void add(){
-//        // cannot override this methods
-//    }
+class HourlyEmployee extends employee{
 
-    public void display(int para){
-        super.display(12);
+    private double hours;
+    private double wages;
+
+    public void getInput(){
+        System.out.print("Enter FirstName: ");
+        super.setFirstname(scan.nextLine());
+
+        System.out.print("Enter LastName: ");
+        super.setLastname(scan.nextLine());
+
+        System.out.print("Enter social security number: ");
+        super.setSsn(scan.nextInt());
+
+        System.out.print("Enter Hours: ");
+        this.setHours(scan.nextDouble());
+
+        System.out.print("Enter Wages: ");
+        this.setWages(scan.nextDouble());
     }
 
+    public double getHours() {
+        return hours;
+    }
+
+    public void setHours(double hours) {
+        if(hours>=0 || hours <= 168) {
+            this.hours = hours;
+        }
+    }
+
+    public double getWages() {
+        return wages;
+    }
+
+    public void setWages(double wages) {
+        if(wages>=0) {
+            this.wages = wages;
+        }
+    }
+
+    public double totalEarning(){
+        if(this.getHours()<=40){
+            return (this.getHours() * this.getWages());
+        }else{
+            double hour = this.getHours() - 40;
+            return ((40 * this.getWages()) + hour * (getWages() * 1.5));
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Firstname: "+ super.getFirstname() + " Lastname: " + super.getLastname() + " Hours Worked: "+ this.getHours() + " Wages per hour: " + this.getWages() + " Total wages: " + this.totalEarning();
+    }
 }
-
-public class test{
+public class test {
     public static void main(String[] args) {
-        person Fahad = new person();
-        Fahad.display(13);
-        Fahad.add();
-        System.out.println(person.staticMain);
 
-        teacher t1 = new teacher();
-
-
+        HourlyEmployee employee = new HourlyEmployee();
+        employee.getInput();
+        System.out.println(employee);
     }
 }
