@@ -9,10 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -105,6 +103,7 @@ public class Login implements Initializable {
             }
             else{
 //                check(2);
+
                 System.out.println("Login succesfully");
                 MainView Veiw = new MainView();
                 Veiw.setMainView();
