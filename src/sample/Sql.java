@@ -1,21 +1,26 @@
-//package sample;
-//import java.sql.*;
-//
-//
-//public class Sql {
-//    public static void main(String[] args) {
-//
-//    }
-//
-//    public static Connection ConnectDB(){
-//        try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            Connection conn = DriverManager.getConnection("jdbc:mysql//localhost/javaapplication");
-//
-//
-//        }catch (Exception e){
-//            System.out.println(e);
-//        }
-//    }
-//
-//}
+package sample;
+
+import java.sql.*;
+
+public class Sql {
+    public static void main(String args[]){
+            Connection con=null;
+
+            try{
+                System.out.println("Successfully connected to MySQL server...");
+                Class.forName("com.mysql.jdbc.Driver");
+                System.out.println("Successfully connected to MySQL server...");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:8080/javaapplication","root","");
+                if(!(con.isClosed()))
+                    System.out.println("Successfully connected to MySQL server...");
+            }
+             catch (Exception e) {
+                 e.printStackTrace();
+             }finally{
+                try{
+                    if(con != null)
+                        con.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }}}

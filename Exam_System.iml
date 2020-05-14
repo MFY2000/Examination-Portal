@@ -13,5 +13,6 @@
     <orderEntry type="library" exported="" name="jsf-api" level="application" />
     <orderEntry type="library" exported="" name="javax.mail1" level="application" />
     <orderEntry type="library" exported="" name="mysql-connector-java-8.0.20" level="application" />
+    <orderEntry type="library" name="activation" level="application" />
   </component>
 </module>
