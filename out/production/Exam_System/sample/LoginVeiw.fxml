@@ -7,20 +7,13 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="804.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Login">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="804.0" style="-fx-background-color: red;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Login">
    <children>
-      <Button layoutX="28.0" layoutY="25.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #2D3447;" text="Back to preveiw" textAlignment="CENTER" textFill="#a1a2ab" />
-      <ImageView fitHeight="26.0" fitWidth="21.0" layoutX="22.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
-         <image>
-            <Image url="@../12-120716_free-black-right-arrow-icon-png-vector-right.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="92.0" fitWidth="282.0" layoutX="275.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="92.0" fitWidth="282.0" layoutX="281.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Group.png" />
          </image>
       </ImageView>
-      <Button layoutX="710.0" layoutY="45.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="65.0" style="-fx-background-color: #151928; -fx-background-radius: 100;" text="Sign Up" textAlignment="CENTER" textFill="#a1a2ab" />
       <Label layoutX="341.0" layoutY="141.0" prefHeight="66.0" prefWidth="107.0" text="Login">
          <font>
             <Font name="Imprint MT Shadow" size="36.0" />
