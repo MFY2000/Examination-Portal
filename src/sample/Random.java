@@ -1,4 +1,4 @@
-package Todo;
+package sample;
 // Java program generate a random AlphaNumeric String
 // using Math.random() method
 

@@ -1,4 +1,4 @@
-package Todo;
+package sample;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
