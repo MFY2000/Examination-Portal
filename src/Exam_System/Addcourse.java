@@ -1,4 +1,4 @@
-package Exam_System.Admin;
+package Exam_System;
 
 import Exam_System.Randommy;
 import javafx.fxml.FXML;

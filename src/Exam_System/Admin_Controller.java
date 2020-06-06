@@ -1,4 +1,4 @@
-package Exam_System.Admin;
+package Exam_System;
 
 
 import Exam_System.db.*;
@@ -59,7 +59,7 @@ public class Admin_Controller{
             infoBox("Please enter correct Email and Password", null, "Failed");
         }else {
             infoBox("Login Successful!", null, "Failed");
-            AnchorPane pane2 = FXMLLoader.load(getClass().getResource("FXML/ admin_pannel.fxml"));
+            AnchorPane pane2 = FXMLLoader.load(getClass().getResource("FXML/admin_pannel.fxml"));
             rootgride.getChildren().setAll(pane2);
         }
     }

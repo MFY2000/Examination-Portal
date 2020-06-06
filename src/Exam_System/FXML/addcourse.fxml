@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="538.0" style="-fx-background-color: #0d1137;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.Admin.Addcourse">
+<AnchorPane prefHeight="400.0" prefWidth="538.0" style="-fx-background-color: #0d1137;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.Addcourse">
    <children>
       <TextField fx:id="Field" layoutX="252.0" layoutY="127.0" promptText="Field Name" />
       <Label alignment="CENTER" layoutX="115.0" layoutY="125.0" prefHeight="26.0" prefWidth="121.0" text="Enter the Field" textFill="WHITE">
