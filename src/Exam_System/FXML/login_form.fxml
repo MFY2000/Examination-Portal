@@ -72,7 +72,7 @@
             </AnchorPane>
          </children>
       </GridPane>
-      <Button fx:id="Admin_button" layoutX="525.0" mnemonicParsing="false" onAction="#ADMIN_CALLER" prefHeight="54.0" prefWidth="59.0" style="-fx-background-radius: 100; -fx-background-color: #FF8066;" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="20.0">
+      <Button fx:id="Admin_button" layoutX="525.0" layoutY="21.0" mnemonicParsing="false" onAction="#ADMIN_CALLER" prefHeight="53.0" prefWidth="46.0" style="-fx-background-radius: 100; -fx-background-color: #FF8066;" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="21.0">
          <graphic>
             <ImageView fitHeight="38.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -80,9 +80,9 @@
                </image></ImageView>
          </graphic>
       </Button>
-      <Button fx:id="Admin_button1" layoutX="501.0" layoutY="30.0" mnemonicParsing="false" onAction="#ADMIN_CALLER" prefHeight="30.0" prefWidth="15.0" style="-fx-background-color: #4B4453;" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+      <Button fx:id="Admin_button1" layoutX="501.0" layoutY="30.0" mnemonicParsing="false" onAction="#CloseApp" prefHeight="30.0" prefWidth="15.0" style="-fx-background-color: #4B4453;" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
          <graphic>
-            <ImageView fitHeight="37.0" fitWidth="30.0" onDragDetected="#CloseApp" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="37.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/Close.png" />
                </image>

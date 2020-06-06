@@ -83,8 +83,11 @@ public class LoginController  {
         rootgride.getChildren().setAll(pane1);
     }
 
-    public void CloseApp(ActionEvent actionEvent){
-        showAlert("", null, "Failed");
+    public void CloseApp(ActionEvent actionEvent)throws Exception{
+        Window owner = submitButton.getScene().getWindow();
+        showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter a password");
+        System.exit(1);
     }
+
 
 }
