@@ -1,4 +1,4 @@
-package Exam_System.Student;
+package Exam_System;
 // Java program generate a random AlphaNumeric String
 // using Math.random() method
 

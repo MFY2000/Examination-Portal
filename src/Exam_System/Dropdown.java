@@ -1,4 +1,4 @@
-package Exam_System.Student;
+package Exam_System;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

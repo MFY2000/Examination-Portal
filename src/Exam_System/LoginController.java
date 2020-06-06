@@ -1,4 +1,4 @@
-package Exam_System.Student;
+package Exam_System;
 
 // local files
 import Exam_System.db.jdbcDao;

@@ -1,6 +1,6 @@
 package Exam_System.Admin;
 
-import Exam_System.Student.Randommy;
+import Exam_System.Randommy;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
