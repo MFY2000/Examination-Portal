@@ -79,7 +79,7 @@ public class LoginController  {
     }
 
     public void ADMIN_CALLER(ActionEvent actionEvent) throws IOException {
-        AnchorPane pane1 = FXMLLoader.load(getClass().getResource("../FXML/Admin.fxml"));
+        AnchorPane pane1 = FXMLLoader.load(getClass().getResource("FXML/Admin.fxml"));
         rootgride.getChildren().setAll(pane1);
     }
 }

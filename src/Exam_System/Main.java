@@ -2,11 +2,9 @@ package Exam_System;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class Main extends Application {
     private double x,y;
@@ -25,9 +23,9 @@ public class Main extends Application {
 //            primaryStage.setY(mouseEvent.getSceneY() - y);
 //        });
 
-        Scene scene = new  Scene(root);
 //        scene.getStylesheets().add(Main.class.getResource("CSS/Combobox.css").toExternalForm());
 
+        Scene scene = new  Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
