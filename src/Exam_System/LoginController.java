@@ -84,6 +84,7 @@ public class LoginController  {
     }
 
     public void CloseApp(ActionEvent actionEvent){
-        infoBox("", null, "Failed");
+        showAlert("", null, "Failed");
     }
+
 }
