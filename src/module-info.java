@@ -1,10 +1,7 @@
-/**
- *  require files
- */
-module Exam_System {
+module untitled {
     requires javafx.fxml;
-    requires javafx.controls;
     requires java.sql;
+    requires javafx.controls;
 
-    opens sample;
+    opens Exam_System;
 }

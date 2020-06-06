@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="645.0" style="-fx-border-color: #FFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutX="148.0" layoutY="78.0" prefHeight="447.0" prefWidth="645.0" style="-fx-background-color: #4B4453;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="162.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="531.0" minWidth="10.0" prefWidth="483.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="447.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="447.0" minHeight="10.0" prefHeight="414.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="149.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="84.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="35.0" prefWidth="178.0" text="    Exam_System.Admin Pannel" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" text="Button">
+                     <HBox.margin>
+                        <Insets left="400.0" top="3.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="208.0" style="-fx-background-color: #FF8066; -fx-border-color: #FFF;" text="Insert Exam" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets top="-350.0" />
+               </GridPane.margin>
+            </Button>
+            <Separator orientation="VERTICAL" prefHeight="414.0" prefWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="206.0" style="-fx-background-color: #FF8066; -fx-border-color: #FFF;" text="Button" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets top="-270.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+      <Separator layoutX="-19.0" layoutY="31.0" prefHeight="4.0" prefWidth="662.0" />
+   </children>
+</AnchorPane>
