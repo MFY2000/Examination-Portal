@@ -82,4 +82,8 @@ public class LoginController  {
         AnchorPane pane1 = FXMLLoader.load(getClass().getResource("FXML/Admin.fxml"));
         rootgride.getChildren().setAll(pane1);
     }
+
+    public void CloseApp(ActionEvent actionEvent){
+        infoBox("", null, "Failed");
+    }
 }
