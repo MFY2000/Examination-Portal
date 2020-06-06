@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane fx:id="rootgride" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.Admin_Controller">
+<AnchorPane fx:id="rootgride" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.Admin_Controller">
    <children>
-      <GridPane  alignment="center" hgap="10" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4B4453;" vgap="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <GridPane alignment="center" hgap="10" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4B4453;" vgap="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <padding>
             <Insets bottom="40" left="40" right="40" top="40" />
          </padding>
@@ -31,16 +25,41 @@
             <RowConstraints />
          </rowConstraints>
          <children>
-            <Label text="Exam_System.Admin Login" textFill="WHITE" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.rowSpan="1">
+            <Label alignment="CENTER" prefHeight="75.0" prefWidth="212.0" text="Admin Login" textFill="WHITE" GridPane.columnSpan="2" GridPane.halignment="CENTER">
                <font>
                   <Font name="Wingdings" size="24.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Admin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                <GridPane.margin>
-                  <Insets bottom="20" left="0" right="0" top="20" />
+                  <Insets bottom="20.0" top="20.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="emailIdField" prefHeight="46.0" prefWidth="466.0" style="-fx-background-color: #FCF8FF; -fx-background-radius: 40;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <PasswordField fx:id="passwordField" prefHeight="47.0" prefWidth="504.0" style="-fx-background-color: #FCF8FF; -fx-background-radius: 40;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <AnchorPane prefHeight="35.0" prefWidth="510.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="31.0" fitWidth="36.0" layoutX="27.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="4.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../Images/Admin.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="emailIdField" layoutX="76.0" prefHeight="35.0" prefWidth="434.0" promptText="User id" style="-fx-background-color: #FCF8FF; -fx-background-radius: 40;" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="35.0" prefWidth="510.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <ImageView fitHeight="54.0" fitWidth="31.0" layoutX="27.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-19.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../Images/iconfinder_lock-24_103178.png" />
+                     </image>
+                  </ImageView>
+                  <PasswordField fx:id="passwordField" layoutX="76.0" prefHeight="35.0" prefWidth="434.0" promptText="Password" style="-fx-background-color: #FCF8FF; -fx-background-radius: 40;" />
+               </children>
+            </AnchorPane>
             <Button fx:id="submitButton" defaultButton="true" onAction="#login" prefHeight="40" prefWidth="100" style="-fx-background-color: #FF8066; -fx-background-radius: 40;" text="Submit" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.rowSpan="1">
                <GridPane.margin>
                   <Insets bottom="20" left="0" right="0" top="20" />
@@ -48,5 +67,23 @@
             </Button>
          </children>
       </GridPane>
+      <Button fx:id="Admin_button" layoutX="535.0" layoutY="10.0" mnemonicParsing="false" onAction="#ADMIN_CALLER" prefHeight="54.0" prefWidth="59.0" style="-fx-background-radius: 100; -fx-background-color: #FF8066;" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="20.0">
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/Student.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="541.0" layoutY="-122.0" mnemonicParsing="false" onAction="#CloseApp" prefHeight="30.0" prefWidth="15.0" style="-fx-background-color: #4B4453;" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/Close.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

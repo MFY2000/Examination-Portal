@@ -83,6 +83,17 @@ public class Admin_Controller{
         alert.initOwner(owner);
         alert.show();
     }
+
+    public void ADMIN_CALLER(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane1 = FXMLLoader.load(getClass().getResource("FXML/login_form.fxml"));
+        rootgride.getChildren().setAll(pane1);
+    }
+
+    public void CloseApp(ActionEvent actionEvent)throws Exception{
+        Window owner = submitButton.getScene().getWindow();
+        showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter a password");
+        System.exit(1);
+    }
 }
 
 
