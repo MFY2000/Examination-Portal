@@ -27,8 +27,6 @@ public class Main extends Application {
                 x = mouseEvent.getSceneX();
                 y = mouseEvent.getSceneY();
 
-            System.out.println("hello");
-
                 if (bounds.getWidth() < x)
                     System.out.println("hello");
 

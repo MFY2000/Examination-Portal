@@ -18,8 +18,10 @@ import javafx.stage.Window;
 
 public class LoginController {
     public Button Admin_button;
+    public AnchorPane main_plane;
 
-
+    @FXML
+    private AnchorPane ExamShowPane;
     @FXML
     private AnchorPane Plane;
     @FXML
@@ -43,12 +45,12 @@ public class LoginController {
         Window owner = submitButton.getScene().getWindow();
 
         if(emailIdField.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+            showAlert(AlertType.ERROR, owner, "Form Error!",
                     "Please enter your email id");
             return;
         }
         if(passwordField.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+            showAlert(AlertType.ERROR, owner, "Form Error!",
                     "Please enter a password");
             return;
         }
@@ -63,8 +65,10 @@ public class LoginController {
             infoBox("Please enter correct Email and Password", null, "Failed");
         }else {
             infoBox("Login Successful!", null, "Failed");
-            AnchorPane Plane1 = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
-            Plane.getChildren().setAll(Plane1);
+//            AnchorPane Plane1 = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
+            Plane.setOpacity(100);
+            rootgride = null;
+
         }
     }
 
@@ -97,5 +101,14 @@ public class LoginController {
     }
 
 
+    public void PopUpExxam(ActionEvent event) {
+
+    }
+
+    public void QuizDisplay(ActionEvent event) throws IOException {
+        System.out.println("hello");
+        AnchorPane pane3 = FXMLLoader.load(getClass().getResource("FXML/Dropdown.fxml"));
+        ExamShowPane.getChildren().setAll(pane3);
+    }
 
 }

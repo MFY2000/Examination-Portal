@@ -1,6 +1,7 @@
 package Exam_System;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,6 +14,9 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
     @FXML
     private AnchorPane loginFrame;
+
+    @FXML
+    private AnchorPane ExamShowPane;
 
     @FXML
     private AnchorPane Plane;
@@ -41,6 +45,13 @@ public class Controller implements Initializable {
         Plane.getChildren().setAll(pane1);
     }
 
+    public void PopUpExxam(ActionEvent event) {
+
+    }
+
+    public void QuizDisplay(ActionEvent event) throws IOException {
+        AnchorPane pane3 = FXMLLoader.load(getClass().getResource("FXML/Dropdown.fxml"));
+        ExamShowPane.getChildren().setAll(pane3);
+    }
 
 }
-
