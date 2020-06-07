@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #12a4d9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.Dropdown">
+<AnchorPane prefHeight="519.0" prefWidth="530.0" style="-fx-background-color: #12a4d9;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.Dropdown">
    <children>
       <ComboBox fx:id="combobox" editable="true" layoutX="286.0" layoutY="131.0" onAction="#EnterPin" prefWidth="150.0" promptText="Felid" />
       <AnchorPane fx:id="pinbox" focusTraversable="true" layoutX="158.0" layoutY="144.0" prefHeight="126.0" prefWidth="284.0" visible="false">

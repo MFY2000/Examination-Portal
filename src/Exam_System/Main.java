@@ -14,17 +14,16 @@ public class Main extends Application {
         AnchorPane root = FXMLLoader.load(getClass().getResource("FXML/login_form.fxml"));
         primaryStage.initStyle(StageStyle.UNDECORATED);
 
-        root.setOnMousePressed(mouseEvent -> {
-                x = mouseEvent.getSceneX();
-                y = mouseEvent.getSceneY();
-            }
-        );
-        root.setOnMouseDragged(mouseEvent -> {
-            primaryStage.setX(mouseEvent.getSceneX() - x);
-            primaryStage.setY(mouseEvent.getSceneY() - y);
-        });
+//        root.setOnMousePressed(mouseEvent -> {
+//                x = mouseEvent.getSceneX();
+//                y = mouseEvent.getSceneY();
+//            }
+//        );
+//        root.setOnMouseDragged(mouseEvent -> {
+//            primaryStage.setX(mouseEvent.getSceneX() - x);
+//            primaryStage.setY(mouseEvent.getSceneY() - y);
+//        });
 
-//        scene.getStylesheets().add(Main.class.getResource("CSS/Combobox.css").toExternalForm());
 
         Scene scene = new  Scene(root);
         primaryStage.setScene(scene);
