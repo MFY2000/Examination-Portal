@@ -25,7 +25,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-public class LoginController implements Initializable{
+public class LoginController {
     public Button Admin_button;
 
 
@@ -72,7 +72,8 @@ public class LoginController implements Initializable{
             infoBox("Please enter correct Email and Password", null, "Failed");
         }else {
             infoBox("Login Successful!", null, "Failed");
-            Plane = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
+            AnchorPane Plane1 = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
+            Plane.getChildren().setAll(Plane1);
         }
     }
 
@@ -104,15 +105,4 @@ public class LoginController implements Initializable{
         System.exit(1);
     }
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        AnchorPane pane1 = null;
-        try {
-            pane1 = FXMLLoader.load(getClass().getResource("FXML/login_form.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        loginFrame.getChildren().setAll(pane1);
-    }
 }
