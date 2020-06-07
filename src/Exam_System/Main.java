@@ -26,16 +26,18 @@ public class Main extends Application {
         root.setOnMousePressed(mouseEvent -> {
                 x = mouseEvent.getSceneX();
                 y = mouseEvent.getSceneY();
-                System.out.println(x);
 
-                if (bounds.getWidth() > x)
+            System.out.println("hello");
+
+                if (bounds.getWidth() < x)
                     System.out.println("hello");
 
             }
         );
 
         root.setOnMouseDragged(mouseEvent -> {
-            System.out.println(bounds.getWidth() +" "+ x );
+            if (bounds.getWidth() < x)
+                System.out.println("hello");
 
             if (bounds.getWidth() < x)//do all the thing
                 primaryStage.hide();

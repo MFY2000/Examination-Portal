@@ -16,7 +16,7 @@
 
 <AnchorPane fx:id="main_plane" prefHeight="680.0" prefWidth="1430.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.LoginController">
    <children>
-      <AnchorPane fx:id="Plane" layoutX="344.0" layoutY="186.0" prefHeight="498.0" prefWidth="731.0" style="-fx-background-color: red;">
+      <AnchorPane fx:id="Plane" layoutX="344.0" layoutY="186.0" prefHeight="498.0" prefWidth="731.0">
          <children>
             <AnchorPane fx:id="rootgride" layoutX="69.0" layoutY="62.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="606.0">
                <children>
