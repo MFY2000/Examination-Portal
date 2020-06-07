@@ -4,11 +4,14 @@ package Exam_System;
 import Exam_System.db.jdbcDao;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -20,8 +23,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-public class LoginController  {
+public class LoginController implements Initializable{
     public Button Admin_button;
+
+    @FXML
+    private AnchorPane loginFrame;
     @FXML
     private LoginController PopController;
     @FXML
@@ -36,7 +42,7 @@ public class LoginController  {
     private Button submitButton;
 
     @FXML
-    public void login(ActionEvent event) throws SQLException, IOException,Exception {
+    public void login(ActionEvent event)  throws SQLException, IOException,Exception {
 
         Window owner = submitButton.getScene().getWindow();
 
@@ -101,4 +107,14 @@ public class LoginController  {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        AnchorPane pane1 = null;
+        try {
+            pane1 = FXMLLoader.load(getClass().getResource("FXML/Admin.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        loginFrame.getChildren().setAll(pane1);
+    }
 }
