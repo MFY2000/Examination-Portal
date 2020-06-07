@@ -26,7 +26,7 @@ public class Main extends Application {
         root.setOnMousePressed(mouseEvent -> {
                 x = mouseEvent.getSceneX();
                 y = mouseEvent.getSceneY();
-                System.out.println(bounds.getWidth() +" "+ x );
+                System.out.println(x);
 
                 if (bounds.getWidth() > x)
                     System.out.println("hello");

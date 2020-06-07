@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -20,12 +21,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
 public class LoginController implements Initializable{
     public Button Admin_button;
 
+
+    @FXML
+    private AnchorPane Plane;
     @FXML
     private AnchorPane loginFrame;
     @FXML
@@ -67,14 +72,7 @@ public class LoginController implements Initializable{
             infoBox("Please enter correct Email and Password", null, "Failed");
         }else {
             infoBox("Login Successful!", null, "Failed");
-            AnchorPane pane2 = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
-            ((Node)(event.getSource())).getScene().getWindow().hide();
-            Scene secondScene = new Scene(pane2);
-            Stage newWindow = new Stage();
-            newWindow.setScene(secondScene);
-
-            newWindow.show();
-
+            Plane = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
         }
     }
 
@@ -111,7 +109,7 @@ public class LoginController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         AnchorPane pane1 = null;
         try {
-            pane1 = FXMLLoader.load(getClass().getResource("FXML/Admin.fxml"));
+            pane1 = FXMLLoader.load(getClass().getResource("FXML/login_form.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
