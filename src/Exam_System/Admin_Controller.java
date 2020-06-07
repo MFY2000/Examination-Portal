@@ -5,11 +5,13 @@ import Exam_System.db.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Window;
 
 import java.io.IOException;
@@ -29,6 +31,8 @@ public class Admin_Controller{
 
     @FXML
     private Button submitButton;
+    @FXML
+    private AnchorPane ExamShowPane;
     @FXML
     public void login(ActionEvent event) throws SQLException, IOException {
 
@@ -94,6 +98,13 @@ public class Admin_Controller{
         showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter a password");
         System.exit(1);
     }
+
+    public void PopUpExxam(ActionEvent actionEvent) throws IOException {
+          AnchorPane pane3 = FXMLLoader.load(getClass().getResource("FXML/Exam_Insertion.fxml"));
+          ExamShowPane.getChildren().setAll(pane3);
+    }
+
+
 }
 
 
