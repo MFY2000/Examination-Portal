@@ -154,8 +154,8 @@ public class LoginController {
             Plane.setOpacity(0);
             QuizDetials.setOpacity(100);
             QuizDetials.setDisable(!true);
-
             //
+            QuizDetailPlane();
         }
     }
 

@@ -14,9 +14,25 @@ public class jdbcDao {
     private static final String DATABASE_PASSWORD = "";
     private static final String INSERT_QUERY = "INSERT INTO questioncurd (Question,option1,option2,option3,option4,Answer) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SELECT_QUERY_LOGIN = "SELECT * FROM login WHERE email_id = ? and password = ?";
+
+    //Database varaible
     private Connection connection;
-    private Statement sc;
-    private ResultSet res;
+    private Statement statement;
+    private ResultSet result;
+
+    //Database
+    
+
+    jdbcDao(){
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
+            statement = connection.createStatement();
+        } catch (ClassNotFoundException | SQLException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+    }
 
     public void insertRecord(String Question,String Option_1,String Option_2,String Option_3,String Option_4,String Answer) throws SQLException {
 
@@ -78,24 +94,15 @@ public class jdbcDao {
         return false;
     }
 
+    // fetch data
     public ArrayList<String> displayFeildList(){
         List<String> Feild = new ArrayList<String>();
-
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
-            sc = connection.createStatement();
-        } catch (ClassNotFoundException | SQLException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
-        }
-
-            try {
             String query = "select * from subjectlist";
-            res = sc.executeQuery(query);
+            result = statement.executeQuery(query);
 
-            while (res.next()){
-                Feild.add(res.getString("Field"));
+            while (result.next()){
+                Feild.add(result.getString("Field"));
             }}
         catch (Exception e){
             System.out.println("Error : "+e);
@@ -107,20 +114,17 @@ public class jdbcDao {
             String query = "SELECT * FROM `subjectlist` WHERE `Field` LIKE "+'"'+Feild+'"'+" ";
             boolean match = false;
             try {
-                res = sc.executeQuery(query);
-                res.next();
-                String pin = res.getString("Pincode");
-
+                result = statement.executeQuery(query);
+                result.next();
+                String pin = result.getString("Pincode");
                 if (pin.equals(pinEnter)){
                     match = true;
                 }
-
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
             return match;
         }
-
 
         public static void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
@@ -137,6 +141,10 @@ public class jdbcDao {
             }
         }
     }
+
+
+
+
 }
 
 
