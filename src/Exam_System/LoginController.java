@@ -146,7 +146,6 @@ public class LoginController {
     public void checkingPin(ActionEvent event) {
 
         if (jdb.checkPin(pincode.getText(), (String) combobox.getValue())){
-            System.out.println("Welcome ");
             Plane.setDisable(true);
             Plane.setOpacity(0);
 
