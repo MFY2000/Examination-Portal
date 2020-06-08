@@ -5,6 +5,7 @@ import Exam_System.db.jdbcDao;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.collections.FXCollections;
@@ -18,45 +19,47 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Window;
 
 public class LoginController {
-    public Button Admin_button;
-    public AnchorPane main_plane;
-    public AnchorPane dropdown;
+//main plane
+    @FXML public AnchorPane main_plane;
 
-    @FXML
-    private AnchorPane ExamShowPane;
-    @FXML
-    private AnchorPane Plane;
-    @FXML
-    private AnchorPane loginFrame;
-    @FXML
-    private LoginController PopController;
-    @FXML
-    private AnchorPane rootgride;
-    @FXML
-    private TextField emailIdField;
 
-    @FXML
-    private PasswordField passwordField;
+    public AnchorPane QuizPlane;
+    public Label QuestionNo;
+    public Label timer;
+    public Label question;
+    public RadioButton B;
+    public RadioButton D;
+    public RadioButton A;
+    public RadioButton C;
 
-    @FXML
-    private Button submitButton;
+    public AnchorPane QuizDetials;
+    public Label QuizName;
+    public Label QuizTime;
+    public Label QuizNo;
 
-    ObservableList<String> ChoiceList;
+    @FXML private AnchorPane Plane;
+    @FXML private AnchorPane dropdown;
+    @FXML private ComboBox combobox;
+    @FXML private AnchorPane pinbox;
+    @FXML private PasswordField pincode;
 
-    @FXML
-    private ComboBox combobox;
-    @FXML
+    @FXML private AnchorPane ExamShowPane;
+    @FXML private Label nameOFUser;
 
-    private AnchorPane pinbox = new AnchorPane();
-    @FXML
-    private PasswordField pincode = new PasswordField();
+    @FXML private AnchorPane rootgride;
+    @FXML private TextField emailIdField;
+    @FXML private PasswordField passwordField;
+    @FXML private Button submitButton;
+
+    // Local varaible
+    private ObservableList<String> ChoiceList;
+
+    private ArrayList<Integer> QuestionNumber = new ArrayList<Integer>();
+    private ArrayList<ArrayList<String>> Question = new ArrayList<ArrayList<String>>();
 
     private jdbcDao jdb = new jdbcDao();
 
-    private 
-
-    @FXML
-    public void login(ActionEvent event)  throws SQLException, IOException,Exception {
+    @FXML private void login(ActionEvent event)  throws SQLException, IOException,Exception {
 
         Window owner = submitButton.getScene().getWindow();
 
@@ -108,17 +111,16 @@ public class LoginController {
         alert.show();
     }
 
-    public void ADMIN_CALLER(ActionEvent actionEvent) throws IOException {
+    @FXML private void ADMIN_CALLER(ActionEvent actionEvent) throws IOException {
         AnchorPane pane1 = FXMLLoader.load(getClass().getResource("FXML/Admin.fxml"));
         rootgride.getChildren().setAll(pane1);
     }
 
-    public void CloseApp(ActionEvent actionEvent)throws Exception{
+    @FXML private void CloseApp(ActionEvent actionEvent)throws Exception{
         Window owner = submitButton.getScene().getWindow();
         showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter a password");
         System.exit(1);
     }
-
 
     public void PopUpExxam(ActionEvent event) {
 
@@ -146,11 +148,25 @@ public class LoginController {
     }
 
     public void checkingPin(ActionEvent event) {
-
         if (jdb.checkPin(pincode.getText(), (String) combobox.getValue())){
+            // to change the the plane
             Plane.setDisable(true);
             Plane.setOpacity(0);
+            QuizDetials.setOpacity(100);
+            QuizDetials.setDisable(!true);
 
+            //
         }
+    }
+
+    public void QuizDetailPlane(){
+
+    }
+
+    public void NextQuestion(ActionEvent event) {
+
+    }
+
+    public void StartQuiz(ActionEvent event) {
     }
 }

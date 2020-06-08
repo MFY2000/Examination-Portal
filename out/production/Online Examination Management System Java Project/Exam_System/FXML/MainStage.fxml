@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -15,11 +16,109 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="main_plane" prefHeight="914.0" prefWidth="1323.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.LoginController">
    <children>
-      <AnchorPane fx:id="Plane" layoutX="262.0" layoutY="126.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="555.0" prefWidth="791.0" style="-fx-border-color: #FFF;">
+      <AnchorPane disable="true" layoutX="300.0" layoutY="200.0" opacity="0.0" prefHeight="424.0" prefWidth="627.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="213.0" layoutY="24.0" prefHeight="60.0" prefWidth="122.0" text="Question # ">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="QuestionNo" layoutX="329.0" layoutY="37.0" text="no">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="timer" layoutX="471.0" layoutY="24.0" prefHeight="32.0" prefWidth="72.0" text="time">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="question" layoutX="53.0" layoutY="123.0" prefHeight="50.0" prefWidth="490.0" text="Question" />
+            <AnchorPane layoutX="48.0" layoutY="173.0" prefHeight="203.0" prefWidth="517.0" style="-fx-border-color: black;">
+               <children>
+                  <VBox layoutX="259.0" prefHeight="138.0" prefWidth="254.0">
+                     <children>
+                        <RadioButton fx:id="B" contentDisplay="TOP" mnemonicParsing="false" text="RadioButton">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="D" contentDisplay="TOP" mnemonicParsing="false" text="RadioButton">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="203.0" prefWidth="254.0">
+                     <children>
+                        <RadioButton fx:id="A" contentDisplay="TOP" mnemonicParsing="false" text="RadioButton">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="C" contentDisplay="TOP" mnemonicParsing="false" text="RadioButton">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                     </children>
+                  </VBox>
+                  <Button layoutX="419.0" layoutY="144.0" mnemonicParsing="false" onAction="#NextQuestion" prefHeight="41.0" prefWidth="78.0" style="-fx-background-color: #017399; -fx-border-color: WHITE; -fx-border-radius: 10;" text="Next" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="QuizDetials" disable="true" layoutX="300.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="555.0" prefWidth="791.0">
+         <children>
+            <Label layoutX="292.0" layoutY="44.0" prefHeight="53.0" prefWidth="226.0" text="Quiz details">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="128.0" prefHeight="54.0" prefWidth="250.0" text="Welcome to you in this Quiz: " textFill="#595959">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="QuizName" layoutX="322.0" layoutY="128.0" prefHeight="54.0" prefWidth="85.0" textFill="#595959" underline="true" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="82.0" layoutY="182.0" prefHeight="54.0" prefWidth="144.0" text="No of Question: " textFill="#595959">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="242.0" prefHeight="54.0" prefWidth="124.0" text="Time proivde: " textFill="#595959">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="QuizTime" layoutX="205.0" layoutY="243.0" prefHeight="54.0" prefWidth="98.0" textFill="#595959" underline="true" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="QuizNo" layoutX="231.0" layoutY="182.0" prefHeight="54.0" prefWidth="98.0" textFill="#595959" underline="true" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="545.0" layoutY="402.0" mnemonicParsing="false" onAction="#StartQuiz" prefHeight="54.0" prefWidth="156.0" style="-fx-background-color: inhertance; -fx-border-color: Black;" text="Start Quiz">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Plane" layoutX="300.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="555.0" prefWidth="791.0" style="-fx-border-color: #FFF;">
          <children>
             <GridPane layoutX="-1.0" layoutY="2.0" prefHeight="555.0" prefWidth="731.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <columnConstraints>
@@ -160,7 +259,7 @@
             <Separator layoutX="-1.0" layoutY="31.0" prefHeight="9.0" prefWidth="735.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="30.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="rootgride" layoutX="351.0" layoutY="294.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="627.0">
+      <AnchorPane fx:id="rootgride" layoutX="300.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="627.0">
          <children>
             <Button fx:id="Admin_button" layoutX="525.0" layoutY="21.0" mnemonicParsing="false" onAction="#ADMIN_CALLER" prefHeight="53.0" prefWidth="46.0" style="-fx-background-radius: 100; -fx-background-color: #FF8066;" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="21.0">
                <graphic>
