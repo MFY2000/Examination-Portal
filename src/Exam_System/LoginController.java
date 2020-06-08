@@ -5,20 +5,22 @@ import Exam_System.db.jdbcDao;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Window;
 
 public class LoginController {
     public Button Admin_button;
     public AnchorPane main_plane;
+    public AnchorPane dropdown;
 
     @FXML
     private AnchorPane ExamShowPane;
@@ -38,6 +40,18 @@ public class LoginController {
 
     @FXML
     private Button submitButton;
+
+    ObservableList<String> ChoiceList;
+
+    @FXML
+    private ComboBox combobox;
+    @FXML
+
+    private AnchorPane pinbox = new AnchorPane();
+    @FXML
+    private PasswordField pincode = new PasswordField();
+
+    private jdbcDao jdb = new jdbcDao();
 
     @FXML
     public void login(ActionEvent event)  throws SQLException, IOException,Exception {
@@ -65,9 +79,12 @@ public class LoginController {
             infoBox("Please enter correct Email and Password", null, "Failed");
         }else {
             infoBox("Login Successful!", null, "Failed");
-//            AnchorPane Plane1 = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
             Plane.setOpacity(100);
-            rootgride = null;
+//            AnchorPane Plane1 = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
+//            rootgride.getChildren().setAll((Collection<? extends Node>) null);
+//            main_plane.getChildren().remove(rootgride);
+            rootgride.setOpacity(0);
+            rootgride.setDisable(true);
 
         }
     }
@@ -106,9 +123,33 @@ public class LoginController {
     }
 
     public void QuizDisplay(ActionEvent event) throws IOException {
-        System.out.println("hello");
-        AnchorPane pane3 = FXMLLoader.load(getClass().getResource("FXML/Dropdown.fxml"));
-        ExamShowPane.getChildren().setAll(pane3);
+//        AnchorPane pane3 = FXMLLoader.load(getClass().getResource("FXML/Dropdown.fxml"));
+//        ExamShowPane.getChildren().setAll(pane3);
+        ExamShowPane.setOpacity(0);
+        ExamShowPane.setDisable(true);
+
+        dropdown.setOpacity(100);
+        feildEnter();
     }
 
+    public void feildEnter(){
+        List<String> Feild = jdb.displayFeildList();
+        ChoiceList = FXCollections.observableArrayList(Feild);
+        combobox.setItems(ChoiceList);
+        combobox.setValue("Feild");
+    }
+
+    public void EnterPin(ActionEvent event) {
+        pinbox.setVisible(true);
+    }
+
+    public void checkingPin(ActionEvent event) {
+
+        if (jdb.checkPin(pincode.getText(), (String) combobox.getValue())){
+            System.out.println("Welcome ");
+            Plane.setDisable(true);
+            Plane.setOpacity(0);
+
+        }
+    }
 }

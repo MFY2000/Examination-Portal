@@ -27,20 +27,7 @@ public class Dropdown implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        List<String> Feild = jdb.displayFeildList();
-        ChoiceList = FXCollections.observableArrayList(Feild);
-        combobox.setItems(ChoiceList);
-        combobox.setValue("Feild");
+
     }
 
-    public void EnterPin(ActionEvent event) {
-        pinbox.setVisible(true);
-    }
-
-    public void checkingPin(ActionEvent event) {
-
-        if (jdb.checkPin(pincode.getText(), (String) combobox.getValue())){
-            System.out.println("Welcome ");
-        }
-    }
 }
