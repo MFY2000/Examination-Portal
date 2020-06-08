@@ -7,9 +7,13 @@ class test{
         Varabile = 44;
     }
 
-    protected static void methods(){
+    private static void methods(int i){
         System.out.println("Hello");
     }
+    public static void methods(){
+        System.out.println("Hello");
+    }
+
 }
 
 public class sample {

@@ -53,6 +53,8 @@ public class LoginController {
 
     private jdbcDao jdb = new jdbcDao();
 
+    private 
+
     @FXML
     public void login(ActionEvent event)  throws SQLException, IOException,Exception {
 

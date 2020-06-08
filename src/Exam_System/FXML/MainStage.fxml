@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -15,6 +16,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="main_plane" prefHeight="914.0" prefWidth="1323.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.LoginController">
@@ -245,6 +247,59 @@
                   </ImageView>
                </graphic>
             </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="915.0" prefWidth="1320.0" style="-fx-background-color: #017399;">
+         <children>
+            <Label layoutX="213.0" layoutY="24.0" prefHeight="60.0" prefWidth="122.0" text="Question # " textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="QuestionNo" layoutX="329.0" layoutY="37.0" text="no" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="timer" layoutX="471.0" layoutY="24.0" prefHeight="32.0" prefWidth="72.0" text="time" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="question" layoutX="53.0" layoutY="123.0" prefHeight="50.0" prefWidth="490.0" text="Question" textFill="WHITE" />
+            <AnchorPane layoutX="48.0" layoutY="173.0" prefHeight="203.0" prefWidth="517.0">
+               <children>
+                  <VBox layoutX="259.0" prefHeight="138.0" prefWidth="254.0">
+                     <children>
+                        <RadioButton fx:id="B" contentDisplay="TOP" mnemonicParsing="false" text="RadioButton" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="D" contentDisplay="TOP" mnemonicParsing="false" text="RadioButton" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="203.0" prefWidth="254.0">
+                     <children>
+                        <RadioButton fx:id="A" contentDisplay="TOP" mnemonicParsing="false" text="RadioButton" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="C" contentDisplay="TOP" mnemonicParsing="false" text="RadioButton" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                     </children>
+                  </VBox>
+                  <Button layoutX="419.0" layoutY="144.0" mnemonicParsing="false" onAction="#NextQuestion" onMouseDragOver="" prefHeight="41.0" prefWidth="78.0" style="-fx-background-color: #017399; -fx-border-color: WHITE; -fx-border-radius: 10;" text="Next" textFill="WHITE" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>

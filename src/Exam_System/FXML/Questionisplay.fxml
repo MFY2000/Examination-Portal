@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #017399;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.Questionisplay">
+<AnchorPane prefHeight="504.0" prefWidth="690.0" style="-fx-background-color: #017399;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.Questionisplay">
    <children>
       <Label layoutX="213.0" layoutY="24.0" prefHeight="60.0" prefWidth="122.0" text="Question # " textFill="WHITE">
          <font>
@@ -54,8 +54,8 @@
                   </RadioButton>
                </children>
             </VBox>
-            <Button layoutX="419.0" layoutY="144.0" mnemonicParsing="false" onAction="#NextQuestion" onMouseDragOver="" prefHeight="41.0" prefWidth="78.0" style="-fx-background-color: #017399; -fx-border-color: WHITE; -fx-border-radius: 10;" text="Next" textFill="WHITE" />
          </children>
       </AnchorPane>
+      <Button layoutX="210.0" layoutY="443.0" mnemonicParsing="false" onAction="#NextQuestion" onMouseDragOver="" prefHeight="41.0" prefWidth="78.0" style="-fx-background-color: #017399; -fx-border-color: WHITE; -fx-border-radius: 10;" text="Next" textFill="WHITE" />
    </children>
 </AnchorPane>
