@@ -73,7 +73,7 @@ public class jdbcDao {
 
         // Step 1: Establishing a Connection and
         // try-with-resource statement will auto close the connection.
-        try (
+        try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
              // Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_QUERY_LOGIN)) {
             preparedStatement.setString(1, emailId);

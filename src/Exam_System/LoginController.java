@@ -49,7 +49,7 @@ public class LoginController {
     @FXML private AnchorPane rootgride;
     @FXML private TextField emailIdField;
     @FXML private PasswordField passwordField;
-    @FXML private Button submitButton;
+    @FXML public Button submitButton;
 
     // Local varaible
     private ObservableList<String> ChoiceList;
@@ -85,9 +85,12 @@ public class LoginController {
         }else {
             infoBox("Login Successful!", null, "Failed");
             Plane.setOpacity(100);
+            Plane.setDisable(false);
+
 //            AnchorPane Plane1 = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
 //            rootgride.getChildren().setAll((Collection<? extends Node>) null);
 //            main_plane.getChildren().remove(rootgride);
+
             rootgride.setOpacity(0);
             rootgride.setDisable(true);
 

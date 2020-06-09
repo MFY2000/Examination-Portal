@@ -306,7 +306,7 @@
                         <TextField fx:id="emailIdField" layoutX="76.0" prefHeight="35.0" prefWidth="426.0" promptText="User id" style="-fx-background-color: #FCF8FF; -fx-background-radius: 40;" />
                      </children>
                   </AnchorPane>
-                  <Button defaultButton="true" onAction="#login" prefHeight="31.0" prefWidth="233.0" style="-fx-background-color: #FF8066; -fx-background-radius: 40;" text="Submit" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="1">
+                  <Button fx:id="submitButton" defaultButton="true" onAction="#login" prefHeight="31.0" prefWidth="233.0" style="-fx-background-color: #FF8066; -fx-background-radius: 40;" text="Submit" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="1">
                      <GridPane.margin>
                         <Insets bottom="20" left="0" right="0" top="20" />
                      </GridPane.margin>
