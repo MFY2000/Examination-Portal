@@ -180,7 +180,8 @@ public class LoginController {
         QuestionNumber = (new Randommy(jdbcDao.getTotalQuizQuestion())).getRandomArray();// direct create call and get the value
     }
 
-    public void NextQuestion(ActionEvent event) {
+    public void NextQuestion(ActionEvent event) throws InterruptedException {
+        System.out.println("Start a the Quiz");
         int temp = Integer.parseInt(jdbcDao.getQuizNoofAttemt());
         if (temp > QNO){
             QuestionAnswer = new ArrayList<String>();
@@ -191,17 +192,22 @@ public class LoginController {
             B.setText("B) "+QuestionAnswer.get(2));
             C.setText("C) "+QuestionAnswer.get(3));
             D.setText("D) "+QuestionAnswer.get(4));
+            Thread.sleep(2000);
+            QNO++;
         }
         else {
             System.out.println("Hello");
         }
     }
 
+    ArrayList<String> Answer = new ArrayList<String>();
+
     public void Selected(ActionEvent event){
-        System.out.println(event.getTarget());
+        Answer.add(QNO,event.getEventType().getName());
+        System.out.println(event.getEventType().getName());
     }
 
-    public void StartQuiz(ActionEvent event) {
+    public void StartQuiz(ActionEvent event) throws InterruptedException {
         tgGroup = new ToggleGroup();
         A.setToggleGroup(tgGroup);
         B.setToggleGroup(tgGroup);
@@ -215,8 +221,12 @@ public class LoginController {
         QuizPlane.setOpacity(100);
 
         NextQuestion(event);
-
     }
 
+    public void checkQuestion() throws InterruptedException {
+        Thread.sleep(2000);
+
+
+    }
 
 }
