@@ -1,26 +1,42 @@
 package Exam_System;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 // Java program generate a random AlphaNumeric String
 // using Math.random() method
-class randomArray{
+class randomArray {
     private int limit;
     private ArrayList<Integer> list;
+    private int lenght;
+    Random rd = new Random(); // creating Random object
 
-    randomArray(int lim){
-        this.limit = lim;
+    randomArray(String lim, String lenght) {
+        this.limit = Integer.parseInt(lim);
+        this.lenght = Integer.parseInt(lenght);
+        list = new ArrayList<Integer>(this.lenght);
     }
 
-    
+
+    public void createList() {
+        for (int i = 0; i < lenght; i++)
+            list.add(rd.nextInt()); // storing random integers in an array\
+    }
+
+    public ArrayList<Integer> getRandomArray(){
+        createList();
+        return list;
+    }
 }
 
+public class Randommy extends randomArray{
 
-public class Randommy {
+    Randommy(String lim, String lenght) {
+        super(lim, lenght);
+    }
 
     // function to generate a random string of length n
-    public static String getAlphaNumericString(int n)
-    {
+    public String getAlphaNumericString(int n){
 
         // chose a Character random from this String
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"

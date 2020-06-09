@@ -175,7 +175,7 @@ public class LoginController {
     }
 
     public void getQuestionList() {
-        QuestionNumber = new ArrayList<Integer>();
+        QuestionNumber = (new Randommy(jdbcDao.getQuizNoofAttemt(),jdbcDao.getTotalQuizQuestion())).getRandomArray();// direct create call and get the value
 
     }
 

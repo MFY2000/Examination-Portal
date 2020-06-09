@@ -151,6 +151,10 @@ public class jdbcDao {
         return QuizSelete;
     }
 
+    public static String getTotalQuizQuestion() {
+        return TotalQuizQuestion;
+    }
+
     public static String getUserId() {
         return UserId;
     }
