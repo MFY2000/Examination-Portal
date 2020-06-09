@@ -23,6 +23,8 @@ public class jdbcDao {
     //Database varaible that save data
     private static String UserId;
     private static String QuizSelete;
+    private static String QuizTime;
+    private static String QuizNoofAttemt;
     private static String UserName;
 
     public jdbcDao(){
@@ -149,6 +151,14 @@ public class jdbcDao {
     public static String getUserId() {
         return UserId;
     }
+
+    public void getQuizDetails(){
+        String query = "SELECT * FROM `subjectlist` WHERE `Field` LIKE "+'"'+getQuizSelete()+'"'+" ";
+
+    }
+
+
+
 }
 
 

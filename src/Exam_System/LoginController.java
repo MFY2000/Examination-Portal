@@ -136,6 +136,7 @@ public class LoginController {
         ExamShowPane.setDisable(true);
 
         dropdown.setOpacity(100);
+        dropdown.setDisable(false);
         feildEnter();
     }
 
@@ -163,7 +164,9 @@ public class LoginController {
     }
 
     public void QuizDetailPlane(){
-        System.out.println(jdbcDao.getQuizSelete()+" "+jdbcDao.getUserId());
+        QuizName.setText(jdbcDao.getQuizSelete());
+
+        System.out.println(jdbcDao.getUserId());
     }
 
     public void NextQuestion(ActionEvent event) {
