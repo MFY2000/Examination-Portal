@@ -21,7 +21,16 @@
 
 <AnchorPane fx:id="main_plane" prefHeight="914.0" prefWidth="1323.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.LoginController">
    <children>
-      <AnchorPane fx:id="QuizPlane" disable="true" layoutX="300.0" layoutY="200.0" opacity="0.0" prefHeight="424.0" prefWidth="627.0" style="-fx-border-color: black;">
+      <Button mnemonicParsing="false" onAction="#CloseApp" prefHeight="38.0" prefWidth="44.0" style="-fx-background-color: inhertance;" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+         <graphic>
+            <ImageView fitHeight="56.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/Close.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <AnchorPane fx:id="QuizPlane" disable="true" layoutX="399.0" layoutY="185.0" opacity="0.0" prefHeight="424.0" prefWidth="627.0" style="-fx-border-color: black;">
          <children>
             <Label layoutX="213.0" layoutY="24.0" prefHeight="60.0" prefWidth="122.0" text="Question # ">
                <font>
@@ -74,7 +83,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="QuizDetials" disable="true" layoutX="300.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="555.0" prefWidth="791.0">
+      <AnchorPane fx:id="QuizDetials" disable="true" layoutX="399.0" layoutY="185.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="555.0" prefWidth="791.0">
          <children>
             <Label layoutX="292.0" layoutY="44.0" prefHeight="53.0" prefWidth="226.0" text="Quiz details">
                <font>
@@ -86,7 +95,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="QuizName" layoutX="322.0" layoutY="128.0" prefHeight="54.0" prefWidth="85.0" textFill="#595959" underline="true" wrapText="true">
+            <Label fx:id="QuizName" layoutX="322.0" layoutY="128.0" prefHeight="54.0" prefWidth="326.0" textFill="#595959" underline="true" wrapText="true">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
@@ -101,12 +110,12 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="QuizTime" layoutX="205.0" layoutY="243.0" prefHeight="54.0" prefWidth="98.0" textFill="#595959" underline="true" wrapText="true">
+            <Label fx:id="QuizTime" layoutX="205.0" layoutY="243.0" prefHeight="54.0" prefWidth="293.0" textFill="#595959" underline="true" wrapText="true">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="QuizNo" layoutX="231.0" layoutY="182.0" prefHeight="54.0" prefWidth="98.0" textFill="#595959" underline="true" wrapText="true">
+            <Label fx:id="QuizNo" layoutX="231.0" layoutY="182.0" prefHeight="54.0" prefWidth="326.0" textFill="#595959" underline="true" wrapText="true">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
@@ -118,7 +127,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Plane" disable="true" layoutX="300.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="555.0" prefWidth="791.0" style="-fx-border-color: #FFF;">
+      <AnchorPane fx:id="Plane" disable="true" layoutX="399.0" layoutY="185.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="555.0" prefWidth="791.0" style="-fx-border-color: #FFF;">
          <children>
             <GridPane layoutX="-1.0" layoutY="2.0" prefHeight="555.0" prefWidth="731.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <columnConstraints>
@@ -259,7 +268,7 @@
             <Separator layoutX="-1.0" layoutY="31.0" prefHeight="9.0" prefWidth="735.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="30.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="rootgride" layoutX="300.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="627.0">
+      <AnchorPane fx:id="rootgride" layoutX="399.0" layoutY="185.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="627.0">
          <children>
             <GridPane alignment="center" hgap="10" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="606.0" style="-fx-background-color: #4B4453;" vgap="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <padding>
@@ -331,15 +340,6 @@
                   <ImageView fitHeight="38.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/Admin.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="501.0" layoutY="30.0" mnemonicParsing="false" onAction="#CloseApp" prefHeight="30.0" prefWidth="15.0" style="-fx-background-color: #4B4453;" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
-               <graphic>
-                  <ImageView fitHeight="37.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/Close.png" />
                      </image>
                   </ImageView>
                </graphic>

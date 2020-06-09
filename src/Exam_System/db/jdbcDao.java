@@ -1,7 +1,6 @@
 package Exam_System.db;
 
 
-import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -111,7 +110,7 @@ public class jdbcDao {
             return (ArrayList<String>) Feild;
         }
 
-        public boolean checkPin(String pinEnter,String Feild){
+    public boolean checkPin(String pinEnter,String Feild){
             String query = "SELECT * FROM `subjectlist` WHERE `Field` LIKE "+'"'+Feild+'"'+" ";
             boolean match = false;
             try {
@@ -121,6 +120,8 @@ public class jdbcDao {
                 if (pin.equals(pinEnter)){
                     match = true;
                     QuizSelete = Feild;
+                    QuizTime = result.getString("QuizTime");
+                    QuizNoofAttemt =  result.getString("QuizNoofAttemp");
                 }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
@@ -128,7 +129,7 @@ public class jdbcDao {
             return match;
         }
 
-        public static void printSQLException(SQLException ex) {
+    public static void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
             if (e instanceof SQLException) {
                 e.printStackTrace(System.err);
@@ -150,6 +151,14 @@ public class jdbcDao {
 
     public static String getUserId() {
         return UserId;
+    }
+
+    public static String getQuizNoofAttemt() {
+        return QuizNoofAttemt;
+    }
+
+    public static String getQuizTime() {
+        return QuizTime;
     }
 
     public void getQuizDetails(){

@@ -164,9 +164,9 @@ public class LoginController {
     }
 
     public void QuizDetailPlane(){
-        QuizName.setText(jdbcDao.getQuizSelete());
-
-        System.out.println(jdbcDao.getUserId());
+        QuizName.setText(jdb.getQuizSelete());
+        QuizNo.setText(jdbcDao.getQuizNoofAttemt());
+        QuizTime.setText(jdbcDao.getQuizTime());
     }
 
     public void NextQuestion(ActionEvent event) {

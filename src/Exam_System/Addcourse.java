@@ -24,13 +24,6 @@ public class Addcourse implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         PIN.setText(Randommy.getAlphaNumericString(6));
-
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/database_choicelist?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     public void courseSubmit() throws SQLException {
