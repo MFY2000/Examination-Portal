@@ -20,10 +20,12 @@ public class jdbcDao {
     private Statement statement;
     private ResultSet result;
 
-    //Database
-    
+    //Database varaible that save data
+    private static String UserId;
+    private static String QuizSelete;
+    private static String UserName;
 
-    jdbcDao(){
+    public jdbcDao(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
@@ -71,18 +73,15 @@ public class jdbcDao {
 
         // Step 1: Establishing a Connection and
         // try-with-resource statement will auto close the connection.
-        try (Connection connection = DriverManager
-                .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
-
+        try (
              // Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_QUERY_LOGIN)) {
             preparedStatement.setString(1, emailId);
             preparedStatement.setString(2, password);
 
-            System.out.println(preparedStatement);
-
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
+                UserId = emailId;
                 return true;
             }
 
@@ -119,6 +118,7 @@ public class jdbcDao {
                 String pin = result.getString("Pincode");
                 if (pin.equals(pinEnter)){
                     match = true;
+                    QuizSelete = Feild;
                 }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
@@ -142,9 +142,13 @@ public class jdbcDao {
         }
     }
 
+    public static String getQuizSelete() {
+        return QuizSelete;
+    }
 
-
-
+    public static String getUserId() {
+        return UserId;
+    }
 }
 
 

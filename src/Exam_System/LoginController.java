@@ -160,7 +160,7 @@ public class LoginController {
     }
 
     public void QuizDetailPlane(){
-
+        System.out.println(jdbcDao.getQuizSelete()+" "+jdbcDao.getUserId());
     }
 
     public void NextQuestion(ActionEvent event) {

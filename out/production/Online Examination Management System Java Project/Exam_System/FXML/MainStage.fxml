@@ -21,7 +21,7 @@
 
 <AnchorPane fx:id="main_plane" prefHeight="914.0" prefWidth="1323.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.LoginController">
    <children>
-      <AnchorPane disable="true" layoutX="300.0" layoutY="200.0" opacity="0.0" prefHeight="424.0" prefWidth="627.0" style="-fx-border-color: black;">
+      <AnchorPane fx:id="QuizPlane" disable="true" layoutX="300.0" layoutY="200.0" opacity="0.0" prefHeight="424.0" prefWidth="627.0" style="-fx-border-color: black;">
          <children>
             <Label layoutX="213.0" layoutY="24.0" prefHeight="60.0" prefWidth="122.0" text="Question # ">
                <font>
@@ -118,7 +118,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Plane" layoutX="300.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="555.0" prefWidth="791.0" style="-fx-border-color: #FFF;">
+      <AnchorPane fx:id="Plane" disable="true" layoutX="300.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="555.0" prefWidth="791.0" style="-fx-border-color: #FFF;">
          <children>
             <GridPane layoutX="-1.0" layoutY="2.0" prefHeight="555.0" prefWidth="731.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <columnConstraints>
@@ -261,15 +261,6 @@
       </AnchorPane>
       <AnchorPane fx:id="rootgride" layoutX="300.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="627.0">
          <children>
-            <Button fx:id="Admin_button" layoutX="525.0" layoutY="21.0" mnemonicParsing="false" onAction="#ADMIN_CALLER" prefHeight="53.0" prefWidth="46.0" style="-fx-background-radius: 100; -fx-background-color: #FF8066;" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="21.0">
-               <graphic>
-                  <ImageView fitHeight="38.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/Admin.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
             <GridPane alignment="center" hgap="10" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="606.0" style="-fx-background-color: #4B4453;" vgap="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <padding>
                   <Insets left="40.0" right="40.0" />
@@ -315,7 +306,7 @@
                         <TextField fx:id="emailIdField" layoutX="76.0" prefHeight="35.0" prefWidth="426.0" promptText="User id" style="-fx-background-color: #FCF8FF; -fx-background-radius: 40;" />
                      </children>
                   </AnchorPane>
-                  <Button fx:id="submitButton" defaultButton="true" onAction="#login" prefHeight="31.0" prefWidth="233.0" style="-fx-background-color: #FF8066; -fx-background-radius: 40;" text="Submit" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="1">
+                  <Button defaultButton="true" onAction="#login" prefHeight="31.0" prefWidth="233.0" style="-fx-background-color: #FF8066; -fx-background-radius: 40;" text="Submit" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="1">
                      <GridPane.margin>
                         <Insets bottom="20" left="0" right="0" top="20" />
                      </GridPane.margin>
@@ -335,7 +326,16 @@
                   </AnchorPane>
                </children>
             </GridPane>
-            <Button fx:id="Admin_button1" layoutX="501.0" layoutY="30.0" mnemonicParsing="false" onAction="#CloseApp" prefHeight="30.0" prefWidth="15.0" style="-fx-background-color: #4B4453;" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+            <Button layoutX="525.0" layoutY="21.0" mnemonicParsing="false" onAction="#ADMIN_CALLER" prefHeight="53.0" prefWidth="46.0" style="-fx-background-radius: 100; -fx-background-color: #FF8066;" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="21.0">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Admin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="501.0" layoutY="30.0" mnemonicParsing="false" onAction="#CloseApp" prefHeight="30.0" prefWidth="15.0" style="-fx-background-color: #4B4453;" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
                <graphic>
                   <ImageView fitHeight="37.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
