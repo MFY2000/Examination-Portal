@@ -57,7 +57,9 @@ public class LoginController {
     private ObservableList<String> ChoiceList;
 
     private ArrayList<Integer> QuestionNumber;
-    private ArrayList<ArrayList<String>> Question;
+    private ArrayList<String> QuestionAnswer;
+    private ArrayList<Integer> ResultOfAnswer;
+    private int QNO = 0;
     ToggleGroup tgGroup;
 
     private jdbcDao jdb = new jdbcDao();
@@ -175,12 +177,28 @@ public class LoginController {
     }
 
     public void getQuestionList() {
-        QuestionNumber = (new Randommy(jdbcDao.getQuizNoofAttemt(),jdbcDao.getTotalQuizQuestion())).getRandomArray();// direct create call and get the value
-
+        QuestionNumber = (new Randommy(jdbcDao.getTotalQuizQuestion())).getRandomArray();// direct create call and get the value
     }
 
     public void NextQuestion(ActionEvent event) {
+        int temp = Integer.parseInt(jdbcDao.getQuizNoofAttemt());
+        if (temp > QNO){
+            QuestionAnswer = new ArrayList<String>();
+            QuestionAnswer = jdb.getQuizDetails(QuestionNumber.get(QNO));
+            QuizNo.setText(" " +QNO);
+            question.setText("Q ."+QuestionAnswer.get(0));
+            A.setText("A) "+QuestionAnswer.get(1));
+            B.setText("B) "+QuestionAnswer.get(2));
+            C.setText("C) "+QuestionAnswer.get(3));
+            D.setText("D) "+QuestionAnswer.get(4));
+        }
+        else {
+            System.out.println("Hello");
+        }
+    }
 
+    public void Selected(ActionEvent event){
+        System.out.println(event.getTarget());
     }
 
     public void StartQuiz(ActionEvent event) {
@@ -192,8 +210,12 @@ public class LoginController {
 
         QuizDetials.setOpacity(0);
         QuizDetials.setDisable(true);
+
         QuizPlane.setDisable(!true);
         QuizPlane.setOpacity(100);
+
+        NextQuestion(event);
+
     }
 
 

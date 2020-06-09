@@ -26,6 +26,7 @@ public class jdbcDao {
     private static String QuizNoofAttemt;
     private static String TotalQuizQuestion;
     private static String UserName;
+    private ArrayList<String> QuestioAnswer = new ArrayList<String>();
 
     public jdbcDao(){
         try {
@@ -167,7 +168,24 @@ public class jdbcDao {
         return QuizTime;
     }
 
-    public void getQuizDetails(){
+    public ArrayList<String> getQuizDetails(int QuestionId){
+        String query = "SELECT * FROM "+'`'+ QuizSelete +'`'+" WHERE `Id` LIKE "+'"'+QuestionId+'"'+" ";
+
+        try {
+            result = statement.executeQuery(query);
+            result.next();
+            QuestioAnswer.add(" "+result.getString("Question"));
+            QuestioAnswer.add(" "+result.getString("A"));
+            QuestioAnswer.add(" "+result.getString("B"));
+            QuestioAnswer.add(" "+result.getString("C"));
+            QuestioAnswer.add(" "+result.getString("D"));
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return QuestioAnswer;
+
     }
 
 

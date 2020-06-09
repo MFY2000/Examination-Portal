@@ -2,25 +2,25 @@ package Exam_System;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 // Java program generate a random AlphaNumeric String
 // using Math.random() method
 class randomArray {
-    private int limit;
     private ArrayList<Integer> list;
     private int lenght;
     Random rd = new Random(); // creating Random object
 
-    randomArray(String lim, String lenght) {
-        this.limit = Integer.parseInt(lim);
+    randomArray(String lenght) {
         this.lenght = Integer.parseInt(lenght);
         list = new ArrayList<Integer>(this.lenght);
     }
 
 
     public void createList() {
-        for (int i = 0; i < lenght; i++)
-            list.add(rd.nextInt()); // storing random integers in an array\
+        for (int i = 0; i < lenght; i++) {
+            list.add(ThreadLocalRandom.current().nextInt(0, lenght + 1)); // storing random integers in an array\
+        }
     }
 
     public ArrayList<Integer> getRandomArray(){
@@ -30,9 +30,8 @@ class randomArray {
 }
 
 public class Randommy extends randomArray{
-
-    Randommy(String lim, String lenght) {
-        super(lim, lenght);
+    Randommy(String lenght) {
+        super(lenght);
     }
 
     // function to generate a random string of length n

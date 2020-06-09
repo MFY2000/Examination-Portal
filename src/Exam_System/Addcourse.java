@@ -18,12 +18,13 @@ public class Addcourse implements Initializable {
     Button SubmitButton = new Button();
 // Private varabile
     private Connection connection;
-
+    Randommy randommy = new Randommy("12");
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        PIN.setText(Randommy.getAlphaNumericString(6));
+
+        PIN.setText(randommy.getAlphaNumericString(6));
     }
 
     public void courseSubmit() throws SQLException {
@@ -45,7 +46,7 @@ public class Addcourse implements Initializable {
         try {
             preparedStmt.execute();
             Field.setText("");
-            PIN.setText(Randommy.getAlphaNumericString(6));
+            PIN.setText(randommy.getAlphaNumericString(6));
         }
         catch (Exception e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
