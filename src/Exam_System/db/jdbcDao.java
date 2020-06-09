@@ -24,6 +24,7 @@ public class jdbcDao {
     private static String QuizSelete;
     private static String QuizTime;
     private static String QuizNoofAttemt;
+    private static String TotalQuizQuestion;
     private static String UserName;
 
     public jdbcDao(){
@@ -122,6 +123,7 @@ public class jdbcDao {
                     QuizSelete = Feild;
                     QuizTime = result.getString("QuizTime");
                     QuizNoofAttemt =  result.getString("QuizNoofAttemp");
+                    TotalQuizQuestion = result.getString("TotalQuestion");
                 }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
@@ -162,8 +164,6 @@ public class jdbcDao {
     }
 
     public void getQuizDetails(){
-        String query = "SELECT * FROM `subjectlist` WHERE `Field` LIKE "+'"'+getQuizSelete()+'"'+" ";
-
     }
 
 

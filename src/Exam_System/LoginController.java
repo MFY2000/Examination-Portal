@@ -38,12 +38,14 @@ public class LoginController {
     public Label QuizNo;
 
     @FXML private AnchorPane Plane;
-    @FXML private AnchorPane dropdown;
+    @FXML
+    public AnchorPane dropdown;
     @FXML private ComboBox combobox;
     @FXML private AnchorPane pinbox;
     @FXML private PasswordField pincode;
 
-    @FXML private AnchorPane ExamShowPane;
+    @FXML
+    public AnchorPane ExamShowPane;
     @FXML private Label nameOFUser;
 
     @FXML private AnchorPane rootgride;
@@ -54,8 +56,9 @@ public class LoginController {
     // Local varaible
     private ObservableList<String> ChoiceList;
 
-    private ArrayList<Integer> QuestionNumber = new ArrayList<Integer>();
-    private ArrayList<ArrayList<String>> Question = new ArrayList<ArrayList<String>>();
+    private ArrayList<Integer> QuestionNumber;
+    private ArrayList<ArrayList<String>> Question;
+    ToggleGroup tgGroup;
 
     private jdbcDao jdb = new jdbcDao();
 
@@ -87,12 +90,13 @@ public class LoginController {
             Plane.setOpacity(100);
             Plane.setDisable(false);
 
-//            AnchorPane Plane1 = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
+            AnchorPane Plane1 = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
 //            rootgride.getChildren().setAll((Collection<? extends Node>) null);
 //            main_plane.getChildren().remove(rootgride);
-
             rootgride.setOpacity(0);
             rootgride.setDisable(true);
+
+
 
         }
     }
@@ -167,6 +171,12 @@ public class LoginController {
         QuizName.setText(jdb.getQuizSelete());
         QuizNo.setText(jdbcDao.getQuizNoofAttemt());
         QuizTime.setText(jdbcDao.getQuizTime());
+        getQuestionList();
+    }
+
+    public void getQuestionList() {
+        QuestionNumber = new ArrayList<Integer>();
+
     }
 
     public void NextQuestion(ActionEvent event) {
@@ -174,5 +184,17 @@ public class LoginController {
     }
 
     public void StartQuiz(ActionEvent event) {
+        tgGroup = new ToggleGroup();
+        A.setToggleGroup(tgGroup);
+        B.setToggleGroup(tgGroup);
+        C.setToggleGroup(tgGroup);
+        D.setToggleGroup(tgGroup);
+
+        QuizDetials.setOpacity(0);
+        QuizDetials.setDisable(true);
+        QuizPlane.setDisable(!true);
+        QuizPlane.setOpacity(100);
     }
+
+
 }

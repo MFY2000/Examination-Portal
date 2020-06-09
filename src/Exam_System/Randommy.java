@@ -1,6 +1,20 @@
 package Exam_System;
+
+import java.util.ArrayList;
+
 // Java program generate a random AlphaNumeric String
 // using Math.random() method
+class randomArray{
+    private int limit;
+    private ArrayList<Integer> list;
+
+    randomArray(int lim){
+        this.limit = lim;
+    }
+
+    
+}
+
 
 public class Randommy {
 

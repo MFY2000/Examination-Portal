@@ -15,30 +15,44 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         AnchorPane root = FXMLLoader.load(getClass().getResource("FXML/MainStage.fxml"));
         primaryStage.initStyle(StageStyle.UNDECORATED);
+
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
 
         primaryStage.setX(bounds.getMinX());
         primaryStage.setY(bounds.getMinY());
         primaryStage.setWidth(bounds.getWidth());
-        primaryStage.setHeight(bounds.getHeight());
+        primaryStage.setHeight(bounds.getHeight()+100);
+
+        root.setOnMouseDragged(mouseEvent -> {
+            double x = mouseEvent.getSceneX();
+            double y = mouseEvent.getSceneY();
+
+            System.out.println(x+""+y);
+        });
 
         root.setOnMousePressed(mouseEvent -> {
                 x = mouseEvent.getSceneX();
                 y = mouseEvent.getSceneY();
 
-                if (bounds.getWidth() < x)
+               if (bounds.getWidth() < x) {
                     System.out.println("hello");
+                    primaryStage.close();
+               }
 
             }
         );
 
         root.setOnMouseDragged(mouseEvent -> {
-            if (bounds.getWidth() < x)
+            if (bounds.getWidth() < x) {
                 System.out.println("hello");
+                primaryStage.close();
+            }
 
-            if (bounds.getWidth() < x)//do all the thing
-                primaryStage.hide();
+            if (bounds.getWidth() > x){//do all the thing
+                System.out.println("hello2");
+                primaryStage.close();
+            }
         });
 
 
