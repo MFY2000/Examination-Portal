@@ -12,7 +12,7 @@ public class jdbcDao {
     private static final String DATABASE_URL = "jdbc:mysql://localhost/javalogin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private static final String DATABASE_USERNAME = "root";
     private static final String DATABASE_PASSWORD = "";
-    private static final String INSERT_QUERY = "INSERT INTO questioncurd (Question,option1,option2,option3,option4,Answer) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String INSERT_QUERY = "INSERT INTO `oop(object-oriented programming)` (`Id`, `Question`, `A`, `B`, `C`, `D`, `Answer`) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SELECT_QUERY_LOGIN = "SELECT * FROM login WHERE email_id = ? and password = ?";
 
     //Database varaible

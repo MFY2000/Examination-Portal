@@ -1,0 +1,80 @@
+1. Which is private member functions access scope?
+a) Member functions which can only be used within the class
+b) Member functions which can used outside the class
+c) Member functions which are accessible in derived class
+d) Member functions which can’t be accessed inside the class
+
+Answer is a.
+
+2. Which among the following is true?
+a) The private members can’t be accessed by public members of the class
+b) The private members can be accessed by public members of the class
+c) The private members can be accessed only by the private members of the class
+d) The private members can’t be accessed by the protected members of the class
+
+Answer is b.
+
+3. Which member can never be accessed by inherited classes?
+a) Private member function
+b) Public member function
+c) Protected member function
+d) All can be accessed
+
+Answer is a.
+
+4. Which syntax among the following shows that a member is private in a class?
+a) private: functionName(parameters)
+b) private(functionName(parameters))
+c) private functionName(parameters)
+d) private::functionName(parameters)
+
+Answer is c.
+
+5. If private member functions are to be declared in C++ then _____________
+a) private: &lt;all private members&gt;
+b) private &lt;member name&gt;
+c) private(private member list)
+d) private :- &lt;private members&gt;
+
+Answer is a.
+
+6. In java, which rule must be followed?
+a) Keyword private preceding list of private member’s
+b) Keyword private with a colon before list of private member’s
+c) Keyword private with arrow before each private member
+d) Keyword private preceding each private member
+
+Answer is d.
+
+7. How many private member functions are allowed in a class?
+a) Only 1
+b) Only 7
+c) Only 255
+d) As many as required
+
+Answer is d.
+
+8. How to access a private member function of a class?
+a) Using object of class
+b) Using object pointer
+c) Using address of member function
+d) Using class address
+
+Answer is c
+
+9. Private member functions ____________
+a) Can’t be called from enclosing class
+b) Can be accessed from enclosing class
+c) Can be accessed only if nested class is private
+d) Can be accessed only if nested class is public
+
+Answer is a.
+
+10. Which function among the following can’t be accessed outside the class in java in
+same package?
+a) public void show()
+b) void show()
+c) protected show()
+d) static void show()
+
+Answer is c.
