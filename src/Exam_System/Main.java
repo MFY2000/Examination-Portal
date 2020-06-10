@@ -32,12 +32,12 @@ public class Main extends Application {
 
         KeyCombination keyCombinationWin1 = new KeyCodeCombination(KeyCode.TAB, KeyCombination.ALT_ANY);
         KeyCombination keyCombinationWin2 = new KeyCodeCombination(KeyCode.WINDOWS, KeyCombination.ALT_ANY);
-//        KeyCombination keyCombinationWin3 = new KeyCodeCombination(KeyCode.TAB, KeyCombination.ALT_DOWN);
 
         root.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
-            if (keyCombinationWin1.match(event) || keyCombinationWin2.match(event)) {
+            if (keyCombinationWin1.match(event) || keyCombinationWin2.match(event) ||  event.getCode() == KeyCode.WINDOWS || event.getCode() == KeyCode.ALT ) {
                 System.out.println("hello");
-                    primaryStage.close();
+                // object of cheating
+//                    primaryStage.close();
             }
         });
 

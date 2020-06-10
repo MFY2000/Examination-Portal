@@ -52,12 +52,12 @@
                <children>
                   <VBox layoutX="335.0" prefHeight="202.0" prefWidth="333.0">
                      <children>
-                        <RadioButton fx:id="B" contentDisplay="TOP" mnemonicParsing="false" onAction="#Selected" text="RadioButton">
+                        <RadioButton fx:id="B" contentDisplay="TOP" mnemonicParsing="false" text="RadioButton">
                            <VBox.margin>
                               <Insets top="50.0" />
                            </VBox.margin>
                         </RadioButton>
-                        <RadioButton fx:id="D" contentDisplay="TOP" mnemonicParsing="false" onAction="#Selected" text="RadioButton">
+                        <RadioButton fx:id="D" contentDisplay="TOP" mnemonicParsing="false" text="RadioButton">
                            <VBox.margin>
                               <Insets top="50.0" />
                            </VBox.margin>
@@ -66,19 +66,19 @@
                   </VBox>
                   <VBox layoutX="1.0" layoutY="-4.0" prefHeight="206.0" prefWidth="332.0">
                      <children>
-                        <RadioButton fx:id="A" contentDisplay="TOP" mnemonicParsing="false" onAction="#Selected" text="RadioButton">
+                        <RadioButton fx:id="A" contentDisplay="TOP" mnemonicParsing="false" text="RadioButton">
                            <VBox.margin>
                               <Insets top="50.0" />
                            </VBox.margin>
                         </RadioButton>
-                        <RadioButton fx:id="C" contentDisplay="TOP" mnemonicParsing="false" onAction="#Selected" text="RadioButton">
+                        <RadioButton fx:id="C" contentDisplay="TOP" mnemonicParsing="false" text="RadioButton">
                            <VBox.margin>
                               <Insets top="50.0" />
                            </VBox.margin>
                         </RadioButton>
                      </children>
                   </VBox>
-                  <Button layoutX="523.0" layoutY="150.0" mnemonicParsing="false" onAction="#NextQuestion" prefHeight="32.0" prefWidth="94.0" style="-fx-border-color: BLACK; -fx-border-radius: 10;" text="Next" textFill="#030303" />
+                  <Button layoutX="523.0" layoutY="150.0" mnemonicParsing="false" onAction="#SubmitNextQuestion" prefHeight="32.0" prefWidth="94.0" style="-fx-border-color: BLACK; -fx-border-radius: 10;" text="Next" textFill="#030303" />
                </children>
             </AnchorPane>
          </children>
@@ -270,7 +270,7 @@
       </AnchorPane>
       <AnchorPane fx:id="rootgride" layoutX="399.0" layoutY="185.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="627.0">
          <children>
-            <GridPane alignment="center" hgap="10" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="606.0" style="-fx-background-color: #4B4453;" vgap="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <GridPane alignment="center" hgap="10" layoutX="10.0" layoutY="10.0" onDragDetected="#SubmitNextQuestion" prefHeight="400.0" prefWidth="606.0" style="-fx-background-color: #4B4453;" vgap="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <padding>
                   <Insets left="40.0" right="40.0" />
                </padding>

@@ -6,6 +6,7 @@ import Exam_System.db.jdbcDao;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javafx.collections.FXCollections;
@@ -58,7 +59,6 @@ public class LoginController {
 
     private ArrayList<Integer> QuestionNumber;
     private ArrayList<String> QuestionAnswer;
-    private ArrayList<Integer> ResultOfAnswer;
     private int QNO = 0;
     ToggleGroup tgGroup;
 
@@ -177,34 +177,68 @@ public class LoginController {
     }
 
     public void getQuestionList() {
-        QuestionNumber = (new Randommy(jdbcDao.getTotalQuizQuestion())).getRandomArray();// direct create call and get the value
+        QuestionNumber = (new Randommy(jdbcDao.getTotalQuizQuestion(),jdbcDao.getQuizNoofAttemt())).getRandomArray();// direct create call and get the value
+        for (int i = 0; i < QuestionNumber.size(); i++) {
+            System.out.println(QuestionNumber.get(i));
+        }
     }
 
-    public void NextQuestion(ActionEvent event) throws InterruptedException {
-        System.out.println("Start a the Quiz");
+    public void NextQuestion() throws InterruptedException {
+        System.out.println("Starting the Quiz");
         int temp = Integer.parseInt(jdbcDao.getQuizNoofAttemt());
-        if (temp > QNO){
+        if(temp > QNO){
+
+        }
+        else if (temp > QNO){
             QuestionAnswer = new ArrayList<String>();
             QuestionAnswer = jdb.getQuizDetails(QuestionNumber.get(QNO));
-            QuizNo.setText(" " +QNO);
-            question.setText("Q ."+QuestionAnswer.get(0));
-            A.setText("A) "+QuestionAnswer.get(1));
-            B.setText("B) "+QuestionAnswer.get(2));
-            C.setText("C) "+QuestionAnswer.get(3));
-            D.setText("D) "+QuestionAnswer.get(4));
-            Thread.sleep(2000);
-            QNO++;
+            setQuestion();
         }
         else {
-            System.out.println("Hello");
+
         }
     }
 
-    ArrayList<String> Answer = new ArrayList<String>();
+    public void setQuestion() {
+        QuizNo.setText(" " +QNO);
+        question.setText("Q ."+QuestionAnswer.get(0));
+        A.setText("A) "+QuestionAnswer.get(1));
+        B.setText("B) "+QuestionAnswer.get(2));
+        C.setText("C) "+QuestionAnswer.get(3));
+        D.setText("D) "+QuestionAnswer.get(4));
 
-    public void Selected(ActionEvent event){
-        Answer.add(QNO,event.getEventType().getName());
-        System.out.println(event.getEventType().getName());
+        A.getText().substring(4);
+        B.getText().substring(4);
+        C.getText().substring(4);
+        D.getText().substring(4);
+
+        A.setSelected(false);
+        B.setSelected(false);
+        C.setSelected(false);
+        D.setSelected(false);
+
+    }
+
+    ArrayList<Character> Answer = new ArrayList<Character>();
+
+    public void Selected(){
+        char selete = ' ';
+
+            if(A.isSelected())
+                selete = 'A';
+
+            else if(B.isSelected())
+                selete = 'B';
+
+
+            else if(C.isSelected())
+                selete = 'C';
+
+            else if(D.isSelected()) {
+                selete = 'D';
+            }
+            Answer.add((QNO),selete);
+        System.out.println(selete);
     }
 
     public void StartQuiz(ActionEvent event) throws InterruptedException {
@@ -217,16 +251,19 @@ public class LoginController {
         QuizDetials.setOpacity(0);
         QuizDetials.setDisable(true);
 
-        QuizPlane.setDisable(!true);
+        QuizPlane.setDisable(false);
         QuizPlane.setOpacity(100);
 
-        NextQuestion(event);
+        NextQuestion();
     }
 
-    public void checkQuestion() throws InterruptedException {
-        Thread.sleep(2000);
-
-
+    public void SubmitNextQuestion() throws InterruptedException {
+        QuestionAnswer.clear();
+        Selected();
+        QNO++;
+        NextQuestion();
     }
+
+
 
 }

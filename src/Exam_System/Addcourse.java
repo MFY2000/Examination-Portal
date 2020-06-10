@@ -18,7 +18,7 @@ public class Addcourse implements Initializable {
     Button SubmitButton = new Button();
 // Private varabile
     private Connection connection;
-    Randommy randommy = new Randommy("12");
+    Randommy randommy = new Randommy("12","45");
 
 
     @Override

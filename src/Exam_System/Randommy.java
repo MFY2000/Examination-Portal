@@ -9,17 +9,28 @@ import java.util.concurrent.ThreadLocalRandom;
 class randomArray {
     private ArrayList<Integer> list;
     private int lenght;
+    private int limit;
     Random rd = new Random(); // creating Random object
 
-    randomArray(String lenght) {
+    randomArray(String lenght ,String lim) {
+        this.limit = Integer.parseInt(lim);
         this.lenght = Integer.parseInt(lenght);
-        list = new ArrayList<Integer>(this.lenght);
+        list = new ArrayList<Integer>(this.limit);
     }
 
 
+
+
     public void createList() {
-        for (int i = 0; i < lenght; i++) {
-            list.add(ThreadLocalRandom.current().nextInt(0, lenght + 1)); // storing random integers in an array\
+        int temp;
+        for (int i = 0; i < limit; i++) {
+            temp = ThreadLocalRandom.current().nextInt(1, lenght);
+            if (list.contains(temp)){
+                i--;
+            }else {
+                list.add(temp);
+            }
+            // storing random integers in an array\
         }
     }
 
@@ -30,8 +41,9 @@ class randomArray {
 }
 
 public class Randommy extends randomArray{
-    Randommy(String lenght) {
-        super(lenght);
+
+    Randommy(String lenght, String lim) {
+        super(lenght, lim);
     }
 
     // function to generate a random string of length n
