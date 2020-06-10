@@ -4,54 +4,70 @@ package Exam_System;
 import Exam_System.db.jdbcDao;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Arrays;
-import java.util.List;
+//import java.util.List;
+import java.util.ResourceBundle;
 
+import javafx.animation.AnimationTimer;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.stage.Window;
+import javafx.util.Duration;
 
-public class LoginController {
+public class LoginController{
 //main plane
-    @FXML public AnchorPane main_plane;
+    @FXML public AnchorPane Main_plane;
+    @FXML public Button Closebutton;
+    @FXML public Button Closebutton2;
 
-
-    public AnchorPane QuizPlane;
-    public Label QuestionNo;
-    public Label timer;
-    public Label question;
-    public RadioButton B;
-    public RadioButton D;
-    public RadioButton A;
-    public RadioButton C;
+    @FXML public AnchorPane Quiz_plane;
+    @FXML public Label QuestionNo;
+    @FXML public Label QuizTimer;
+    @FXML public Label question;
+    @FXML public RadioButton B;
+    @FXML public RadioButton D;
+    @FXML public RadioButton A;
+    @FXML public RadioButton C;
     @FXML public Button Submit;
 
 
-    public AnchorPane QuizDetials;
+    public AnchorPane Result_plane;
+    public Label correctAnswer;
+    public Label wrongAnswer;
+    public Label TotalAnswer;
+    public Label Percentage;
+
+
+    public AnchorPane Details_plane;
     public Label QuizName;
     public Label QuizTime;
     public Label QuizNo;
 
-    @FXML private AnchorPane Plane;
-    @FXML
-    public AnchorPane dropdown;
+    @FXML private AnchorPane Student_plane;
+
+    @FXML public AnchorPane Course_plane;
     @FXML private ComboBox combobox;
     @FXML private AnchorPane pinbox;
     @FXML private PasswordField pincode;
 
-    @FXML
-    public AnchorPane ExamShowPane;
+    @FXML public AnchorPane ExamShowPane;
     @FXML private Label nameOFUser;
 
-    @FXML private AnchorPane rootgride;
+    @FXML private AnchorPane Login_plane;
     @FXML private TextField emailIdField;
     @FXML private PasswordField passwordField;
     @FXML public Button submitButton;
@@ -64,6 +80,8 @@ public class LoginController {
     private ArrayList<String> RealAnswer = new ArrayList<String>();
     private int QNO = 0;
     ToggleGroup tgGroup;
+    ArrayList<Character> Answer;
+
 
     private jdbcDao jdb = new jdbcDao();
 
@@ -92,14 +110,14 @@ public class LoginController {
             infoBox("Please enter correct Email and Password", null, "Failed");
         }else {
             infoBox("Login Successful!", null, "Failed");
-            Plane.setOpacity(100);
-            Plane.setDisable(false);
+            Student_plane.setOpacity(100);
+            Student_plane.setDisable(false);
 
-            AnchorPane Plane1 = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
-//            rootgride.getChildren().setAll((Collection<? extends Node>) null);
-//            main_plane.getChildren().remove(rootgride);
-            rootgride.setOpacity(0);
-            rootgride.setDisable(true);
+//            AnchorPane Plane1 = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
+//            Login_plane.getChildren().setAll((Collection<? extends Node>) null);
+//            main_plane.getChildren().remove(Login_plane);
+            Login_plane.setOpacity(0);
+            Login_plane.setDisable(true);
 
 
 
@@ -125,7 +143,7 @@ public class LoginController {
 
     @FXML private void ADMIN_CALLER(ActionEvent actionEvent) throws IOException {
         AnchorPane pane1 = FXMLLoader.load(getClass().getResource("FXML/Admin.fxml"));
-        rootgride.getChildren().setAll(pane1);
+        Login_plane.getChildren().setAll(pane1);
     }
 
     @FXML private void CloseApp(ActionEvent actionEvent)throws Exception{
@@ -139,13 +157,13 @@ public class LoginController {
     }
 
     public void QuizDisplay(ActionEvent event) throws IOException {
-//        AnchorPane pane3 = FXMLLoader.load(getClass().getResource("FXML/Dropdown.fxml"));
+//        AnchorPane pane3 = FXMLLoader.load(getClass().getResource("FXML/Course_plane.fxml"));
 //        ExamShowPane.getChildren().setAll(pane3);
         ExamShowPane.setOpacity(0);
         ExamShowPane.setDisable(true);
 
-        dropdown.setOpacity(100);
-        dropdown.setDisable(false);
+        Course_plane.setOpacity(100);
+        Course_plane.setDisable(false);
         feildEnter();
     }
 
@@ -163,10 +181,10 @@ public class LoginController {
     public void checkingPin(ActionEvent event) {
         if (jdb.checkPin(pincode.getText(), (String) combobox.getValue())){
             // to change the the plane
-            Plane.setDisable(true);
-            Plane.setOpacity(0);
-            QuizDetials.setOpacity(100);
-            QuizDetials.setDisable(!true);
+            Student_plane.setDisable(true);
+            Student_plane.setOpacity(0);
+            Details_plane.setOpacity(100);
+            Details_plane.setDisable(!true);
             //
             QuizDetailPlane();
         }
@@ -177,6 +195,7 @@ public class LoginController {
         QuizNo.setText(jdbcDao.getQuizNoofAttemt());
         QuizTime.setText(jdbcDao.getQuizTime());
         getQuestionList();
+        Answer = new ArrayList<Character>(Integer.parseInt(jdbcDao.getQuizNoofAttemt()));
     }
 
     public void getQuestionList() {
@@ -187,11 +206,17 @@ public class LoginController {
     }
 
     public void NextQuestion() throws InterruptedException {
-        System.out.println("Starting the Quiz");
+        QuestionNo.setText(String.valueOf(QNO));
         int temp = Integer.parseInt(jdbcDao.getQuizNoofAttemt());
         if(QNO == temp-1){
             Submit.setText("Submit Quiz");
-            Submit.setOnAction(event -> Submit_CheckAnswer(event));
+            Submit.setOnAction(event -> {
+                try {
+                    Submit_CheckAnswer(event);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            });
         }
         if (temp > QNO){
             QuestionAnswer = new ArrayList<String>();
@@ -199,13 +224,10 @@ public class LoginController {
             RealAnswer.add(QuestionAnswer.get(5));
             setQuestion();
         }
-        else {
-
-        }
     }
 
     public void setQuestion() {
-        QuizNo.setText(" " +QNO);
+        QuizNo.setText(" " +(QNO+1));
         question.setText("Q ."+QuestionAnswer.get(0));
         A.setText("A) "+QuestionAnswer.get(1));
         B.setText("B) "+QuestionAnswer.get(2));
@@ -223,8 +245,6 @@ public class LoginController {
         D.setSelected(false);
 
     }
-
-    ArrayList<Character> Answer = new ArrayList<Character>();
 
     public void Selected(){
         char selete = ' ';
@@ -253,12 +273,12 @@ public class LoginController {
         C.setToggleGroup(tgGroup);
         D.setToggleGroup(tgGroup);
 
-        QuizDetials.setOpacity(0);
-        QuizDetials.setDisable(true);
+        Details_plane.setOpacity(0);
+        Details_plane.setDisable(true);
 
-        QuizPlane.setDisable(false);
-        QuizPlane.setOpacity(100);
-
+        Quiz_plane.setDisable(false);
+        Quiz_plane.setOpacity(100);
+        getTime();
         NextQuestion();
     }
 
@@ -269,8 +289,112 @@ public class LoginController {
         NextQuestion();
     }
 
-    public void Submit_CheckAnswer(ActionEvent event){
-        
+    public void Submit_CheckAnswer(ActionEvent event) throws SQLException {
+        Quiz_plane.setOpacity(0);
+        Quiz_plane.setDisable(true);
+        Result_plane.setOpacity(100);
+        Result_plane.setDisable(!true);
+        QuestionAnswer.clear();
+        Selected();
+        QNO++;
+
+        check();
     }
+
+    public void check() throws SQLException {
+        int temp=0;
+        for (int i = 0; i < RealAnswer.size(); i++) {
+            if(RealAnswer.get(i).matches(String.valueOf(Answer.get(i)))){
+                temp++;
+            }
+        }
+        float temp2 = ((float) temp / (float) QNO);
+
+        correctAnswer.setText(""+temp);
+        wrongAnswer.setText(""+(QNO-temp));
+        TotalAnswer.setText(""+QNO);
+        Percentage.setText(""+(temp2*100));
+
+        GetDate date = new GetDate();
+        //
+        jdb.insertRecord((""+temp) ,(""+(temp2*100)),date.get());
+    }
+
+    private Timeline timeline;
+    private Integer horse,minute,timeSeconds;
+
+    public void handleTime() {
+        if (timeline != null) {
+            timeline.stop();
+        }
+
+        timeline = new Timeline();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+
+
+        timeline.getKeyFrames().add(
+                new KeyFrame(Duration.seconds(1),
+                        new EventHandler() {
+                            @Override
+                            public void handle(Event event) {
+                                if (timeSeconds == 1){
+                                    if(minute == 0){
+                                        try {
+                                            CloseApp();
+                                        } catch (SQLException throwables) {
+                                            throwables.printStackTrace();
+                                        }
+                                        timeline.stop();
+                                    }
+                                    else{
+                                        --minute;
+                                        timeSeconds = 60;
+                                    }
+                                }
+                                else
+                                    --timeSeconds;
+
+
+                                // update timerLabel
+                                QuizTimer.setText(""+horse+" : "+minute+" : "+timeSeconds);
+
+                            }
+                        }));
+        timeline.playFromStart();
+    }
+
+    public void getTime(){
+        horse = 00;
+        timeSeconds = 60;
+        minute = Integer.parseInt(jdbcDao.getQuizTime());
+        handleTime();
+    }
+
+    public void CloseApp() throws SQLException {
+        int TotalAnswer = Integer.parseInt(jdbcDao.getQuizNoofAttemt());
+        int left = TotalAnswer - QNO;
+        for (int i = 0; i < left; i++) {
+            RealAnswer.add(jdb.getOnlyAnswer(QuestionNumber.get(QNO)));
+            Answer.add(' ');
+        }
+        check();
+    }
+
+    @FXML public void minimize(Event evt) {
+        Stage stage = (Stage)((Button) evt.getSource()).getScene().getWindow();
+        stage.setIconified(true);
+    }
+
+    @FXML public void Forget(Event evt) throws Exception {
+        MailSender mailSender = new MailSender();
+        if (!(emailIdField.getText()).isEmpty()){
+            infoBox("We are send send the mail to "+emailIdField.getText()+"@maju.edu.pk","We are send mail","Forget Passwords");
+            mailSender.SendMail(emailIdField.getText()+"@maju.edu.pk");
+            jdb.forgetPassword(emailIdField.getText(),MailSender.Random);
+        }
+
+    }
+
+
 
 }

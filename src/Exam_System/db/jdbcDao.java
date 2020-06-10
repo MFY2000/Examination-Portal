@@ -11,7 +11,7 @@ public class jdbcDao {
     private static final String DATABASE_URL = "jdbc:mysql://localhost/javalogin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private static final String DATABASE_USERNAME = "root";
     private static final String DATABASE_PASSWORD = "";
-    private static final String INSERT_QUERY = "INSERT INTO `oop(object-oriented programming)` (`Id`, `Question`, `A`, `B`, `C`, `D`, `Answer`) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String INSERT_QUERY = "INSERT INTO `resultofquiz` (`id`,`UserId`, `QuizName`, `TotalQuestion`, `NoOfQuestionCorrect`, `Percentage`, `Time`) VALUES (NULL,?,?, ?, ?, ?, ?)";
     private static final String SELECT_QUERY_LOGIN = "SELECT * FROM login WHERE email_id = ? and password = ?";
 
     //Database varaible
@@ -27,8 +27,10 @@ public class jdbcDao {
     private static String TotalQuizQuestion;
     private static String UserName;
     private ArrayList<String> QuestioAnswer = new ArrayList<String>();
+    private String Answer;
 
     public jdbcDao(){
+        // load and register JDBC driver for MySQL
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
@@ -39,30 +41,20 @@ public class jdbcDao {
         }
     }
 
-    public void insertRecord(String Question,String Option_1,String Option_2,String Option_3,String Option_4,String Answer) throws SQLException {
-
-        // load and register JDBC driver for MySQL
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
-        }
+    public void insertRecord(String NoOfQuestionCorrect,String Percentage,String dateTime) throws SQLException {
 
         // Step 1: Establishing a Connection and
         // try-with-resource statement will auto close the connection.
-        try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
+        System.out.println(INSERT_QUERY);
 
-             // Step 2:Create a statement using connection object
-             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERY)) {
-            preparedStatement.setString(1, Question);
-            preparedStatement.setString(2, Option_1);
-            preparedStatement.setString(3, Option_2);
-            preparedStatement.setString(4, Option_3);
-            preparedStatement.setString(5, Option_4);
-            preparedStatement.setString(6, Answer);
+        try (PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERY)) {
+            preparedStatement.setString(1, getUserId());
+            preparedStatement.setString(2, getQuizSelete());
+            preparedStatement.setString(3, getQuizNoofAttemt());
+            preparedStatement.setString(4, NoOfQuestionCorrect);
+            preparedStatement.setString(5, Percentage);
+            preparedStatement.setString(6, dateTime);
 
-            System.out.println(preparedStatement);
             // Step 3: Execute the query or update query
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -70,7 +62,6 @@ public class jdbcDao {
             printSQLException(e);
         }
     }
-
     //    login system
     public boolean validate(String emailId, String password) throws SQLException {
 
@@ -95,7 +86,6 @@ public class jdbcDao {
         }
         return false;
     }
-
     // fetch data
     public ArrayList<String> displayFeildList(){
         List<String> Feild = new ArrayList<String>();
@@ -111,7 +101,6 @@ public class jdbcDao {
         }
             return (ArrayList<String>) Feild;
         }
-
     public boolean checkPin(String pinEnter,String Feild){
             String query = "SELECT * FROM `subjectlist` WHERE `Field` LIKE "+'"'+Feild+'"'+" ";
             boolean match = false;
@@ -131,7 +120,6 @@ public class jdbcDao {
             }
             return match;
         }
-
     public static void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
             if (e instanceof SQLException) {
@@ -147,27 +135,21 @@ public class jdbcDao {
             }
         }
     }
-
     public static String getQuizSelete() {
         return QuizSelete;
     }
-
     public static String getTotalQuizQuestion() {
         return TotalQuizQuestion;
     }
-
     public static String getUserId() {
         return UserId;
     }
-
     public static String getQuizNoofAttemt() {
         return QuizNoofAttemt;
     }
-
     public static String getQuizTime() {
         return QuizTime;
     }
-
     public ArrayList<String> getQuizDetails(int QuestionId){
         String query = "SELECT * FROM "+'`'+ QuizSelete +'`'+" WHERE `Id` LIKE "+'"'+QuestionId+'"'+" ";
 
@@ -187,7 +169,35 @@ public class jdbcDao {
         return QuestioAnswer;
 
     }
+    public String getOnlyAnswer(int QuestionId){
+        String query = "SELECT `Answer` FROM "+'`'+ QuizSelete +'`'+" WHERE `Id` LIKE "+'"'+QuestionId+'"'+" ";
 
+        try {
+            result = statement.executeQuery(query);
+            result.next();
+
+            Answer = result.getString("Answer");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return Answer;
+
+    }
+    public void forgetPassword(String id,String Password){
+        String query = "UPDATE `login` SET `password`= ? WHERE email_id = ?";
+        try {
+            // create the java mysql update preparedstatement
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString(1, Password);
+            preparedStmt.setString(2, id);
+
+            // execute the java preparedstatement
+            preparedStmt.executeUpdate();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 
 
 }
