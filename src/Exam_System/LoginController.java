@@ -10,7 +10,6 @@ import java.util.*;
 import java.util.Arrays;
 //import java.util.List;
 import java.util.ResourceBundle;
-
 import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -388,7 +387,7 @@ public class LoginController{
     @FXML public void Forget(Event evt) throws Exception {
         MailSender mailSender = new MailSender();
         if (!(emailIdField.getText()).isEmpty()){
-            infoBox("We are send send the mail to "+emailIdField.getText()+"@maju.edu.pk","We are send mail","Forget Passwords");
+            infoBox("We are sending the mail to "+emailIdField.getText()+"@maju.edu.pk","We are send mail","Forget Passwords");
             mailSender.SendMail(emailIdField.getText()+"@maju.edu.pk");
             jdb.forgetPassword(emailIdField.getText(),MailSender.Random);
         }

@@ -25,14 +25,14 @@ public class jdbcDao {
     private static String QuizTime;
     private static String QuizNoofAttemt;
     private static String TotalQuizQuestion;
-    private static String UserName;
+    private static boolean QuizStart = false;
     private ArrayList<String> QuestioAnswer = new ArrayList<String>();
     private String Answer;
 
     public jdbcDao(){
         // load and register JDBC driver for MySQL
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
             statement = connection.createStatement();
         } catch (ClassNotFoundException | SQLException e1) {
@@ -152,7 +152,7 @@ public class jdbcDao {
     }
     public ArrayList<String> getQuizDetails(int QuestionId){
         String query = "SELECT * FROM "+'`'+ QuizSelete +'`'+" WHERE `Id` LIKE "+'"'+QuestionId+'"'+" ";
-
+        QuizStart = true;
         try {
             result = statement.executeQuery(query);
             result.next();
@@ -199,7 +199,9 @@ public class jdbcDao {
         }
     }
 
-
+    public static boolean getQuizStart() {
+        return QuizStart;
+    }
 }
 
 

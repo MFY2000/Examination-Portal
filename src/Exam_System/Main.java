@@ -1,5 +1,7 @@
 package Exam_System;
 
+
+import Exam_System.db.jdbcDao;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -37,9 +39,13 @@ public class Main extends Application {
 
         root.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
             if (keyCombinationWin1.match(event) || keyCombinationWin2.match(event) ||  event.getCode() == KeyCode.WINDOWS || event.getCode() == KeyCode.ALT ) {
-                System.out.println("hello");
+                if(jdbcDao.getQuizStart()){
+                    System.out.println("hello");
+                    primaryStage.close();
+//                      Cheating cheat = new Cheating();
+//                      cheat
+                }
                 // object of cheating
-//                    primaryStage.close();
             }
         });
 
