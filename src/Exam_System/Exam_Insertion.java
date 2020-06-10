@@ -82,7 +82,7 @@ public class Exam_Insertion {
         String Answer = answer.getText();
 
         jdbcDao jdbcDao = new jdbcDao();
-        jdbcDao.insertRecord(question,Option_1,Option_2,Option_3,Option_4,Answer);
+//        jdbcDao.insertRecord(question,Option_1,Option_2,Option_3,Option_4,Answer);
 
         showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!", "Question Inserted");
     }
