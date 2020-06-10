@@ -180,8 +180,7 @@ public class jdbcDao {
             QuestioAnswer.add(" "+result.getString("B"));
             QuestioAnswer.add(" "+result.getString("C"));
             QuestioAnswer.add(" "+result.getString("D"));
-
-
+            QuestioAnswer.add(result.getString("Answer"));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

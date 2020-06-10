@@ -32,6 +32,8 @@ public class LoginController {
     public RadioButton D;
     public RadioButton A;
     public RadioButton C;
+    @FXML public Button Submit;
+
 
     public AnchorPane QuizDetials;
     public Label QuizName;
@@ -59,6 +61,7 @@ public class LoginController {
 
     private ArrayList<Integer> QuestionNumber;
     private ArrayList<String> QuestionAnswer;
+    private ArrayList<String> RealAnswer = new ArrayList<String>();
     private int QNO = 0;
     ToggleGroup tgGroup;
 
@@ -186,12 +189,14 @@ public class LoginController {
     public void NextQuestion() throws InterruptedException {
         System.out.println("Starting the Quiz");
         int temp = Integer.parseInt(jdbcDao.getQuizNoofAttemt());
-        if(temp > QNO){
-
+        if(QNO == temp-1){
+            Submit.setText("Submit Quiz");
+            Submit.setOnAction(event -> Submit_CheckAnswer(event));
         }
-        else if (temp > QNO){
+        if (temp > QNO){
             QuestionAnswer = new ArrayList<String>();
             QuestionAnswer = jdb.getQuizDetails(QuestionNumber.get(QNO));
+            RealAnswer.add(QuestionAnswer.get(5));
             setQuestion();
         }
         else {
@@ -264,6 +269,8 @@ public class LoginController {
         NextQuestion();
     }
 
-
+    public void Submit_CheckAnswer(ActionEvent event){
+        
+    }
 
 }
