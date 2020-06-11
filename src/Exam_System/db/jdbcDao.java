@@ -203,7 +203,9 @@ public class jdbcDao {
     public static boolean getQuizStart() {
         return QuizStart;
     }
-
+    public static void setUserId() {
+        UserId = null;
+    }
     public ArrayList<Product> getFromDatabase(){
         ArrayList<Product> list = new ArrayList<Product>();
 
@@ -219,6 +221,15 @@ public class jdbcDao {
         }
         return list;
 
+    }
+    public boolean QuizAlreadyGiven() throws SQLException {
+        boolean match = false;
+        String query = "SELECT * FROM `resultofquiz` where `UserId` Like '"+getUserId()+"'and `QuizName` LIKE '"+getQuizSelete()+"'";//
+        result = statement.executeQuery(query);
+        if (result.next()){
+            match = true;
+        }
+        return match;
     }
 }
 

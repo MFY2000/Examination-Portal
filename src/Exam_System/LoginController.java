@@ -3,13 +3,16 @@ package Exam_System;
 // local files
 import Exam_System.db.jdbcDao;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.security.PublicKey;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.Arrays;
 //import java.util.List;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
@@ -23,6 +26,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -73,7 +79,7 @@ public class LoginController{
     @FXML private PasswordField pincode;
 
     @FXML public AnchorPane ExamShowPane;
-    @FXML private Label nameOFUser;
+    @FXML private Label UserIdcome;
 
     @FXML private AnchorPane Login_plane;
     @FXML private TextField emailIdField;
@@ -104,7 +110,7 @@ public class LoginController{
 
     ArrayList<Product> listitem = new ArrayList<Product>();
 
-    @FXML private void login(ActionEvent event)  throws SQLException, IOException,Exception {
+    public void login(ActionEvent event)  throws SQLException, IOException,Exception {
 
         Window owner = submitButton.getScene().getWindow();
 
@@ -131,10 +137,7 @@ public class LoginController{
             infoBox("Login Successful!", null, "Failed");
             Student_plane.setOpacity(100);
             Student_plane.setDisable(false);
-
-//            AnchorPane Plane1 = FXMLLoader.load(getClass().getResource("FXML/Student_plane.fxml"));
-//            Login_plane.getChildren().setAll((Collection<? extends Node>) null);
-//            main_plane.getChildren().remove(Login_plane);
+            UserIdcome.setText(jdbcDao.getUserId());
             Login_plane.setOpacity(0);
             Login_plane.setDisable(true);
 
@@ -142,7 +145,6 @@ public class LoginController{
 
         }
     }
-
     public static void infoBox(String infoMessage, String headerText, String title){
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setContentText(infoMessage);
@@ -158,11 +160,12 @@ public class LoginController{
         alert.initOwner(owner);
         alert.show();
     }
-    @FXML private void ADMIN_CALLER(ActionEvent actionEvent) throws IOException {
-        AnchorPane pane1 = FXMLLoader.load(getClass().getResource("FXML/Admin.fxml"));
-        Login_plane.getChildren().setAll(pane1);
+    public void ADMIN_CALLER(ActionEvent actionEvent) throws IOException, URISyntaxException {
+//        AnchorPane pane1 = FXMLLoader.load(getClass().getResource("FXML/Admin.fxml"));
+//        Login_plane.getChildren().setAll(pane1);
+        Desktop.getDesktop().browse(new URL("https://google.com").toURI());
     }
-    @FXML private void CloseApp(ActionEvent actionEvent)throws Exception{
+    public void CloseApp(ActionEvent actionEvent)throws Exception{
         Window owner = submitButton.getScene().getWindow();
         showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter a password");
         System.exit(1);
@@ -180,6 +183,7 @@ public class LoginController{
 
         Course_plane.setOpacity(100);
         Course_plane.setDisable(false);
+
         feildEnter();
     }
     public void feildEnter(){
@@ -201,6 +205,10 @@ public class LoginController{
             //
             QuizDetailPlane();
         }
+        else {
+            Window owner = Closebutton.getScene().getWindow();
+            showAlert(AlertType.ERROR,owner,"Enter a wrong pin","pls Enter the correct pin");
+        }
     }
     public void QuizDetailPlane(){
         QuizName.setText(jdb.getQuizSelete());
@@ -211,9 +219,7 @@ public class LoginController{
     }
     public void getQuestionList() {
         QuestionNumber = (new Randommy(jdbcDao.getTotalQuizQuestion(),jdbcDao.getQuizNoofAttemt())).getRandomArray();// direct create call and get the value
-        for (int i = 0; i < QuestionNumber.size(); i++) {
-            System.out.println(QuestionNumber.get(i));
-        }
+        Closebutton2.setDisable(true);
     }
     public void NextQuestion() throws InterruptedException {
         QuestionNo.setText(String.valueOf(QNO));
@@ -273,8 +279,12 @@ public class LoginController{
             Answer.add((QNO),selete);
         System.out.println(selete);
     }
-    public void StartQuiz(ActionEvent event) throws InterruptedException {
-        tgGroup = new ToggleGroup();
+    public void StartQuiz(ActionEvent event) throws InterruptedException, SQLException {
+        if (jdb.QuizAlreadyGiven()){
+            Window owner = Closebutton.getScene().getWindow();
+            showAlert(AlertType.ERROR,owner,"Already given","You have alredy give this Quiz");
+        }else {
+            tgGroup = new ToggleGroup();
         A.setToggleGroup(tgGroup);
         B.setToggleGroup(tgGroup);
         C.setToggleGroup(tgGroup);
@@ -285,8 +295,10 @@ public class LoginController{
 
         Quiz_plane.setDisable(false);
         Quiz_plane.setOpacity(100);
+        Closebutton2.setDisable(true);
         getTime();
         NextQuestion();
+        }
     }
     public void SubmitNextQuestion() throws InterruptedException {
         QuestionAnswer.clear();
@@ -322,6 +334,7 @@ public class LoginController{
         GetDate date = new GetDate();
         //
         jdb.insertRecord((""+temp) ,(""+(temp2*100)),date.get());
+        Closebutton2.setDisable(false);
     }
     private Timeline timeline;
     private Integer horse,minute,timeSeconds;
@@ -379,11 +392,11 @@ public class LoginController{
         }
         check();
     }
-    @FXML public void minimize(Event evt) {
+    public void minimize(Event evt) {
         Stage stage = (Stage)((Button) evt.getSource()).getScene().getWindow();
         stage.setIconified(true);
     }
-    @FXML public void Forget(Event evt) throws Exception {
+    public void Forget(Event evt) throws Exception {
         MailSender mailSender = new MailSender();
         if (!(emailIdField.getText()).isEmpty()){
             infoBox("We are sending the mail to "+emailIdField.getText()+"@maju.edu.pk","We are send mail","Forget Passwords");
@@ -396,20 +409,7 @@ public class LoginController{
         ObservableList<Product> list = FXCollections.observableArrayList(po);
         return list;
     }
-
-    public void displayDashborad(){
-        System.out.println("Hello22");
-        ExamShowPane.setOpacity(100);
-        ExamShowPane.setDisable(false);
-
-        ResultVeiw_plane.setOpacity(0);
-        ResultVeiw_plane.setDisable(true);
-
-        Course_plane.setOpacity(0);
-        Course_plane.setDisable(true);
-    }
-
-    public void start() {
+    public void start(ActionEvent e) {
         System.out.println("Hello333");
 
         ExamShowPane.setOpacity(0);
@@ -422,7 +422,6 @@ public class LoginController{
         listitem = jdb.getFromDatabase();
         getData();
     }
-
     public void getData(){
         id.setCellValueFactory(new PropertyValueFactory<Product,Integer>("SNO"));
         Total.setCellValueFactory(new PropertyValueFactory<Product,String>("Total"));
@@ -433,9 +432,36 @@ public class LoginController{
 
         table.setItems(getProduct(listitem));
     }
-
-    public void logout(){
+    public void logout(ActionEvent e){
         System.out.println("Hello");
-
+        jdbcDao.setUserId();
+        Student_plane.setOpacity(0);
+        Student_plane.setDisable(true);
+        Login_plane.setOpacity(100);
+        Login_plane.setDisable(false);
     }
+    public void displayDashborad(ActionEvent event) {
+        System.out.println("Hello22");
+
+        ExamShowPane.setOpacity(100);
+        ExamShowPane.setDisable(false);
+
+        ResultVeiw_plane.setOpacity(0);
+        ResultVeiw_plane.setDisable(true);
+
+        Course_plane.setOpacity(0);
+        Course_plane.setDisable(true);
+    }
+    public void BackToplane(ActionEvent event){
+        Details_plane.setDisable(true);
+        Details_plane.setOpacity(0);
+
+        Quiz_plane.setDisable(true);
+        Quiz_plane.setOpacity(0);
+
+        ExamShowPane.setOpacity(100);
+        ExamShowPane.setDisable(false);
+    }
+
+
 }
