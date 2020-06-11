@@ -1,6 +1,5 @@
 package Exam_System;
 
-import Exam_System.ResultTable;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,7 +17,7 @@ import javafx.stage.Stage;
 public class ResultVeiw extends Application {
 
     Stage window;
-    TableView<ResultTable> table;
+    TableView<Product> table;
 
     public static void main(String[] args) {
         launch(args);
@@ -30,17 +29,17 @@ public class ResultVeiw extends Application {
         window.setTitle("thenewboston - JavaFX");
 
         //Name column
-        TableColumn<ResultTable, String> nameColumn = new TableColumn<>("Name");
+        TableColumn<Product, String> nameColumn = new TableColumn<>("Name");
         nameColumn.setMinWidth(200);
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
         //Price column
-        TableColumn<ResultTable, Double> priceColumn = new TableColumn<>("Price");
+        TableColumn<Product, Double> priceColumn = new TableColumn<>("Price");
         priceColumn.setMinWidth(100);
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         //Quantity column
-        TableColumn<ResultTable, String> quantityColumn = new TableColumn<>("Quantity");
+        TableColumn<Product, String> quantityColumn = new TableColumn<>("Quantity");
         quantityColumn.setMinWidth(100);
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
 
@@ -57,14 +56,14 @@ public class ResultVeiw extends Application {
     }
 
     //Get all of the products
-    public ObservableList<ResultTable> getProduct(){
-        ObservableList<ResultTable> products = FXCollections.observableArrayList();
-        products.add(new ResultTable("Laptop", "859.00", "20"));
-        products.add(new ResultTable("Bouncy Ball", "2.49", "198"));
-        products.add(new ResultTable("Toilet", "99.00", "74"));
-        products.add(new ResultTable("The Notebook DVD", "19.99", "12"));
-        products.add(new ResultTable("Corn", "1.49", "856"));
-        return ResultTable;
+    public ObservableList<Product> getProduct(){
+        ObservableList<Product> products = FXCollections.observableArrayList();
+        products.add(new Product("Laptop", 859.00, 20));
+        products.add(new Product("Bouncy Ball", 2.49, 198));
+        products.add(new Product("Toilet", 99.00, 74));
+        products.add(new Product("The Notebook DVD", 19.99, 12));
+        products.add(new Product("Corn", 1.49, 856));
+        return products;
     }
 
 
