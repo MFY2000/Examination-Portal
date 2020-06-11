@@ -21,7 +21,7 @@
 
 <AnchorPane fx:id="Main_plane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="824.01" prefWidth="1536.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.LoginController">
    <children>
-      <Button fx:id="Closebutton" mnemonicParsing="false" onAction="#CloseApp" prefHeight="40.0" prefWidth="45.0" style="-fx-background-color: inhertance;" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+      <Button fx:id="Closebutton" mnemonicParsing="false" onAction="#CloseApp" prefHeight="40.0" prefWidth="45.0" style="-fx-background-color: inheritance ;" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
          <graphic>
             <ImageView fitHeight="56.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -57,7 +57,7 @@
                   <Font name="Bell MT Bold" size="20.0" />
                </font>
             </Label>
-            <Button layoutX="27.0" layoutY="37.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" style="-fx-background-color: INHERTANCE;" text="Back to plane" />
+            <Button layoutX="27.0" layoutY="37.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" style="-fx-background-color: inheritance ;" text="Back to plane" />
             <Label fx:id="correctAnswer" layoutX="318.0" layoutY="190.0" prefHeight="45.0" prefWidth="224.0" textFill="#007c1d">
                <font>
                   <Font name="Bell MT Bold" size="20.0" />
@@ -170,16 +170,16 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="545.0" layoutY="402.0" mnemonicParsing="false" onAction="#StartQuiz" prefHeight="54.0" prefWidth="156.0" style="-fx-background-color: inhertance; -fx-border-color: Black;" text="Start Quiz">
+            <Button layoutX="545.0" layoutY="402.0" mnemonicParsing="false" onAction="#StartQuiz" prefHeight="54.0" prefWidth="156.0" style="-fx-background-color: inheritance ; -fx-border-color: Black;" text="Start Quiz">
                <font>
                   <Font name="Berlin Sans FB Bold" size="14.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Student_plane" disable="true" layoutX="412.0" layoutY="205.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="560.0" prefWidth="732.0" style="-fx-border-color: #FFF;" AnchorPane.bottomAnchor="132.0" AnchorPane.leftAnchor="402.0" AnchorPane.rightAnchor="402.0" AnchorPane.topAnchor="132.0">
+      <AnchorPane fx:id="Student_plane" disable="true" layoutX="412.0" layoutY="147.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="518.0" prefWidth="722.0" style="-fx-border-color: #FFF;" AnchorPane.bottomAnchor="179.0" AnchorPane.leftAnchor="407.0" AnchorPane.rightAnchor="407.0" AnchorPane.topAnchor="179.0">
          <children>
-            <GridPane layoutX="34.0" layoutY="2.0" prefHeight="558.0" prefWidth="756.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+            <GridPane layoutX="34.0" layoutY="2.0" prefHeight="558.0" prefWidth="756.0" style="-fx-background-color: #5F9EA0;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="120.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="531.0" minWidth="10.0" prefWidth="456.0" />
@@ -189,7 +189,7 @@
                   <RowConstraints maxHeight="523.0" minHeight="10.0" prefHeight="519.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <HBox prefHeight="34.0" prefWidth="173.0" style="-fx-background-color: #d4ffff;">
+                  <HBox prefHeight="34.0" prefWidth="173.0" style="-fx-background-color: #5F9EA0;">
                      <children>
                         <Label prefHeight="34.0" prefWidth="154.0" text="Student Pannel">
                            <font>
@@ -198,7 +198,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox prefHeight="34.0" prefWidth="456.0" style="-fx-background-color: #d4ffff;" GridPane.columnIndex="1">
+                  <HBox prefHeight="34.0" prefWidth="456.0" style="-fx-background-color: #5F9EA0;" GridPane.columnIndex="1">
                      <children>
                         <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Log out">
                            <HBox.margin>
@@ -210,7 +210,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <Pane prefHeight="522.0" prefWidth="210.0" style="-fx-background-color: #d4ffff;" GridPane.rowIndex="1">
+                  <Pane prefHeight="522.0" prefWidth="210.0" style="-fx-background-color: #5F9EA0;" GridPane.rowIndex="1">
                      <children>
                         <Button layoutY="251.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="207.0" style="-fx-background-color: none;" text="Dashbord">
                            <font>
@@ -232,7 +232,7 @@
                               <Image url="@../Images/Student.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="-1.0" layoutY="369.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="207.0" style="-fx-background-color: none;" text="Sign Out">
+                        <Button layoutX="-1.0" layoutY="369.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="207.0" style="-fx-background-color: none;" text="Log out">
                            <font>
                               <Font name="Consolas Bold" size="19.0" />
                            </font>
@@ -241,7 +241,7 @@
                   </Pane>
                   <Pane prefHeight="200.0" prefWidth="471.0" style="-fx-background-color: #fff;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Separator layoutX="-2.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="519.0" prefWidth="5.0" />
+                        <Separator layoutX="-2.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="530.0" prefWidth="5.0" />
                         <AnchorPane fx:id="Course_plane" opacity="0.0" prefHeight="519.0" prefWidth="530.0">
                            <children>
                               <ComboBox fx:id="combobox" editable="true" layoutX="260.0" layoutY="229.0" onAction="#EnterPin" prefWidth="150.0" promptText="Felid" />
@@ -272,7 +272,7 @@
                               </Label>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="ExamShowPane" layoutX="-8.0" prefHeight="519.0" prefWidth="570.0">
+                        <AnchorPane fx:id="ExamShowPane" layoutX="-1.0" prefHeight="519.0" prefWidth="563.0">
                            <children>
                               <Label fx:id="nameOFUser" layoutX="21.0" layoutY="14.0" prefHeight="62.0" prefWidth="230.0" text="Welcome to" textFill="#003636">
                                  <font>
@@ -301,7 +301,7 @@
                                           <Image url="@../Images/list.png" />
                                        </image>
                                     </ImageView>
-                                    <Label layoutX="7.0" layoutY="93.0" prefHeight="42.0" prefWidth="96.0" text="Quiz/ Exam">
+                                    <Label layoutX="7.0" layoutY="93.0" prefHeight="42.0" prefWidth="96.0" text="Result">
                                        <font>
                                           <Font name="System Bold Italic" size="14.0" />
                                        </font>
@@ -309,13 +309,13 @@
                                     <Button layoutX="-3.0" mnemonicParsing="false" prefHeight="136.0" prefWidth="107.0" style="-fx-background-color: INHERITENCE;" />
                                  </children>
                               </AnchorPane>
+                              <Separator layoutX="-191.0" layoutY="-4.0" prefHeight="6.0" prefWidth="719.0" AnchorPane.leftAnchor="-191.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="-4.0" />
                            </children>
                         </AnchorPane>
                      </children>
                   </Pane>
                </children>
             </GridPane>
-            <Separator layoutX="-1.0" layoutY="31.0" prefHeight="9.0" prefWidth="735.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="30.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="Login_plane" layoutX="221.0" layoutY="205.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="630.0" AnchorPane.bottomAnchor="197.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="197.0">
@@ -383,7 +383,7 @@
                         <PasswordField fx:id="passwordField" layoutX="76.0" prefHeight="35.0" prefWidth="426.0" promptText="Password" style="-fx-background-color: #FCF8FF; -fx-background-radius: 40;" />
                      </children>
                   </AnchorPane>
-                  <Button mnemonicParsing="false" onAction="#Forget" style="-fx-background-color: inhertance;" text="Forget Password ?" textAlignment="CENTER" textFill="#0043ff" underline="true" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                  <Button mnemonicParsing="false" onAction="#Forget" style="-fx-background-color: inheritance ;" text="Forget Password ?" textAlignment="CENTER" textFill="#0043ff" underline="true" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -404,7 +404,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <Button fx:id="Closebutton2" layoutX="1342.0" layoutY="24.0" mnemonicParsing="false" onAction="#minimize" prefHeight="40.0" prefWidth="45.0" style="-fx-background-color: inhertance;" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="3.0">
+      <Button fx:id="Closebutton2" layoutX="1342.0" layoutY="24.0" mnemonicParsing="false" onAction="#minimize" prefHeight="40.0" prefWidth="45.0" style="-fx-background-color: inheritance ;" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="3.0">
          <graphic>
             <ImageView fitHeight="56.0" fitWidth="56.0" onDragDetected="#minimize" pickOnBounds="true" preserveRatio="true">
                <image>
