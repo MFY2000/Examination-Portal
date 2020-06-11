@@ -5,6 +5,7 @@ import Exam_System.db.jdbcDao;
 
 import java.io.IOException;
 import java.net.URL;
+import java.security.PublicKey;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.Arrays;
@@ -22,10 +23,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.util.Duration;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
 
 public class LoginController{
 //main plane
@@ -83,6 +92,17 @@ public class LoginController{
 
 
     private jdbcDao jdb = new jdbcDao();
+    @FXML private AnchorPane ResultVeiw_plane;
+    public TableView<Product> table;
+
+    public TableColumn<Product,Integer> id;
+    public TableColumn<Product,String> PercentageOfResult;
+    public TableColumn<Product,String> Total;
+    public TableColumn<Product,String> Correct;
+    public TableColumn<Product,String> QuizNameOfResult;
+    public TableColumn<Product,String> timeofsubmit;
+
+    ArrayList<Product> listitem = new ArrayList<Product>();
 
     @FXML private void login(ActionEvent event)  throws SQLException, IOException,Exception {
 
@@ -130,7 +150,6 @@ public class LoginController{
         alert.setHeaderText(headerText);
         alert.showAndWait();
     }
-
     private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
@@ -139,25 +158,23 @@ public class LoginController{
         alert.initOwner(owner);
         alert.show();
     }
-
     @FXML private void ADMIN_CALLER(ActionEvent actionEvent) throws IOException {
         AnchorPane pane1 = FXMLLoader.load(getClass().getResource("FXML/Admin.fxml"));
         Login_plane.getChildren().setAll(pane1);
     }
-
     @FXML private void CloseApp(ActionEvent actionEvent)throws Exception{
         Window owner = submitButton.getScene().getWindow();
         showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter a password");
         System.exit(1);
     }
-
     public void PopUpExxam(ActionEvent event) {
 
     }
-
     public void QuizDisplay(ActionEvent event) throws IOException {
 //        AnchorPane pane3 = FXMLLoader.load(getClass().getResource("FXML/Course_plane.fxml"));
 //        ExamShowPane.getChildren().setAll(pane3);
+        System.out.println("Hello1");
+
         ExamShowPane.setOpacity(0);
         ExamShowPane.setDisable(true);
 
@@ -165,18 +182,15 @@ public class LoginController{
         Course_plane.setDisable(false);
         feildEnter();
     }
-
     public void feildEnter(){
         List<String> Feild = jdb.displayFeildList();
         ChoiceList = FXCollections.observableArrayList(Feild);
         combobox.setItems(ChoiceList);
         combobox.setValue("Feild");
     }
-
     public void EnterPin(ActionEvent event) {
         pinbox.setVisible(true);
     }
-
     public void checkingPin(ActionEvent event) {
         if (jdb.checkPin(pincode.getText(), (String) combobox.getValue())){
             // to change the the plane
@@ -188,7 +202,6 @@ public class LoginController{
             QuizDetailPlane();
         }
     }
-
     public void QuizDetailPlane(){
         QuizName.setText(jdb.getQuizSelete());
         QuizNo.setText(jdbcDao.getQuizNoofAttemt());
@@ -196,14 +209,12 @@ public class LoginController{
         getQuestionList();
         Answer = new ArrayList<Character>(Integer.parseInt(jdbcDao.getQuizNoofAttemt()));
     }
-
     public void getQuestionList() {
         QuestionNumber = (new Randommy(jdbcDao.getTotalQuizQuestion(),jdbcDao.getQuizNoofAttemt())).getRandomArray();// direct create call and get the value
         for (int i = 0; i < QuestionNumber.size(); i++) {
             System.out.println(QuestionNumber.get(i));
         }
     }
-
     public void NextQuestion() throws InterruptedException {
         QuestionNo.setText(String.valueOf(QNO));
         int temp = Integer.parseInt(jdbcDao.getQuizNoofAttemt());
@@ -224,7 +235,6 @@ public class LoginController{
             setQuestion();
         }
     }
-
     public void setQuestion() {
         QuizNo.setText(" " +(QNO+1));
         question.setText("Q ."+QuestionAnswer.get(0));
@@ -244,7 +254,6 @@ public class LoginController{
         D.setSelected(false);
 
     }
-
     public void Selected(){
         char selete = ' ';
 
@@ -264,7 +273,6 @@ public class LoginController{
             Answer.add((QNO),selete);
         System.out.println(selete);
     }
-
     public void StartQuiz(ActionEvent event) throws InterruptedException {
         tgGroup = new ToggleGroup();
         A.setToggleGroup(tgGroup);
@@ -280,14 +288,12 @@ public class LoginController{
         getTime();
         NextQuestion();
     }
-
     public void SubmitNextQuestion() throws InterruptedException {
         QuestionAnswer.clear();
         Selected();
         QNO++;
         NextQuestion();
     }
-
     public void Submit_CheckAnswer(ActionEvent event) throws SQLException {
         Quiz_plane.setOpacity(0);
         Quiz_plane.setDisable(true);
@@ -299,7 +305,6 @@ public class LoginController{
 
         check();
     }
-
     public void check() throws SQLException {
         int temp=0;
         for (int i = 0; i < RealAnswer.size(); i++) {
@@ -318,10 +323,8 @@ public class LoginController{
         //
         jdb.insertRecord((""+temp) ,(""+(temp2*100)),date.get());
     }
-
     private Timeline timeline;
     private Integer horse,minute,timeSeconds;
-
     public void handleTime() {
         if (timeline != null) {
             timeline.stop();
@@ -361,14 +364,12 @@ public class LoginController{
                         }));
         timeline.playFromStart();
     }
-
     public void getTime(){
         horse = 00;
         timeSeconds = 60;
         minute = Integer.parseInt(jdbcDao.getQuizTime());
         handleTime();
     }
-
     public void CloseApp() throws SQLException {
         int TotalAnswer = Integer.parseInt(jdbcDao.getQuizNoofAttemt());
         int left = TotalAnswer - QNO;
@@ -378,12 +379,10 @@ public class LoginController{
         }
         check();
     }
-
     @FXML public void minimize(Event evt) {
         Stage stage = (Stage)((Button) evt.getSource()).getScene().getWindow();
         stage.setIconified(true);
     }
-
     @FXML public void Forget(Event evt) throws Exception {
         MailSender mailSender = new MailSender();
         if (!(emailIdField.getText()).isEmpty()){
@@ -393,7 +392,50 @@ public class LoginController{
         }
 
     }
+    public ObservableList<Product> getProduct(ArrayList<Product> po) {
+        ObservableList<Product> list = FXCollections.observableArrayList(po);
+        return list;
+    }
 
+    public void displayDashborad(){
+        System.out.println("Hello22");
+        ExamShowPane.setOpacity(100);
+        ExamShowPane.setDisable(false);
 
+        ResultVeiw_plane.setOpacity(0);
+        ResultVeiw_plane.setDisable(true);
 
+        Course_plane.setOpacity(0);
+        Course_plane.setDisable(true);
+    }
+
+    public void start() {
+        System.out.println("Hello333");
+
+        ExamShowPane.setOpacity(0);
+        ExamShowPane.setDisable(true);
+
+        ResultVeiw_plane.setOpacity(100);
+        ResultVeiw_plane.setDisable(false);
+
+        jdbcDao jdb = new jdbcDao();
+        listitem = jdb.getFromDatabase();
+        getData();
+    }
+
+    public void getData(){
+        id.setCellValueFactory(new PropertyValueFactory<Product,Integer>("SNO"));
+        Total.setCellValueFactory(new PropertyValueFactory<Product,String>("Total"));
+        Correct.setCellValueFactory(new PropertyValueFactory<Product,String>("Correct"));
+        QuizNameOfResult.setCellValueFactory(new PropertyValueFactory<Product,String>("Quiz"));
+        PercentageOfResult.setCellValueFactory(new PropertyValueFactory<Product,String>("Percentage"));
+        timeofsubmit.setCellValueFactory(new PropertyValueFactory<Product,String>("time"));
+
+        table.setItems(getProduct(listitem));
+    }
+
+    public void logout(){
+        System.out.println("Hello");
+
+    }
 }

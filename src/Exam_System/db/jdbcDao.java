@@ -1,6 +1,8 @@
 package Exam_System.db;
 
 
+import Exam_System.Product;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -198,9 +200,25 @@ public class jdbcDao {
             throwables.printStackTrace();
         }
     }
-
     public static boolean getQuizStart() {
         return QuizStart;
+    }
+
+    public ArrayList<Product> getFromDatabase(){
+        ArrayList<Product> list = new ArrayList<Product>();
+
+        try {
+            String query = "SELECT * FROM `resultofquiz` where `UserId` Like '"+getUserId()+"'";//
+            result = statement.executeQuery(query);
+
+            while (result.next()){
+                list.add(new Product(result.getInt("id"),result.getString("Percentage"),result.getString("QuizName"),result.getString("TotalQuestion"),result.getString("NoOfQuestionCorrect"),result.getString("Time")));
+            }}
+        catch (Exception e){
+            System.out.println("Error : "+e);
+        }
+        return list;
+
     }
 }
 

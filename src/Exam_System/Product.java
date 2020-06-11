@@ -1,45 +1,73 @@
 package Exam_System;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public class Product {
 
-    private String name;
-    private double price;
-    private int quantity;
+    private final SimpleIntegerProperty SNO;
+    private final SimpleStringProperty Quiz;
+    private final SimpleStringProperty Total;
+    private final SimpleStringProperty Correct;
+    private final SimpleStringProperty Percentage;
+    private final SimpleStringProperty time;
 
-    public Product(){
-        this.name = "";
-        this.price = 0;
-        this.quantity = 0;
+
+    public Product(Integer sno, String percentage, String quiz, String total, String correct, String time){
+        SNO = new SimpleIntegerProperty(sno);
+        Percentage = new SimpleStringProperty(percentage);
+        Quiz =  new SimpleStringProperty(quiz);
+        Total = new SimpleStringProperty(total);
+        Correct = new SimpleStringProperty(correct);
+        this.time = new SimpleStringProperty(time);
     }
 
-    public Product(String name, double price, int quantity){
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
+
+    public int getSNO() {
+        return SNO.get();
     }
 
-    public String getName() {
-        return name;
+    public SimpleIntegerProperty SNOProperty() {
+        return SNO;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getPercentage() {
+        return Percentage.get();
     }
 
-    public double getPrice() {
-        return price;
+    public SimpleStringProperty PercentageProperty() {
+        return Percentage;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public String getTotal() {
+        return Total.get();
     }
 
-    public int getQuantity() {
-        return quantity;
+    public SimpleStringProperty totalProperty() {
+        return Total;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public String getCorrect() {
+        return Correct.get();
     }
 
+    public SimpleStringProperty correctProperty() {
+        return Correct;
+    }
+
+    public String getTime() {
+        return time.get();
+    }
+
+    public SimpleStringProperty timeProperty() {
+        return time;
+    }
+
+    public String getQuiz() {
+        return Quiz.get();
+    }
+
+    public SimpleStringProperty quizProperty() {
+        return Quiz;
+    }
 }
