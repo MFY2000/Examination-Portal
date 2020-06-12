@@ -16,35 +16,15 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-#dashboard {
-    display: none;
-}
-
-#show_major {
-    display: none;
-}
-
-#staff_inser {
-    display: none;
-}
-
-#insert_major {
-    display: none;
-}
-
-#Student_insert {
-    display: none;
-}
-
 #wrapper {
     width: 100%;
-    background: #1690A7;
+    background: #202020;
 }
 
 #page-wrapper {
     padding: 15px 15px;
     min-height: 600px;
-    background: #1690A7;
+    background: #202020;
 }
 
 #page-inner {
@@ -86,8 +66,8 @@ p {
 
 
 /*==============================================
-           DASHBOARD STYLES    
-            =============================================*/
+       DASHBOARD STYLES    
+        =============================================*/
 
 .panel-back {
     background-color: #F8F8F8;
@@ -204,7 +184,10 @@ p {
     line-height: 30px;
 }
 
-CHAT PANEL .chat-panel .panel-body {
+
+/*CHAT PANEL*/
+
+.chat-panel .panel-body {
     height: 450px;
     overflow-y: scroll;
 }
@@ -236,8 +219,8 @@ CHAT PANEL .chat-panel .panel-body {
 
 
 /*==============================================
-            MENU STYLES    
-            =============================================*/
+        MENU STYLES    
+        =============================================*/
 
 .user-image {
     margin: 25px auto;
@@ -312,7 +295,7 @@ CHAT PANEL .chat-panel .panel-body {
 
 .sidebar-collapse .nav>li>a:hover,
 .sidebar-collapse .nav>li>a:focus {
-    background: #1690A7;
+    background: #0A0A0A;
     outline: 0;
 }
 
@@ -353,7 +336,7 @@ CHAT PANEL .chat-panel .panel-body {
 
 .navbar-side {
     border: none;
-    background-color: #1690A7;
+    background-color: #202020;
 }
 
 .navbar-cls-top {
@@ -367,7 +350,7 @@ CHAT PANEL .chat-panel .panel-body {
 }
 
 .navbar-default {
-    border: 0px solid #1690A7;
+    border: 0px solid black;
 }
 
 .navbar-header {
@@ -393,26 +376,25 @@ CHAT PANEL .chat-panel .panel-body {
 
 
 /*==============================================
-            UI ELEMENTS STYLES     
-            =============================================
-        
-        .btn-circle {
-            width: 50px;
-            height: 50px;
-            padding: 6px 0;
-            -webkit-border-radius: 25px;
-            -moz-border-radius: 25px;
-            border-radius: 25px;
-            text-align: center;
-            font-size: 12px;
-            line-height: 1.428571429;
-        }
-        */
+        UI ELEMENTS STYLES     
+        =============================================*/
+
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    padding: 6px 0;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
 
 
 /*==============================================
-            MEDIA QUERIES     
-            =============================================*/
+        MEDIA QUERIES     
+        =============================================*/
 
 @media(min-width:768px) {
     #page-wrapper {
