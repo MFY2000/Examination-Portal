@@ -18,21 +18,21 @@ import javafx.stage.StageStyle;
 import java.security.Key;
 
 public class Main extends Application {
-    private double x,y;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        AnchorPane root = FXMLLoader.load(getClass().getResource("FXML/MainStage.fxml"));
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+    // main fxml through all the file are connected
+        AnchorPane root = FXMLLoader.load(getClass().getResource("FXML/MainStage.fxml"));// by-defualt method of javafx
 
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+//for getting the screen size
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
 
-        primaryStage.setX(bounds.getMinX());
+        primaryStage.setX(bounds.getMinX());//
         primaryStage.setY(bounds.getMinY());
         primaryStage.setWidth(bounds.getWidth());
-        primaryStage.setHeight(bounds.getHeight()+100);
-
-        System.out.println("getWidth: "+bounds.getWidth()+"\ngetHeight: "+bounds.getHeight()+100);
+        primaryStage.setHeight(bounds.getHeight()+100);//
 
         KeyCombination keyCombinationWin1 = new KeyCodeCombination(KeyCode.TAB, KeyCombination.ALT_ANY);
         KeyCombination keyCombinationWin2 = new KeyCodeCombination(KeyCode.WINDOWS, KeyCombination.ALT_ANY);
@@ -40,18 +40,19 @@ public class Main extends Application {
         root.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
             if (keyCombinationWin1.match(event) || keyCombinationWin2.match(event) ||  event.getCode() == KeyCode.WINDOWS || event.getCode() == KeyCode.ALT ) {
                 if(jdbcDao.getQuizStart()){
-                    System.out.println("hello");
+                    System.out.println("Your are doing cheating");
                     primaryStage.close();
 //                      Cheating cheat = new Cheating();
 //                      cheat
+                      }
+                else {
+                    //w0000ing
                 }
                 // object of cheating
             }
         });
 
-
 //        root.setOnKeyPressed(keyEvent -> {
-//            System.out.println(keyEvent.getCode() == KeyCode.CONTROL);
 //            if (keyEvent.getCode() == KeyCode.CONTROL){
 //                System.out.println("hello");
 //                primaryStage.close();
