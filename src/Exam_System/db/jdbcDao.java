@@ -47,7 +47,6 @@ public class jdbcDao {
 
         // Step 1: Establishing a Connection and
         // try-with-resource statement will auto close the connection.
-        System.out.println(INSERT_QUERY);
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERY)) {
             preparedStatement.setString(1, getUserId());
@@ -69,8 +68,7 @@ public class jdbcDao {
 
         // Step 1: Establishing a Connection and
         // try-with-resource statement will auto close the connection.
-        try (Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
-             // Step 2:Create a statement using connection object
+        try (// Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_QUERY_LOGIN)) {
             preparedStatement.setString(1, emailId);
             preparedStatement.setString(2, password);
@@ -80,7 +78,6 @@ public class jdbcDao {
                 UserId = emailId;
                 return true;
             }
-
 
         } catch (SQLException e) {
             // print SQL exception information
@@ -137,6 +134,7 @@ public class jdbcDao {
             }
         }
     }
+
     public static String getQuizSelete() {
         return QuizSelete;
     }
@@ -152,6 +150,7 @@ public class jdbcDao {
     public static String getQuizTime() {
         return QuizTime;
     }
+
     public ArrayList<String> getQuizDetails(int QuestionId){
         String query = "SELECT * FROM "+'`'+ QuizSelete +'`'+" WHERE `Id` LIKE "+'"'+QuestionId+'"'+" ";
         QuizStart = true;
@@ -177,7 +176,6 @@ public class jdbcDao {
         try {
             result = statement.executeQuery(query);
             result.next();
-
             Answer = result.getString("Answer");
         } catch (SQLException throwables) {
             throwables.printStackTrace();

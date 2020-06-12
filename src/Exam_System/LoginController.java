@@ -42,7 +42,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
-public class LoginController{
+public class LoginController implements Login_plane{
 //main plane
     @FXML public AnchorPane Main_plane;
     @FXML public Button Closebutton;
@@ -110,7 +110,7 @@ public class LoginController{
 
     ArrayList<Product> listitem = new ArrayList<Product>();
 
-    public void login(ActionEvent event)  throws SQLException, IOException,Exception {
+    public void login(ActionEvent event) throws SQLException, IOException,Exception {
 
         Window owner = submitButton.getScene().getWindow();
 
