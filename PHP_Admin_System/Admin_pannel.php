@@ -16,16 +16,14 @@
    //try connecting to database
    $conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
     //check connection 
-    
-
-
+  
         if($conn == false){
             dir('Error : Connot Connect');
         }
 
 
 
-        
+        //question insertion 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
           error_reporting(E_ERROR | E_PARSE);
             $show = $_POST['Answer2'];
@@ -44,7 +42,7 @@
    
 
      
-
+//major insertion
           if($_SERVER['REQUEST_METHOD'] == 'POST'){
             error_reporting(E_ERROR | E_PARSE);
             $Feild = $_POST['Field'];
@@ -58,14 +56,12 @@
             $result = mysqli_query($conn,$sql); 
             // createTable();
         }
-        
+        //runtime table creation
           error_reporting(E_ERROR | E_PARSE);
           $sql ="CREATE TABLE `javalogin`.`".$Feild."` ( `id` INT(11) NOT NULL AUTO_INCREMENT ,  `Question` VARCHAR(1000) NOT NULL ,  `option1` VARCHAR(1000) NOT NULL ,  `option2` VARCHAR(1000) NOT NULL ,  `option3` VARCHAR(1000) NOT NULL ,  `option4` VARCHAR(1000) NOT NULL ,  `Answer` VARCHAR(1000) NOT NULL ,    PRIMARY KEY  (`id`(1))) ENGINE = InnoDB"; 
           $result = mysqli_query($conn,$sql); 
 
         
-          session_start();
-          
          
           
           ?>          
@@ -142,10 +138,16 @@
                         <a  onclick="mypop()"><i class="fa fa-users fa-3x"></i>Exam Insertion<span class="fa arrow"></span></a>
                     </li>
                     <li>
+                        <a  onclick="mypop7()"><i class="fa fa-question fa-3x"></i>View Questions<span class="fa arrow"></span></a>
+                    </li>
+                    <li>
                         <a  onclick="mypop5()"><i class="fa fa-user fa-3x"></i>Major View<span class="fa arrow"></span></a>
                     </li>
                     <li>
-                        <a  onclick="mypop2()"><i class="fa fa-user fa-3x"></i>Result<span class="fa arrow"></span></a>
+                        <a  onclick="mypop2()"><i class="fa fa-lock fa-3x"></i>Result<span class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a  onclick="mypop6()"><i class="fa fa-inbox fa-3x"></i>Message<span class="fa arrow"></span></a>
                     </li>
                 </ul>
             </div>
@@ -168,59 +170,7 @@
                          } ?> Love to see you back. </h5>
                        <!-- table show -->
                        <section class="page_for_dashboared" id="dashboared">
-                       <section class="text-gray-700 body-font relative">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-col text-center w-full mb-12">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
-    </div>
-    <div class="lg:w-1/2 md:w-2/3 mx-auto">
-      <div class="flex flex-wrap -m-2">
-        <div class="p-2 w-1/2">
-          <input class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2" placeholder="Name" type="text">
-        </div>
-        <div class="p-2 w-1/2">
-          <input class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2" placeholder="Email" type="email">
-        </div>
-        <div class="p-2 w-full">
-          <textarea class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none h-48 focus:border-indigo-500 text-base px-4 py-2 resize-none block" placeholder="Message"></textarea>
-        </div>
-        <div class="p-2 w-full">
-          <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-        </div>
-        <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-          <a class="text-indigo-500">example@email.com</a>
-          <p class="leading-normal my-5">49 Smith St.
-            <br>Saint Cloud, MN 56301
-          </p>
-          <span class="inline-flex">
-            <a class="text-gray-500">
-              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-              </svg>
-            </a>
-            <a class="ml-4 text-gray-500">
-              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-              </svg>
-            </a>
-            <a class="ml-4 text-gray-500">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-              </svg>
-            </a>
-            <a class="ml-4 text-gray-500">
-              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-              </svg>
-            </a>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+                     
                        </section>
                         <?php
                         if($result){
@@ -289,31 +239,31 @@
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Question</th>
-      <th scope="col">Option1</th>
-      <th scope="col">Option2</th>
-      <th scope="col">Option3</th>
-      <th scope="col">Option4</th>
-      <th scope="col">Answers</th>
+      <th scope="col">UserId</th>
+      <th scope="col">Quiz Name</th>
+      <th scope="col">Toatal Question</th>
+      <th scope="col">No of Question Correct</th>
+      <th scope="col">Percentage</th>
+      <th scope="col">Time</th>
     </tr>
   </thead>
   <tbody>
 
   <?php   
-    $show2 = $_POST['Answer2'];
-    $sql = "SELECT * FROM `".$show2."` WHERE 1";
+    //$show2 = $_POST['Answer2'];
+    $sql = "SELECT * FROM `resultofquiz` WHERE 1";
     $result = mysqli_query($conn,$sql) ;
     $id = 0;
     while($row = mysqli_fetch_assoc($result)){
         $id = $id +1;
         echo "<tr>
         <th scope='row'>".$id."</th>
-        <td>".$row['Question']."</td>
-        <td>".$row['option1']."</td>
-        <td>".$row['option2']."</td>
-        <td>".$row['option3']."</td>
-        <td>".$row['option4']."</td>
-        <td>".$row['Answer']."</td>
+        <td>".$row['UserId']."</td>
+        <td>".$row['QuizName']."</td>
+        <td>".$row['TotalQuestion']."</td>
+        <td>".$row['NoOfQuestionCorrect']."</td>
+        <td>".$row['Percentage']."</td>
+        <td>".$row['Time']."</td>
       </tr>";
     }  ?>
   </tbody>
@@ -371,11 +321,102 @@
 
 </section>
 
-                <!-- /. ROW  -->
+                
 
-<!-- Insert major -->
+<!-- Message-->
 
+<section id="mess" style=" display: none;">
+<table class="table" id="myTable3">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Message</th>
+    </tr>
+  </thead>
+  <tbody>
 
+  <?php   
+  
+    $sql = "SELECT * FROM `contact` WHERE 1";
+    $result = mysqli_query($conn,$sql) ;
+    $id = 0;
+    while($row = mysqli_fetch_assoc($result)){
+        $id = $id +1;
+        echo "<tr>
+        <th scope='row'>".$id."</th>
+        <td>".$row['name']."</td>
+        <td>".$row['email']."</td>
+        <td>".$row['message']."</td>
+      </tr>";
+    }  ?>
+  </tbody>
+</table>
+
+</section>
+
+<section id="questionshow" style=" display: none;">
+  <form method="POST" id="fom">
+<label for="">Select</label>
+  <select  class="form-control" id="" name="Answer3" >
+  <?php   
+
+  $sql = "SELECT * FROM `subjectlist` WHERE 1";
+  $result = mysqli_query($conn,$sql) ;
+  $id = 0;
+  while($row = mysqli_fetch_assoc($result)){
+     $id = $id +1;
+   echo ' <option id="Selecter_4" name="hel2">'.$row['Field'].'</option>';
+  }  ?>
+  </select>  
+    <br>
+ <input type="submit" value="Click" class="btn btn-primary" name="btnn" >
+ <br> 
+</form><br>
+<table class="table" id="myTable4" style="padding:10px">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Question</th>
+      <th scope="col">Option 1</th>
+      <th scope="col">Option 2</th>
+      <th scope="col">Option 3</th>
+      <th scope="col">Option 4</th>
+      <th scope="col">Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <?php   
+    
+   
+   
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+      
+      $show3= $_POST['Answer3'];
+      $sql = "SELECT * FROM `".$show3."` WHERE 1";
+      $result = mysqli_query($conn,$sql) ;
+      $id = 0;
+      while($row = mysqli_fetch_assoc($result)){
+          $id = $id +1;
+          echo "<tr>
+          <th scope='row'>".$id."</th>
+          <td>".$row['Question']."</td>
+          <td>".$row['option1']."</td>
+          <td>".$row['option2']."</td>
+          <td>".$row['option3']."</td>
+          <td>".$row['option4']."</td>
+          <td>".$row['Answer']."</td>
+          </tr>";
+    } 
+  
+    }
+    
+   ?>
+  </tbody>
+</table>
+</section>
 </body>
 
 <script src="assets2/js/bootstrap.min.js"></script>
@@ -392,12 +433,16 @@
   var y = document.getElementById("Student_insert");
   var m = document.getElementById("insert_major");
     var a = document.getElementById("dashboared");
+    var j = document.getElementById("mess");
+    var h = document.getElementById("questionshow");
   if (x.style.display === "none") {
     x.style.display = "block";
     y.style.display = "none"
     m.style.display = "none";
     a.style.display = "none";
      k.style.display ="none";
+     j.style.display = "none";
+     h.style.display ="none";
   } else {
     x.style.display ="none";
   } 
@@ -409,12 +454,16 @@ function mypop2()
   var y = document.getElementById("staff_inser");
   var m = document.getElementById("insert_major");
     var a = document.getElementById("dashboared");
+    var j = document.getElementById("mess");
+    var h = document.getElementById("questionshow");
   if (x.style.display === "none") {
     x.style.display = "block";
     y.style.display ="none";
     m.style.display = "none";
     a.style.display = "none";
      k.style.display ="none";
+     j.style.display = "none";
+     h.style.display ="none";
   } else {
     x.style.display ="none";
   } 
@@ -426,6 +475,8 @@ function mypop3(){
     var x = document.getElementById("Student_insert");
     var y = document.getElementById("staff_inser");
     var m = document.getElementById("insert_major");
+    var j = document.getElementById("mess");
+    var h = document.getElementById("questionshow");
 
   if (a.style.display === "none") {
     a.style.display = "block";
@@ -433,6 +484,8 @@ function mypop3(){
     y.style.display ="none";
     m.style.display = "none";
      k.style.display ="none";
+     j.style.display = "none";
+     h.style.display ="none";
   } else {
     a.style.display ="none";
   } 
@@ -445,12 +498,16 @@ function mypop4(){
     var a = document.getElementById("dashboared");
     var x = document.getElementById("Student_insert");
     var y = document.getElementById("staff_inser");
+    var j = document.getElementById("mess");
+    var h = document.getElementById("questionshow");
   if (m.style.display === "none") {
     m.style.display = "block";
     a.style.display = "none"
      k.style.display ="none";
     x.style.display = "none";
     y.style.display ="none";
+    j.style.display = "none";
+    h.style.display ="none";
   } else {
     m.style.display ="none";
   } 
@@ -464,19 +521,68 @@ function mypop5(){
     var a = document.getElementById("dashboared");
     var x = document.getElementById("Student_insert");
     var y = document.getElementById("staff_inser");
+    var j = document.getElementById("mess");
+    var h = document.getElementById("questionshow");
   if (k.style.display === "none") {
     
     k.style.display = "block";
     m.style.display = "none";
     a.style.display = "none";
     x.style.display = "none";
-  
+    j.style.display = "none";
     y.style.display ="none";
+    h.style.display ="none";
   } else {
     k.style.display ="none";
   } 
 }
 
+
+function mypop6(){
+   
+   var k = document.getElementById("show_major"); 
+   var m = document.getElementById("insert_major");
+   var a = document.getElementById("dashboared");
+   var x = document.getElementById("Student_insert");
+   var y = document.getElementById("staff_inser");
+   var h = document.getElementById("questionshow");
+   var j = document.getElementById("mess");
+ if (j.style.display === "none") {
+   
+   j.style.display = "block";
+   k.style.display = "none";
+   m.style.display = "none";
+   a.style.display = "none";
+   x.style.display = "none";
+   y.style.display ="none";
+   h.style.display ="none";
+ } else {
+   j.style.display ="none";
+ } 
+}
+
+function mypop7(){
+   
+   var k = document.getElementById("show_major"); 
+   var m = document.getElementById("insert_major");
+   var a = document.getElementById("dashboared");
+   var x = document.getElementById("Student_insert");
+   var y = document.getElementById("staff_inser");
+   var h = document.getElementById("questionshow");
+   var j = document.getElementById("mess");
+ if (j.style.display === "none") {
+   
+   h.style.display = "block";
+   j.style.display = "none";
+   k.style.display = "none";
+   m.style.display = "none";
+   a.style.display = "none";
+   x.style.display = "none";
+   y.style.display ="none";
+ } else {
+   h.style.display ="none";
+ } 
+}
 function gr()
 {
     var var_for_selecter_1 =  document.getElementById('option_1').value; 
@@ -517,6 +623,13 @@ $(document).ready( function () {
 $(document).ready( function () {
     $('#myTable2').DataTable();
 } );
+$(document).ready( function () {
+    $('#myTable3').DataTable();
+} );
+$(document).ready( function () {
+    $('#myTable4').DataTable();
+} );
+
 </script>
 </html>
 <?php 

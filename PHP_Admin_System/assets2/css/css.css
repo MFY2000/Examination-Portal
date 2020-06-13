@@ -20,6 +20,10 @@ body {
     display: none;
 }
 
+#mess {
+    display: none;
+}
+
 #show_major {
     display: none;
 }

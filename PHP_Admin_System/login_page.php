@@ -19,8 +19,9 @@
      	<label>User Name</label>
      	<input type="password" name="password" placeholder="Password"><br>
 
-		 <a href="contact.php" class="contact" >Contact us</a>
-     	<button type="submit">Login</button>
+		
+		 <button type="submit">Login</button>
+		 <a href="contact.php" class="contact" id="con_btn" >Contact us</a>
 	 </form>
 </body>
 </html>
