@@ -224,10 +224,10 @@
                                       <div class="form-group" onclick="gr()">
                                       <label for="">Answers</label>
                                       <select class="form-control" id="" name="Answer" >
-                                      <option id="Selecter_1"></option>
-                                      <option id="Selecter_2"></option>
-                                      <option id="Selecter_3"></option>
-                                      <option id="Selecter_4"></option>
+                                      <option>A</option>
+                                      <option>B</option>
+                                      <option>C</option>
+                                      <option>D</option>
                                       </select>
                                                                           
                                     <input type="submit" class="btn btn-primary form-control"  id="btn_reg" name="exam"/>
