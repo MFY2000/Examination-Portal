@@ -32,48 +32,46 @@ import java.util.ArrayList;
 
 
 public class LoginController implements Login_plane{
-//main plane
-    @FXML public AnchorPane Main_plane;
-    @FXML public Button Closebutton;
-    @FXML public Button Closebutton2;
+    //main plane
+    @FXML private AnchorPane Main_plane;
+    @FXML private Button Closebutton;
+    @FXML private Button Closebutton2;
 
-    @FXML public AnchorPane Quiz_plane;
-    @FXML public Label QuestionNo;
-    @FXML public Label QuizTimer;
-    @FXML public Label question;
-    @FXML public RadioButton B;
-    @FXML public RadioButton D;
-    @FXML public RadioButton A;
-    @FXML public RadioButton C;
-    @FXML public Button Submit;
+    @FXML private AnchorPane Quiz_plane;
+    @FXML private Label QuestionNo;
+    @FXML private Label QuizTimer;
+    @FXML private Label question;
+    @FXML private RadioButton B;
+    @FXML private RadioButton D;
+    @FXML private RadioButton A;
+    @FXML private RadioButton C;
+    @FXML private Button Submit;
 
-    @FXML public AnchorPane Result_plane;
-    @FXML public Label correctAnswer;
-    @FXML public Label wrongAnswer;
-    @FXML public Label TotalAnswer;
-    @FXML
-    public Label Percentage;
+    @FXML private AnchorPane Result_plane;
+    @FXML private Label correctAnswer;
+    @FXML private Label wrongAnswer;
+    @FXML private Label TotalAnswer;
+    @FXML private Label Percentage;
 
-
-    public AnchorPane Details_plane;
-    public Label QuizName;
-    public Label QuizTime;
-    public Label QuizNo;
+    @FXML private AnchorPane Details_plane;
+    @FXML private Label QuizName;
+    @FXML private Label QuizTime;
+    @FXML private Label QuizNo;
 
     @FXML private AnchorPane Student_plane;
 
-    @FXML public AnchorPane Course_plane;
+    @FXML private AnchorPane Course_plane;
     @FXML private ComboBox combobox;
     @FXML private AnchorPane pinbox;
     @FXML private PasswordField pincode;
 
-    @FXML public AnchorPane ExamShowPane;
+    @FXML private AnchorPane ExamShowPane;
     @FXML private Label UserIdcome;
 
     @FXML private AnchorPane Login_plane;
     @FXML private TextField emailIdField;
     @FXML private PasswordField passwordField;
-    @FXML public Button submitButton;
+    @FXML private Button submitButton;
 
     // Local varaible
     private ObservableList<String> ChoiceList;
@@ -100,6 +98,22 @@ public class LoginController implements Login_plane{
     ArrayList<Product> listitem = new ArrayList<Product>();
     private Timeline timeline;
     private Integer horse,minute,timeSeconds;
+
+    private static void infoBox(String infoMessage, String headerText, String title){
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setContentText(infoMessage);
+        alert.setTitle(title);
+        alert.setHeaderText(headerText);
+        alert.showAndWait();
+    }
+    private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.initOwner(owner);
+        alert.show();
+    }
 
     public void login(ActionEvent event) throws SQLException, IOException,Exception {
 
@@ -136,25 +150,10 @@ public class LoginController implements Login_plane{
 
         }
     }
-    public static void infoBox(String infoMessage, String headerText, String title){
-        Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setContentText(infoMessage);
-        alert.setTitle(title);
-        alert.setHeaderText(headerText);
-        alert.showAndWait();
-    }
-    private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.initOwner(owner);
-        alert.show();
-    }
     public void ADMIN_CALLER(ActionEvent actionEvent) throws IOException, URISyntaxException {
-//        AnchorPane pane1 = FXMLLoader.load(getClass().getResource("FXML/Admin.fxml"));
-//        Login_plane.getChildren().setAll(pane1);
-        Desktop.getDesktop().browse(new URL("https://google.com").toURI());
+        URL togo = new URL("https://google.com");
+        Desktop.getDesktop().browse(togo.toURI());
+
     }
     public void CloseApp(ActionEvent actionEvent)throws Exception{
         Window owner = submitButton.getScene().getWindow();
@@ -162,9 +161,6 @@ public class LoginController implements Login_plane{
         System.exit(1);
     }
     public void QuizDisplay(ActionEvent event) throws IOException {
-//        AnchorPane pane3 = FXMLLoader.load(getClass().getResource("FXML/Course_plane.fxml"));
-//        ExamShowPane.getChildren().setAll(pane3);
-
         ExamShowPane.setOpacity(0);
         ExamShowPane.setDisable(true);
 
@@ -264,7 +260,6 @@ public class LoginController implements Login_plane{
                 selete = 'D';
             }
             Answer.add((QNO),selete);
-        System.out.println(selete);
     }
     public void StartQuiz(ActionEvent event) throws InterruptedException, SQLException {
         if (jdb.QuizAlreadyGiven()){
@@ -323,6 +318,7 @@ public class LoginController implements Login_plane{
         jdb.insertRecord((""+temp) ,(""+(temp2*100)),date.get());
         Closebutton2.setDisable(false);
     }
+
     public void handleTime() {
         if (timeline != null) {
             timeline.stop();
@@ -443,6 +439,5 @@ public class LoginController implements Login_plane{
         ExamShowPane.setOpacity(100);
         ExamShowPane.setDisable(false);
     }
-
 
 }

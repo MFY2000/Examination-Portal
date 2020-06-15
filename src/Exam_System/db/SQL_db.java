@@ -8,7 +8,6 @@ import javax.sql.*;
 
 import java.util.*;
 
-
 abstract class varabile{
     //Database varaible
     public Connection connection;
@@ -25,16 +24,23 @@ abstract class varabile{
     public ArrayList<String> QuestioAnswer = new ArrayList<String>();
     public String Answer;
 
+}
 
+interface Method {
+    void insertRecord(String NoOfQuestionCorrect,String Percentage,String dateTime) throws SQLException;
+    boolean validate(String emailId, String password) throws SQLException;
+    ArrayList<String> displayFeildList();
+    String getOnlyAnswer(int QuestionId);
+    boolean checkPin(String pinEnter,String Feild);
+    void forgetPassword(String id,String Password);
+    ArrayList<Product> getFromDatabase();
+    boolean QuizAlreadyGiven() throws SQLException;
+    ArrayList<String> getQuizDetails(int QuestionId);
 
 }
 
-interface var2 {
 
-        }
-
-public class SQL_db extends varabile {
-
+public class SQL_db extends varabile implements Method {
 
     // Replace below database url, username and password with your actual database credentials
     private static final String DATABASE_URL = "jdbc:mysql://localhost/javalogin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -131,21 +137,6 @@ public class SQL_db extends varabile {
         }
         return match;
     }
-    public static void printSQLException(SQLException ex) {
-        for (Throwable e: ex) {
-            if (e instanceof SQLException) {
-                e.printStackTrace(System.err);
-                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
-                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
-                System.err.println("Message: " + e.getMessage());
-                Throwable t = ex.getCause();
-                while (t != null) {
-                    System.out.println("Cause: " + t);
-                    t = t.getCause();
-                }
-            }
-        }
-    }
     public ArrayList<String> getQuizDetails(int QuestionId){
         String query = "SELECT * FROM "+'`'+ QuizSelete +'`'+" WHERE `Id` LIKE "+'"'+QuestionId+'"'+" ";
         QuizStart = true;
@@ -218,6 +209,24 @@ public class SQL_db extends varabile {
         return match;
     }
 
+    //print the error
+    public static void printSQLException(SQLException ex) {
+        for (Throwable e: ex) {
+            if (e instanceof SQLException) {
+                e.printStackTrace(System.err);
+                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
+                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
+                System.err.println("Message: " + e.getMessage());
+                Throwable t = ex.getCause();
+                while (t != null) {
+                    System.out.println("Cause: " + t);
+                    t = t.getCause();
+                }
+            }
+        }
+    }
+
+    // getter/Setter
     public static boolean getQuizStart() {
         return QuizStart;
     }

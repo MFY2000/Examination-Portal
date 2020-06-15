@@ -359,7 +359,7 @@
       </AnchorPane>
       <AnchorPane fx:id="Login_plane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="630.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="184.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="197.0">
          <children>
-            <Pane prefHeight="443.0" prefWidth="290.0" style="-fx-background-color: #61DEF9;">
+            <Pane prefHeight="443.0" prefWidth="290.0" style="-fx-background-color: #61DEF9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <ImageView fitHeight="284.0" fitWidth="224.0" layoutX="33.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
                      <image>
