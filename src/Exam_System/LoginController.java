@@ -2,19 +2,12 @@ package Exam_System;
 
 // local files
 import Exam_System.db.jdbcDao;
-
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.security.PublicKey;
 import java.sql.SQLException;
-import java.util.*;
-import java.util.Arrays;
-//import java.util.List;
 import java.util.List;
-import java.util.ResourceBundle;
-import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
@@ -23,7 +16,6 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -36,10 +28,7 @@ import javafx.stage.Window;
 import javafx.util.Duration;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 
 public class LoginController implements Login_plane{
@@ -334,7 +323,6 @@ public class LoginController implements Login_plane{
         jdb.insertRecord((""+temp) ,(""+(temp2*100)),date.get());
         Closebutton2.setDisable(false);
     }
-
     public void handleTime() {
         if (timeline != null) {
             timeline.stop();
