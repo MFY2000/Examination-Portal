@@ -37,8 +37,6 @@ public class Main extends Application {
         primaryStage.setWidth(bounds.getWidth());
         primaryStage.setHeight(bounds.getHeight()+100);//
 
-        System.out.println("Width: "+bounds.getWidth()+" Height: "+bounds.getHeight()+100);
-
         KeyCombination keyCombinationWin1 = new KeyCodeCombination(KeyCode.TAB, KeyCombination.ALT_ANY);
         KeyCombination keyCombinationWin2 = new KeyCodeCombination(KeyCode.WINDOWS, KeyCombination.ALT_ANY);
 
