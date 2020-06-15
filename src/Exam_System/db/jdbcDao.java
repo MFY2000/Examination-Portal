@@ -157,7 +157,6 @@ public class jdbcDao {
         try {
             result = statement.executeQuery(query);
             result.next();
-            System.out.println(query);
             QuestioAnswer.add(" "+result.getString("Question"));
             QuestioAnswer.add(" "+result.getString("A"));
             QuestioAnswer.add(" "+result.getString("B"));

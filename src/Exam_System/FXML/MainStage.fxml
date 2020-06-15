@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
@@ -195,7 +196,7 @@
             <Button layoutX="34.0" layoutY="22.0" mnemonicParsing="false" onAction="#BackToplane" prefHeight="42.0" prefWidth="108.0" style="-fx-background-color: inheritance ;" text="Back to plane" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Student_plane" disable="true" layoutX="412.0" layoutY="147.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="518.0" prefWidth="722.0" style="-fx-border-color: #FFF;" AnchorPane.bottomAnchor="179.0" AnchorPane.leftAnchor="407.0" AnchorPane.rightAnchor="407.0" AnchorPane.topAnchor="179.0">
+      <AnchorPane fx:id="Student_plane" disable="true" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="518.0" prefWidth="714.0" style="-fx-border-color: #FFF;" AnchorPane.rightAnchor="409.0" AnchorPane.topAnchor="179.0">
          <children>
             <GridPane layoutX="2.0" layoutY="-351.0" prefHeight="817.0" prefWidth="720.0" style="-fx-background-color: #5F9EA0;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                <columnConstraints>
@@ -207,7 +208,7 @@
                   <RowConstraints maxHeight="523.0" minHeight="10.0" prefHeight="519.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <HBox prefHeight="34.0" prefWidth="173.0" style="-fx-background-color: #5F9EA0;">
+                  <HBox prefHeight="34.0" prefWidth="173.0" style="-fx-background-color: #61DEF9;">
                      <children>
                         <Label prefHeight="34.0" prefWidth="154.0" text="Student Pannel">
                            <font>
@@ -216,9 +217,9 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox prefHeight="39.0" prefWidth="527.0" style="-fx-background-color: #5F9EA0;" GridPane.columnIndex="1">
+                  <HBox prefHeight="39.0" prefWidth="527.0" style="-fx-background-color: #61DEF9;" GridPane.columnIndex="1">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#displayDashborad" prefHeight="34.0" prefWidth="129.0" style="-fx-background-color: none;" text="Dashboard">
+                        <Button mnemonicParsing="false" onAction="#displayDashborad" prefHeight="34.0" prefWidth="129.0" style="-fx-background-color: none;" text="Dashboard" textFill="WHITE">
                            <font>
                               <Font name="Baskerville Old Face" size="18.0" />
                            </font>
@@ -226,7 +227,7 @@
                               <Insets />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#QuizDisplay" prefHeight="38.0" prefWidth="105.0" style="-fx-background-color: none;" text="Exam">
+                        <Button mnemonicParsing="false" onAction="#QuizDisplay" prefHeight="38.0" prefWidth="105.0" style="-fx-background-color: none;" text="Exam" textFill="WHITE">
                            <font>
                               <Font name="Bell MT" size="18.0" />
                            </font>
@@ -234,17 +235,17 @@
                               <Insets />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#start" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: none;" text="Result">
+                        <Button mnemonicParsing="false" onAction="#start" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: none;" text="Result" textFill="WHITE">
                            <font>
                               <Font name="Bell MT" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: none;" text="Log out">
+                        <Button mnemonicParsing="false" onAction="#logout" prefHeight="42.0" prefWidth="39.0" style="-fx-background-radius: 100; -fx-background-color: #61DEF9; -fx-border-color: WHITE; -fx-border-radius: 100;" text="Log out">
                            <font>
-                              <Font name="Bell MT" size="18.0" />
+                              <Font name="Bell MT" size="7.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="100.0" />
+                              <Insets left="111.0" />
                            </HBox.margin>
                         </Button>
                      </children>
@@ -333,19 +334,19 @@
                         </AnchorPane>
                      </children>
                   </Pane>
-                  <Pane prefHeight="454.0" prefWidth="151.0" style="-fx-background-color: #5F9EA0;" GridPane.rowIndex="1">
+                  <Pane prefHeight="454.0" prefWidth="151.0" style="-fx-background-color: #61DEF9;" GridPane.rowIndex="1">
                      <children>
-                        <Label fx:id="nameOFUser" alignment="CENTER" contentDisplay="CENTER" layoutX="-3.0" layoutY="138.0" prefHeight="161.0" prefWidth="194.0" text="Welcome" textAlignment="CENTER" textFill="#003636" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                        <Label fx:id="nameOFUser" alignment="CENTER" contentDisplay="CENTER" layoutX="-8.0" layoutY="139.0" prefHeight="161.0" prefWidth="194.0" text="Welcome" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                            <font>
                               <Font name="Bell MT Bold" size="36.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="170.0" fitWidth="134.0" layoutX="22.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="170.0" fitWidth="134.0" layoutX="26.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/Student.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="UserIdcome" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="279.0" prefHeight="56.0" prefWidth="188.0" textAlignment="CENTER" textFill="#003636" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                        <Label fx:id="UserIdcome" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="243.0" prefHeight="56.0" prefWidth="188.0" textAlignment="CENTER" textFill="#003636" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                            <font>
                               <Font name="Bell MT Bold" size="36.0" />
                            </font>
@@ -356,82 +357,45 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Login_plane" layoutX="221.0" layoutY="205.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="630.0" AnchorPane.bottomAnchor="197.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="197.0">
+      <AnchorPane fx:id="Login_plane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="630.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="184.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="197.0">
          <children>
-            <GridPane alignment="center" hgap="10" layoutX="10.0" layoutY="10.0" onDragDetected="#SubmitNextQuestion" prefHeight="400.0" prefWidth="606.0" style="-fx-background-color: #5F9EA0;" vgap="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <padding>
-                  <Insets left="40.0" right="40.0" />
-               </padding>
-               <columnConstraints>
-                  <ColumnConstraints halignment="RIGHT" maxWidth="Infinity" minWidth="0.0" prefWidth="0.0" />
-                  <ColumnConstraints hgrow="ALWAYS" maxWidth="Infinity" minWidth="159.0" prefWidth="405.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints />
-                  <RowConstraints />
-                  <RowConstraints />
-                  <RowConstraints />
-                  <RowConstraints />
-                  <RowConstraints />
-                  <RowConstraints />
-                  <RowConstraints />
-                  <RowConstraints />
-                  <RowConstraints />
-               </rowConstraints>
+            <Pane prefHeight="443.0" prefWidth="290.0" style="-fx-background-color: #61DEF9;">
                <children>
-                  <Label prefHeight="75.0" prefWidth="212.0" text="Student Login" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.rowSpan="1">
-                     <font>
-                        <Font name="Wingdings" size="24.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="20" left="0" right="0" top="20" />
-                     </GridPane.margin>
-                     <graphic>
-                        <ImageView fitHeight="70.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/Student.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Label>
-                  <AnchorPane prefHeight="35.0" prefWidth="510.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                     <children>
-                        <ImageView fitHeight="31.0" fitWidth="36.0" layoutX="27.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="4.0" AnchorPane.topAnchor="0.0">
-                           <image>
-                              <Image url="@../Images/Student.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="emailIdField" layoutX="76.0" prefHeight="35.0" prefWidth="426.0" promptText="User id" style="-fx-background-color: #FCF8FF; -fx-background-radius: 40;" />
-                     </children>
-                  </AnchorPane>
-                  <Button fx:id="submitButton" defaultButton="true" onAction="#login" prefHeight="31.0" prefWidth="170.0" style="-fx-background-color: #347e7e; -fx-border-radius: 100; -fx-border-color: black; -fx-background-radius: 100;" text="Submit" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="1">
-                     <GridPane.margin>
-                        <Insets bottom="20.0" right="60.0" top="20.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <AnchorPane layoutX="60.0" layoutY="208.0" prefHeight="35.0" prefWidth="510.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
-                     <children>
-                        <ImageView fitHeight="54.0" fitWidth="31.0" layoutX="27.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-19.0" AnchorPane.topAnchor="0.0">
-                           <image>
-                              <Image url="@../Images/iconfinder_lock-24_103178.png" />
-                           </image>
-                        </ImageView>
-                        <PasswordField fx:id="passwordField" layoutX="76.0" prefHeight="35.0" prefWidth="426.0" promptText="Password" style="-fx-background-color: #FCF8FF; -fx-background-radius: 40;" />
-                     </children>
-                  </AnchorPane>
-                  <Button mnemonicParsing="false" onAction="#Forget" prefWidth="569.0" style="-fx-background-color: inheritance ;" text="Forget Password ?" textAlignment="CENTER" textFill="#0043ff" underline="true" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="350.0" />
-                     </GridPane.margin>
-                  </Button>
+                  <ImageView fitHeight="284.0" fitWidth="224.0" layoutX="33.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/img.png" />
+                     </image>
+                  </ImageView>
                </children>
-            </GridPane>
+            </Pane>
+            <Label layoutX="369.0" layoutY="123.0" prefHeight="40.0" prefWidth="182.0" text="Student Login" textFill="#60d6e1">
+               <font>
+                  <Font name="Arial Bold" size="26.0" />
+               </font>
+            </Label>
+            <TextField fx:id="emailIdField" layoutX="376.0" layoutY="207.0" promptText="User name" style="-fx-background-color: transparent; -fx-border-color: #61DEF9; -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField fx:id="passwordField" layoutX="376.0" layoutY="265.0" promptText="Password" style="-fx-border-width: 0px 0px 2px 0px; -fx-background-color: transparent; -fx-border-color: #61DEF9;" />
+            <Button fx:id="submitButton" layoutX="397.0" layoutY="326.0" mnemonicParsing="false" onAction="#login" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: #61DEF9;" text="Login" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Hyperlink layoutX="503.0" layoutY="406.0" onAction="#Forget" text="Forget Password" />
+            <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="345.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/lock2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="51.0" layoutX="426.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/User.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="345.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/person.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <Button fx:id="Closebutton2" layoutX="1342.0" layoutY="24.0" mnemonicParsing="false" onAction="#minimize" prefHeight="40.0" prefWidth="45.0" style="-fx-background-color: inheritance ;" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="3.0">
@@ -443,5 +407,10 @@
             </ImageView>
          </graphic>
       </Button>
+      <ImageView fitHeight="44.0" fitWidth="47.0" layoutX="1468.0" layoutY="761.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/logoFAJ1.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

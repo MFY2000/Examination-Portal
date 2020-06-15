@@ -58,11 +58,11 @@ public class LoginController implements Login_plane{
     @FXML public RadioButton C;
     @FXML public Button Submit;
 
-
-    public AnchorPane Result_plane;
-    public Label correctAnswer;
-    public Label wrongAnswer;
-    public Label TotalAnswer;
+    @FXML public AnchorPane Result_plane;
+    @FXML public Label correctAnswer;
+    @FXML public Label wrongAnswer;
+    @FXML public Label TotalAnswer;
+    @FXML
     public Label Percentage;
 
 
@@ -109,6 +109,8 @@ public class LoginController implements Login_plane{
     public TableColumn<Product,String> timeofsubmit;
 
     ArrayList<Product> listitem = new ArrayList<Product>();
+    private Timeline timeline;
+    private Integer horse,minute,timeSeconds;
 
     public void login(ActionEvent event) throws SQLException, IOException,Exception {
 
@@ -170,13 +172,9 @@ public class LoginController implements Login_plane{
         showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter a password");
         System.exit(1);
     }
-    public void PopUpExxam(ActionEvent event) {
-
-    }
     public void QuizDisplay(ActionEvent event) throws IOException {
 //        AnchorPane pane3 = FXMLLoader.load(getClass().getResource("FXML/Course_plane.fxml"));
 //        ExamShowPane.getChildren().setAll(pane3);
-        System.out.println("Hello1");
 
         ExamShowPane.setOpacity(0);
         ExamShowPane.setDisable(true);
@@ -336,8 +334,7 @@ public class LoginController implements Login_plane{
         jdb.insertRecord((""+temp) ,(""+(temp2*100)),date.get());
         Closebutton2.setDisable(false);
     }
-    private Timeline timeline;
-    private Integer horse,minute,timeSeconds;
+
     public void handleTime() {
         if (timeline != null) {
             timeline.stop();
@@ -410,8 +407,6 @@ public class LoginController implements Login_plane{
         return list;
     }
     public void start(ActionEvent e) {
-        System.out.println("Hello333");
-
         ExamShowPane.setOpacity(0);
         ExamShowPane.setDisable(true);
 
@@ -433,7 +428,6 @@ public class LoginController implements Login_plane{
         table.setItems(getProduct(listitem));
     }
     public void logout(ActionEvent e){
-        System.out.println("Hello");
         jdbcDao.setUserId();
         Student_plane.setOpacity(0);
         Student_plane.setDisable(true);
@@ -441,7 +435,6 @@ public class LoginController implements Login_plane{
         Login_plane.setDisable(false);
     }
     public void displayDashborad(ActionEvent event) {
-        System.out.println("Hello22");
 
         ExamShowPane.setOpacity(100);
         ExamShowPane.setDisable(false);
