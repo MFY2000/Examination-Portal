@@ -5,33 +5,19 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="761.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox prefHeight="554.0" prefWidth="216.0" style="-fx-background-color: #303c4f;">
+      <VBox layoutY="67.0" prefHeight="487.0" prefWidth="216.0" style="-fx-background-color: #61DEF9; -fx-background-radius: 0 60 0 0;">
          <children>
-            <Pane prefHeight="554.0" prefWidth="210.0">
+            <Pane prefHeight="493.0" prefWidth="216.0" style="-fx-background-radius: 0 60 0 0;">
                <children>
-                  <HBox layoutX="-2.0" prefHeight="67.0" prefWidth="224.0">
-                     <children>
-                        <Pane prefHeight="67.0" prefWidth="219.0" style="-fx-background-color: #61DEF9;">
-                           <children>
-                              <Label layoutX="28.0" layoutY="17.0" prefHeight="34.0" prefWidth="157.0" text="Student Pannel" textFill="WHITE">
-                                 <font>
-                                    <Font name="Gadugi Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                     </children>
-                  </HBox>
                   <Pane layoutY="83.0" prefHeight="44.0" prefWidth="216.0">
                      <children>
-                        <Button layoutX="9.0" layoutY="1.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="140.0" style="-fx-background-color: trnrt;" text="Dashboared" textFill="#b3b9c4">
+                        <Button layoutX="9.0" layoutY="1.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="140.0" style="-fx-background-color: trnrt;" text="Dashboared" textFill="#797f89">
                            <font>
                               <Font name="Corbel Light" size="17.0" />
                            </font>
@@ -40,7 +26,7 @@
                   </Pane>
                   <Pane layoutX="2.0" layoutY="134.0" prefHeight="44.0" prefWidth="216.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="132.0" style="-fx-background-color: trnrt;" text="  Give Exam" textFill="#b3b9c4">
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="132.0" style="-fx-background-color: trnrt;" text="  Give Exam" textFill="#797f89">
                            <font>
                               <Font name="Corbel Light" size="17.0" />
                            </font>
@@ -49,14 +35,14 @@
                   </Pane>
                   <Pane layoutX="2.0" layoutY="184.0" prefHeight="44.0" prefWidth="216.0">
                      <children>
-                        <Button layoutX="-2.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="118.0" style="-fx-background-color: trnrt;" text="Result" textFill="#b3b9c4">
+                        <Button layoutX="-2.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="118.0" style="-fx-background-color: trnrt;" text="Result" textFill="#797f89">
                            <font>
                               <Font size="17.0" />
                            </font>
                         </Button>
                      </children>
                   </Pane>
-                  <ImageView fitHeight="235.0" fitWidth="173.0" layoutX="22.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 10%;">
+                  <ImageView fitHeight="235.0" fitWidth="173.0" layoutX="22.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 40%;">
                      <image>
                         <Image url="@../Images/img.png" />
                      </image>
@@ -65,14 +51,19 @@
             </Pane>
          </children>
       </VBox>
-      <Pane layoutX="216.0" prefHeight="67.0" prefWidth="546.0" style="-fx-background-color: #fff;">
+      <Pane layoutX="1.0" prefHeight="67.0" prefWidth="761.0" style="-fx-background-color: #fff;">
          <children>
-            <Label layoutX="26.0" layoutY="20.0" prefHeight="27.0" prefWidth="224.0" text="FAJ EXAMINATION SYSTEM">
+            <Button layoutX="658.0" layoutY="20.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="74.0" style="-fx-background-color: #61DEF9;" text="Log out" textFill="WHITE" />
+            <Label layoutX="80.0" layoutY="17.0" prefHeight="34.0" prefWidth="184.0" text="Student Pannel" textFill="#61def9">
                <font>
-                  <Font size="18.0" />
+                  <Font name="DejaVu Sans Mono Bold" size="20.0" />
                </font>
             </Label>
-            <Button layoutX="453.0" layoutY="20.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" style="-fx-background-color: #61DEF9;" text="Log out" textFill="WHITE" />
+            <ImageView fitHeight="50.0" fitWidth="59.0" layoutX="27.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/person.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Pane layoutX="223.0" layoutY="72.0" prefHeight="478.0" prefWidth="530.0" style="-fx-background-color: #fff;">
@@ -80,6 +71,11 @@
             <Pane layoutX="41.0" layoutY="14.0" prefHeight="127.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-border-color: #333;" />
             <Pane layoutX="292.0" layoutY="14.0" prefHeight="127.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-border-color: #333;" />
             <Pane layoutX="12.0" layoutY="168.0" prefHeight="255.0" prefWidth="506.0" style="-fx-background-color: #fff; -fx-border-color: #333;" />
+            <Label layoutX="343.0" layoutY="437.0" prefHeight="27.0" prefWidth="173.0" text="FAJ EXAMINATION SYSTEM" textFill="#0d839a">
+               <font>
+                  <Font name="Chilanka Regular" size="12.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
