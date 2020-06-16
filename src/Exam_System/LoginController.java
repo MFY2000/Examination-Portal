@@ -16,13 +16,20 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.util.Duration;
@@ -32,6 +39,10 @@ import java.util.ArrayList;
 
 
 public class LoginController implements Login_plane{
+    public Label TotalQuizDone;
+    public Label lastQuizMask;
+    public Pane Chart;
+
     //main plane
     @FXML private AnchorPane Main_plane;
     @FXML private Button Closebutton;
@@ -142,10 +153,9 @@ public class LoginController implements Login_plane{
             infoBox("Login Successful!", null, "Failed");
             Student_plane.setOpacity(100);
             Student_plane.setDisable(false);
-            UserIdcome.setText(jdbcDao.getUserId());
             Login_plane.setOpacity(0);
             Login_plane.setDisable(true);
-
+            Chart();
 
 
         }
@@ -438,6 +448,24 @@ public class LoginController implements Login_plane{
 
         ExamShowPane.setOpacity(100);
         ExamShowPane.setDisable(false);
+    }
+
+    public void  Chart(){
+        final CategoryAxis xAxis = new CategoryAxis();
+        final NumberAxis yAxis = new NumberAxis();
+        xAxis.setLabel("Month");
+
+        final LineChart<String,Number> lineChart =
+                new LineChart<String,Number>(xAxis,yAxis);
+
+        XYChart.Series series = new XYChart.Series();
+        series.setName("My portfolio");
+
+        series.getData().add(new XYChart.Data("Dec", 25));
+
+
+        Chart.getChildren().setAll(lineChart);
+        lineChart.getData().add(series);
     }
 
 }

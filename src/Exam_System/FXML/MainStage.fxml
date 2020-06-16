@@ -2,23 +2,15 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -196,165 +188,101 @@
             <Button layoutX="34.0" layoutY="22.0" mnemonicParsing="false" onAction="#BackToplane" prefHeight="42.0" prefWidth="108.0" style="-fx-background-color: White ;" text="Back to plane" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Student_plane" disable="true" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="518.0" prefWidth="714.0" style="-fx-border-color: #FFF;" AnchorPane.rightAnchor="409.0" AnchorPane.topAnchor="179.0">
+      <AnchorPane fx:id="Student_plane" disable="true" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="554.0" prefWidth="761.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="134.805" AnchorPane.leftAnchor="387.2" AnchorPane.rightAnchor="387.2" AnchorPane.topAnchor="134.804">
          <children>
-            <GridPane layoutX="2.0" layoutY="-351.0" prefHeight="817.0" prefWidth="720.0" style="-fx-background-color: #5F9EA0;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="120.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="531.0" minWidth="10.0" prefWidth="456.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="400.0" minHeight="10.0" percentHeight="6.0" prefHeight="56.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="523.0" minHeight="10.0" prefHeight="519.0" vgrow="SOMETIMES" />
-               </rowConstraints>
+            <VBox layoutY="67.0" prefHeight="487.0" prefWidth="216.0" style="-fx-background-color: #61DEF9; -fx-background-radius: 0 60 0 0;">
                <children>
-                  <HBox prefHeight="34.0" prefWidth="173.0" style="-fx-background-color: #61DEF9;">
+                  <Pane prefHeight="493.0" prefWidth="216.0" style="-fx-background-radius: 0 60 0 0;">
                      <children>
-                        <Label prefHeight="34.0" prefWidth="154.0" text="Student Pannel">
-                           <font>
-                              <Font name="Bell MT Bold" size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="39.0" prefWidth="527.0" style="-fx-background-color: #61DEF9;" GridPane.columnIndex="1">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#displayDashborad" prefHeight="34.0" prefWidth="129.0" style="-fx-background-color: none;" text="Dashboard" textFill="WHITE">
-                           <font>
-                              <Font name="Baskerville Old Face" size="18.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#QuizDisplay" prefHeight="38.0" prefWidth="105.0" style="-fx-background-color: none;" text="Exam" textFill="WHITE">
-                           <font>
-                              <Font name="Bell MT" size="18.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#start" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: none;" text="Result" textFill="WHITE">
-                           <font>
-                              <Font name="Bell MT" size="18.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#logout" prefHeight="42.0" prefWidth="39.0" style="-fx-background-radius: 100; -fx-background-color: #61DEF9; -fx-border-color: WHITE; -fx-border-radius: 100;" text="Log out">
-                           <font>
-                              <Font name="Bell MT" size="7.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="111.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <Pane prefHeight="200.0" prefWidth="471.0" style="-fx-background-color: #fff;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <children>
-                        <Separator layoutX="-2.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="438.0" prefWidth="6.0" />
-                        <AnchorPane fx:id="Course_plane" disable="true" layoutX="-1.0" opacity="0.0" prefHeight="454.0" prefWidth="530.0">
+                        <Pane layoutY="83.0" prefHeight="44.0" prefWidth="216.0">
                            <children>
-                              <ComboBox fx:id="combobox" editable="true" layoutX="260.0" layoutY="229.0" onAction="#EnterPin" prefWidth="150.0" promptText="Felid" />
-                              <AnchorPane fx:id="pinbox" focusTraversable="true" layoutX="132.0" layoutY="242.0" prefHeight="126.0" prefWidth="284.0" visible="false">
-                                 <children>
-                                    <Button layoutX="85.0" layoutY="93.0" mnemonicParsing="false" onAction="#checkingPin" style="-fx-background-color: #12a4d9; -fx-border-color: wHITE;" text="Sumbit">
-                                       <font>
-                                          <Font name="System Bold Italic" size="14.0" />
-                                       </font>
-                                    </Button>
-                                    <Label layoutX="7.0" layoutY="41.0" prefHeight="27.0" prefWidth="101.0" text="Enter the Pin :">
-                                       <font>
-                                          <Font name="System Bold Italic" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <PasswordField fx:id="pincode" layoutX="119.0" layoutY="42.0" promptText="Pin code" />
-                                 </children>
-                              </AnchorPane>
-                              <Label layoutX="164.0" layoutY="149.0" prefHeight="47.0" prefWidth="208.0" text="Quiz/Exam">
+                              <Button layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#displayDashborad" prefHeight="42.0" prefWidth="216.0" style="-fx-background-color: trnrt;" text="Dashboared" textFill="#797f89">
                                  <font>
-                                    <Font name="System Bold Italic" size="32.0" />
+                                    <Font name="Corbel Light" size="17.0" />
                                  </font>
-                              </Label>
-                              <Label layoutX="131.0" layoutY="231.0" text="Selecte the course">
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="2.0" layoutY="134.0" prefHeight="44.0" prefWidth="216.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#QuizDisplay" prefHeight="44.0" prefWidth="216.0" style="-fx-background-color: trnrt;" text="  Give Exam" textFill="#797f89">
                                  <font>
-                                    <Font name="System Bold Italic" size="14.0" />
+                                    <Font name="Corbel Light" size="17.0" />
                                  </font>
-                              </Label>
+                              </Button>
                            </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="ExamShowPane" layoutX="-1.0" layoutY="4.0" prefHeight="429.0" prefWidth="530.0">
+                        </Pane>
+                        <Pane layoutX="2.0" layoutY="184.0" prefHeight="44.0" prefWidth="216.0">
                            <children>
-                              <Separator layoutX="-188.0" layoutY="-3.0" prefHeight="13.0" prefWidth="711.0" AnchorPane.bottomAnchor="439.4" AnchorPane.leftAnchor="-188.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-3.0" />
-                              <AnchorPane layoutX="21.0" layoutY="163.0" prefHeight="127.0" prefWidth="118.0" AnchorPane.rightAnchor="385.0">
-                                 <children>
-                                    <ImageView fitHeight="96.0" fitWidth="118.0" layoutX="8.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../Images/Quiz.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="7.0" layoutY="93.0" prefHeight="42.0" prefWidth="96.0" text="Quiz/ Exam">
-                                       <font>
-                                          <Font name="System Bold Italic" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Button layoutX="-3.0" mnemonicParsing="false" onAction="#QuizDisplay" prefHeight="136.0" prefWidth="126.0" style="-fx-background-color: White;" />
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane layoutX="145.0" layoutY="163.0" prefHeight="136.0" prefWidth="96.0">
-                                 <children>
-                                    <ImageView fitHeight="96.0" fitWidth="118.0" layoutX="8.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../Images/list.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="7.0" layoutY="93.0" onDragDetected="#start" prefHeight="42.0" prefWidth="96.0" text="Result">
-                                       <font>
-                                          <Font name="System Bold Italic" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Button layoutX="-3.0" mnemonicParsing="false" onAction="#start" prefHeight="136.0" prefWidth="107.0" style="-fx-background-color: White;" />
-                                 </children>
-                              </AnchorPane>
+                              <Button layoutX="-2.0" mnemonicParsing="false" onAction="#start" prefHeight="44.0" prefWidth="216.0" style="-fx-background-color: trnrt;" text="Result" textFill="#797f89">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Button>
                            </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="ResultVeiw_plane" disable="true" layoutX="-1.0" opacity="0.0" prefHeight="458.0" prefWidth="527.0">
-                           <children>
-                              <TableView fx:id="table" layoutY="19.0" prefHeight="439.0" prefWidth="527.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <columns>
-                                    <TableColumn fx:id="id" prefWidth="42.39999544620514" text="S.NO" />
-                                    <TableColumn fx:id="QuizNameOfResult" prefWidth="187.99999237060547" text="Quiz Name" />
-                                    <TableColumn fx:id="Total" prefWidth="56.800048828125" text="Total" />
-                                    <TableColumn fx:id="Correct" prefWidth="76.79998779296875" text="Correct" />
-                                    <TableColumn fx:id="timeofsubmit" prefWidth="93.5999755859375" text="Time" />
-                                    <TableColumn fx:id="PercentageOfResult" editable="false" minWidth="0.0" prefWidth="71.20001831054685" sortable="false" text="Percentage" />
-                                 </columns>
-                              </TableView>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="454.0" prefWidth="151.0" style="-fx-background-color: #61DEF9;" GridPane.rowIndex="1">
-                     <children>
-                        <Label fx:id="nameOFUser" alignment="CENTER" contentDisplay="CENTER" layoutX="-8.0" layoutY="139.0" prefHeight="161.0" prefWidth="194.0" text="Welcome" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-                           <font>
-                              <Font name="Bell MT Bold" size="36.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="170.0" fitWidth="134.0" layoutX="26.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                        </Pane>
+                        <ImageView fitHeight="235.0" fitWidth="173.0" layoutX="22.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 40%;">
                            <image>
-                              <Image url="@../Images/Student.png" />
+                              <Image url="@../Images/img.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="UserIdcome" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="243.0" prefHeight="56.0" prefWidth="188.0" textAlignment="CENTER" textFill="#003636" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-                           <font>
-                              <Font name="Bell MT Bold" size="36.0" />
-                           </font>
-                        </Label>
                      </children>
                   </Pane>
                </children>
-            </GridPane>
+            </VBox>
+            <Pane layoutX="1.0" prefHeight="67.0" prefWidth="761.0" style="-fx-background-color: #fff;">
+               <children>
+                  <Button layoutX="658.0" layoutY="20.0" mnemonicParsing="false" onAction="#logout" prefHeight="27.0" prefWidth="74.0" style="-fx-background-color: #61DEF9;" text="Log out" textFill="WHITE" />
+                  <Label layoutX="80.0" layoutY="17.0" prefHeight="34.0" prefWidth="184.0" text="Student Pannel" textFill="#61def9">
+                     <font>
+                        <Font name="DejaVu Sans Mono Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="50.0" fitWidth="59.0" layoutX="27.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/person.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="223.0" layoutY="72.0" prefHeight="478.0" prefWidth="530.0" style="-fx-background-color: #fff;">
+               <children>
+                  <Pane layoutX="41.0" layoutY="14.0" prefHeight="127.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-border-color: #333;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="20.0" layoutY="12.0" prefHeight="48.0" prefWidth="155.0" text="Last Quiz Mask" textAlignment="CENTER" textFill="#61def9">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lastQuizMask" layoutX="24.0" layoutY="68.0" prefHeight="48.0" prefWidth="155.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="292.0" layoutY="14.0" prefHeight="127.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-border-color: #333;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="18.0" layoutY="10.0" prefHeight="48.0" prefWidth="155.0" text="Total Quiz Done" textAlignment="CENTER" textFill="#61def9">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TotalQuizDone" layoutX="22.0" layoutY="66.0" prefHeight="48.0" prefWidth="155.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="Chart" layoutX="12.0" layoutY="168.0" prefHeight="255.0" prefWidth="506.0" style="-fx-background-color: #fff; -fx-border-color: #333;" />
+                  <Label layoutX="343.0" layoutY="437.0" prefHeight="27.0" prefWidth="173.0" text="FAJ EXAMINATION SYSTEM" textFill="#0d839a">
+                     <font>
+                        <Font name="Chilanka Regular" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="Login_plane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="630.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="190.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="190.0">
@@ -407,7 +335,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <ImageView fitHeight="44.0" fitWidth="47.0" layoutX="1468.0" layoutY="761.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="44.0" fitWidth="47.0" layoutX="1468.0" layoutY="761.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <image>
             <Image url="@../Images/logoFAJ1.png" />
          </image>
