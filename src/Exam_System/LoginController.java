@@ -128,7 +128,7 @@ public class LoginController implements Login_plane{
 
     public void login(ActionEvent event) throws SQLException, IOException,Exception {
 
-        Login_plane
+        System.out.println(Login_plane.getHeight()+" "+Login_plane.getHeight());
 
         Window owner = submitButton.getScene().getWindow();
 
