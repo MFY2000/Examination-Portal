@@ -16,7 +16,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="171.0" layoutY="54.0" prefHeight="46.0" prefWidth="174.0" text="Add Course" textFill="#e52165">
+      <Label layoutX="171.0" layoutY="54.0" prefHeight="46.0" prefWidth="215.0" text="Add Course" textFill="#e52165">
          <font>
             <Font name="System Bold Italic" size="31.0" />
          </font>
@@ -27,6 +27,6 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="22.0" layoutX="223.0" layoutY="232.0" mnemonicParsing="false" onAction="#courseSubmit" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: #0d1137; -fx-border-color: white;" text="Submit" textFill="WHITE" />
+      <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="22.0" layoutX="223.0" layoutY="232.0" mnemonicParsing="false" onAction="#courseSubmit" prefHeight="46.0" prefWidth="69.0" style="-fx-background-color: #0d1137; -fx-border-color: white;" text="Submit" textFill="WHITE" />
    </children>
 </AnchorPane>
