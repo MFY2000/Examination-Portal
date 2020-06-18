@@ -196,7 +196,7 @@
                      <children>
                         <Pane layoutY="83.0" prefHeight="44.0" prefWidth="216.0">
                            <children>
-                              <Button layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#displayDashborad" prefHeight="42.0" prefWidth="216.0"  text="Dashboared" textFill="#797f89">
+                              <Button layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#displayDashborad" prefHeight="42.0" prefWidth="216.0" text="Dashboared" textFill="#797f89">
                                  <font>
                                     <Font name="Corbel Light" size="17.0" />
                                  </font>
@@ -285,7 +285,7 @@
             </Pane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Login_plane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="630.0" style="-fx-background-color: #fff; -fx-border-color: black;" AnchorPane.bottomAnchor="190.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="190.0">
+      <AnchorPane fx:id="Login_plane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="630.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);;" AnchorPane.bottomAnchor="190.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="190.0">
          <children>
             <Pane prefHeight="443.0" prefWidth="290.0" style="-fx-background-color: #61DEF9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="339.6" AnchorPane.topAnchor="0.0">
                <children>
