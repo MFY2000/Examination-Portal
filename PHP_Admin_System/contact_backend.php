@@ -26,12 +26,23 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']))
                 header("Location: contact.php?error=Message is required");
                 exit();
             }else{
+                $to="gamaportal8@gmail.com";
+                $subject="Contact to FAJ EXAMINATION SYSTEM";
+                $messages="asasdas";
+                $headers="From: gamaportal8@gmail.com";
+                if(mail($to,$subject,$messages,$headers)){
+                    echo "mail Send Successfull";
+                }else{
+                    echo "not";
+                }
+
             $sql = "INSERT INTO `contact` (`id`,`name`, `email`, `message`) VALUES (NULL, '$name', '$email', '$message');";
             
             $result = mysqli_query($conn,$sql); 
-
+            //mail sender in php
+           
             header("Location: login_page.php");
-	exit();
+	        exit();
             }
          }
 }else{
