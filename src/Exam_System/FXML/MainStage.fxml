@@ -287,8 +287,7 @@
       </AnchorPane>
 
       <AnchorPane fx:id="Login_plane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="630.0" style="-fx-background-color: #fff; -fx-border-color: black;" AnchorPane.bottomAnchor="190.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="190.0">
-      <AnchorPane fx:id="Login_plane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="630.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);;" AnchorPane.bottomAnchor="190.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="190.0">
-         <children>
+          <children>
             <Pane prefHeight="443.0" prefWidth="290.0" style="-fx-background-color: #61DEF9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="339.6" AnchorPane.topAnchor="0.0">
                <children>
                   <ImageView fitHeight="284.0" fitWidth="224.0" layoutX="33.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
