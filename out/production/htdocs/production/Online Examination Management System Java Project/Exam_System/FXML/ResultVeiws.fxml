@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="ResultVeiw" prefHeight="519.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.ResultVeiw">
+
+    <children>
+      <TableView fx:id="table" prefHeight="519.0" prefWidth="530.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="42.39999544620514" text="S.NO" />
+            <TableColumn fx:id="QuizName" prefWidth="187.99999237060547" text="Quiz Name" />
+            <TableColumn fx:id="Total" prefWidth="56.800048828125" text="Total" />
+            <TableColumn fx:id="Correct" prefWidth="76.79998779296875" text="Correct" />
+            <TableColumn fx:id="timeofsubmit" prefWidth="93.5999755859375" text="Time" />
+          <TableColumn fx:id="Percentage" editable="false" minWidth="0.0" prefWidth="71.20001831054685" sortable="false" text="Percentage" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
