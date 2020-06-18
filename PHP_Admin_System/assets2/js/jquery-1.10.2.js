@@ -593,7 +593,7 @@ function isArraylike( obj ) {
 }
 var Sizzle =
 /*!
- * Sizzle CSS Selector Engine v1.10.16
+ * Sizzle Exam_System.CSS Selector Engine v1.10.16
  * http://sizzlejs.com/
  *
  * Copyright 2013 jQuery Foundation, Inc. and other contributors
@@ -671,8 +671,8 @@ var i,
 	// http://www.w3.org/TR/css3-syntax/#characters
 	characterEncoding = "(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",
 
-	// Loosely modeled on CSS identifier characters
-	// An unquoted value should be a CSS identifier http://www.w3.org/TR/css3-selectors/#attribute-selectors
+	// Loosely modeled on Exam_System.CSS identifier characters
+	// An unquoted value should be a Exam_System.CSS identifier http://www.w3.org/TR/css3-selectors/#attribute-selectors
 	// Proper syntax: http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
 	identifier = characterEncoding.replace( "w", "w#" ),
 
@@ -726,7 +726,7 @@ var i,
 	rsibling = /[+~]/,
 	rescape = /'|\\/g,
 
-	// CSS escapes http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
+	// Exam_System.CSS escapes http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
 	runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig" ),
 	funescape = function( _, escaped, escapedWhitespace ) {
 		var high = "0x" + escaped - 0x10000;
@@ -6429,7 +6429,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 })();
 
 
-// A method for quickly swapping in/out CSS properties to get correct calculations.
+// A method for quickly swapping in/out Exam_System.CSS properties to get correct calculations.
 jQuery.swap = function( elem, options, callback, args ) {
 	var ret, name,
 		old = {};
@@ -6707,7 +6707,7 @@ jQuery.extend({
 				return;
 			}
 
-			// If a number was passed in, add 'px' to the (except for certain CSS properties)
+			// If a number was passed in, add 'px' to the (except for certain Exam_System.CSS properties)
 			if ( type === "number" && !jQuery.cssNumber[ origName ] ) {
 				value += "px";
 			}
@@ -6722,7 +6722,7 @@ jQuery.extend({
 			if ( !hooks || !("set" in hooks) || (value = hooks.set( elem, value, extra )) !== undefined ) {
 
 				// Support: IE
-				// Swallow errors from 'invalid' CSS values (#5509)
+				// Swallow errors from 'invalid' Exam_System.CSS values (#5509)
 				try {
 					// Support: Chrome, Safari
 					// Setting style to blank string required to delete "style: x !important;"

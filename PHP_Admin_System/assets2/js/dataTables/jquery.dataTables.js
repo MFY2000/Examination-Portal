@@ -3909,8 +3909,8 @@
 	
 		// If there is a width attr, we want to attach an event listener which
 		// allows the table sizing to automatically adjust when the window is
-		// resized. Use the width attr rather than CSS, since we can't know if the
-		// CSS is a relative value or absolute - DOM read is always px.
+		// resized. Use the width attr rather than Exam_System.CSS, since we can't know if the
+		// Exam_System.CSS is a relative value or absolute - DOM read is always px.
 		if ( tableWidthAttr ) {
 			table.style.width = _fnStringToCss( tableWidthAttr );
 	
@@ -3953,7 +3953,7 @@
 	
 	
 	/**
-	 * Convert a CSS unit width to pixels (e.g. 2em)
+	 * Convert a Exam_System.CSS unit width to pixels (e.g. 2em)
 	 *  @param {string} width width to be converted
 	 *  @param {node} parent parent to get the with for (required for relative widths) - optional
 	 *  @returns {int} width in pixels
@@ -4044,7 +4044,7 @@
 	
 	
 	/**
-	 * Append a CSS unit (only if required) to a string
+	 * Append a Exam_System.CSS unit (only if required) to a string
 	 *  @param {string} value to css-ify
 	 *  @returns {string} value with css unit
 	 *  @memberof DataTable#oApi
@@ -5082,7 +5082,7 @@
 		
 		/**
 		 * This function will make DataTables recalculate the column sizes, based on the data
-		 * contained in the table and the sizes applied to the columns (in the DOM, CSS or
+		 * contained in the table and the sizes applied to the columns (in the DOM, Exam_System.CSS or
 		 * through the sWidth parameter). This can be useful when the width of the table's
 		 * parent element changes (for example a window resize).
 		 *  @param {boolean} [bRedraw=true] Redraw the table or not, you will typically want to
@@ -9371,7 +9371,7 @@
 	
 	
 		/**
-		 * An array of CSS classes that should be applied to displayed rows. This
+		 * An array of Exam_System.CSS classes that should be applied to displayed rows. This
 		 * array may be of any length, and DataTables will apply each class
 		 * sequentially, looping when required.
 		 *  @type array
@@ -11014,7 +11014,7 @@
 		 * certain layout, or you have a large number of columns in the table, you
 		 * can enable x-scrolling to show the table in a viewport, which can be
 		 * scrolled. This property can be `true` which will allow the table to
-		 * scroll horizontally when needed, or any CSS unit, or a number (in which
+		 * scroll horizontally when needed, or any Exam_System.CSS unit, or a number (in which
 		 * case it will be treated as a pixel measurement). Setting as simply `true`
 		 * is recommended.
 		 *  @type boolean|string
@@ -11039,7 +11039,7 @@
 		 * might otherwise do when x-scrolling is enabled. For example if you have a
 		 * table which requires to be well spaced, this parameter is useful for
 		 * "over-sizing" the table, and thus forcing scrolling. This property can by
-		 * any CSS unit, or a number (in which case it will be treated as a pixel
+		 * any Exam_System.CSS unit, or a number (in which case it will be treated as a pixel
 		 * measurement).
 		 *  @type string
 		 *  @default <i>blank string - i.e. disabled</i>
@@ -11063,7 +11063,7 @@
 		 * to the given height, and enable scrolling for any data which overflows the
 		 * current viewport. This can be used as an alternative to paging to display
 		 * a lot of data in a small area (although paging and scrolling can both be
-		 * enabled at the same time). This property can be any CSS unit, or a number
+		 * enabled at the same time). This property can be any Exam_System.CSS unit, or a number
 		 * (in which case it will be treated as a pixel measurement).
 		 *  @type string
 		 *  @default <i>blank string - i.e. disabled</i>
@@ -11946,7 +11946,7 @@
 	
 	
 		/**
-		 * Defining the width of the column, this parameter may take any CSS value
+		 * Defining the width of the column, this parameter may take any Exam_System.CSS value
 		 * (3em, 20px etc). DataTables applies 'smart' widths to columns which have not
 		 * been given a specific width through this interface ensuring that the table
 		 * remains readable.

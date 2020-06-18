@@ -459,18 +459,21 @@ public class LoginController implements Login_plane{
         listOf = jdb.getFromDatabase();
         if(listOf.size() != 0){
             final CategoryAxis xAxis = new CategoryAxis();
-            final CategoryAxis yAxis = new CategoryAxis();
+            final NumberAxis yAxis = new NumberAxis();
             xAxis.setLabel("Quiz");
             yAxis.setLabel("Marks");
 
-            final LineChart<String,String> lineChart = new LineChart<String,String>(xAxis,yAxis);
+            final LineChart<String,Number> lineChart = new LineChart<String,Number>(xAxis,yAxis);
 
             XYChart.Series series = new XYChart.Series();
             series.setName("My Quiz");
             int i;
-
+            float temp;
             for(i = 0;i< listOf.size();i++){
-                series.getData().add(new XYChart.Data(listOf.get(i).getQuiz(),listOf.get(i).getPercentage()));
+                temp = Float.parseFloat(listOf.get(i).getPercentage());
+                System.out.println((Float.parseFloat(listOf.get(i).getPercentage())));
+                series.getData().add(new XYChart.Data(listOf.get(i).getQuiz(),temp));
+
             }
 
             lastQuizMask.setText(listOf.get(i-1).getCorrect());
