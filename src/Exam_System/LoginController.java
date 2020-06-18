@@ -16,6 +16,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
@@ -453,21 +454,40 @@ public class LoginController implements Login_plane{
     }
 
     public void  Chart(){
-        final CategoryAxis xAxis = new CategoryAxis();
-        final NumberAxis yAxis = new NumberAxis();
-        xAxis.setLabel("Month");
+        ArrayList<Product> listOf = new ArrayList<Product>();
 
-        final LineChart<String,Number> lineChart =
-                new LineChart<String,Number>(xAxis,yAxis);
+        listOf = jdb.getFromDatabase();
+        if(listOf.size() != 0){
+            final CategoryAxis xAxis = new CategoryAxis();
+            final CategoryAxis yAxis = new CategoryAxis();
+            xAxis.setLabel("Quiz");
+            yAxis.setLabel("Marks");
+            final LineChart<String,String> lineChart = new LineChart<String,String>(xAxis,yAxis);
+            XYChart.Series series = new XYChart.Series();
+            series.setName("My Quiz");
+            int i;
 
-        XYChart.Series series = new XYChart.Series();
-        series.setName("My portfolio");
+            for(i = 0;i< listOf.size();i++){
 
-        series.getData().add(new XYChart.Data("Dec", 25));
+                series.getData().add(new XYChart.Data(listOf.get(i).getQuiz(),listOf.get(i).getPercentage()));
 
+            }
 
-        Chart.getChildren().setAll(lineChart);
-        lineChart.getData().add(series);
+            lastQuizMask.setText(listOf.get(i).getCorrect());
+            TotalQuizDone.setText(listOf.get(i).getQuiz());
+
+            lineChart.setPrefSize(506,255);
+
+            Chart.getChildren().setAll(lineChart);
+            lineChart.getData().add(series);
+
+        }
+        else {
+            Label b = new Label("No record found :)");
+            Chart.getChildren().setAll(b);
+            lastQuizMask.setText("No record found");
+            TotalQuizDone.setText("No record found");
+        }
     }
 
 }

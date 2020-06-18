@@ -248,5 +248,4 @@ public class SQL_db extends varabile implements Method {
     public static String getQuizTime() {
         return QuizTime;
     }
-
 }
