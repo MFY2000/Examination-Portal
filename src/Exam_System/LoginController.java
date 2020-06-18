@@ -128,6 +128,8 @@ public class LoginController implements Login_plane{
 
     public void login(ActionEvent event) throws SQLException, IOException,Exception {
 
+        Login_plane
+
         Window owner = submitButton.getScene().getWindow();
 
         if(emailIdField.getText().isEmpty()) {
