@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="731.0" style="-fx-border-color: #FFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.StudentPlane">
+   <children>
+      <GridPane layoutX="-1.0" layoutY="2.0" prefHeight="555.0" prefWidth="731.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="140.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="531.0" minWidth="10.0" prefWidth="456.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="447.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="523.0" minHeight="10.0" prefHeight="519.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <HBox prefHeight="34.0" prefWidth="173.0" style="-fx-background-color: #d4ffff;">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="154.0" text="Student Pannel">
+                     <font>
+                        <Font name="Bell MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="34.0" prefWidth="456.0" style="-fx-background-color: #d4ffff;" GridPane.columnIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Log out">
+                     <HBox.margin>
+                        <Insets left="430.0" top="3.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Consolas Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d4ffff;" GridPane.rowIndex="1">
+               <children>
+                  <Button layoutY="251.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="207.0" style="-fx-background-color: none;" text="Dashbord">
+                     <font>
+                        <Font name="Consolas Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="289.0" mnemonicParsing="false" onAction="#PopUpExxam" prefHeight="0.0" prefWidth="207.0" style="-fx-background-color: none;" text="Give Exam">
+                     <font>
+                        <Font name="Consolas Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="329.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="207.0" style="-fx-background-color: none;" text="Results">
+                     <font>
+                        <Font name="Consolas Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="136.0" fitWidth="161.0" layoutX="45.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Student.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="-1.0" layoutY="369.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="207.0" style="-fx-background-color: none;" text="Sign Out">
+                     <font>
+                        <Font name="Consolas Bold" size="19.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="471.0" style="-fx-background-color: #fff;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Separator layoutX="-2.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="519.0" prefWidth="5.0" />
+                  <AnchorPane fx:id="ExamShowPane" layoutX="-8.0" prefHeight="519.0" prefWidth="530.0">
+                     <children>
+                        <Label fx:id="nameOFUser" layoutX="21.0" layoutY="14.0" prefHeight="62.0" prefWidth="230.0" text="Welcome to" textFill="#003636">
+                           <font>
+                              <Font name="Bell MT Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane layoutX="21.0" layoutY="163.0" prefHeight="127.0" prefWidth="118.0">
+                           <children>
+                              <ImageView fitHeight="96.0" fitWidth="118.0" layoutX="8.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/Quiz.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="93.0" prefHeight="42.0" prefWidth="96.0" text="Quiz/ Exam">
+                                 <font>
+                                    <Font name="System Bold Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="-3.0" mnemonicParsing="false" onAction="#QuizDisplay" prefHeight="136.0" prefWidth="126.0" style="-fx-background-color: INHERITENCE;" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="145.0" layoutY="163.0" prefHeight="136.0" prefWidth="96.0">
+                           <children>
+                              <ImageView fitHeight="96.0" fitWidth="118.0" layoutX="8.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/list.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="7.0" layoutY="93.0" prefHeight="42.0" prefWidth="96.0" text="Quiz/ Exam">
+                                 <font>
+                                    <Font name="System Bold Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="-3.0" mnemonicParsing="false" prefHeight="136.0" prefWidth="107.0" style="-fx-background-color: INHERITENCE;" />
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <Separator layoutX="-1.0" layoutY="31.0" prefHeight="9.0" prefWidth="735.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="30.0" />
+   </children>
+</AnchorPane>

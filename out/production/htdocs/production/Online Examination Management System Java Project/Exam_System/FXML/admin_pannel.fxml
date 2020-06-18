@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="731.0" style="-fx-border-color: #FFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam_System.Admin_Controller">
+   <children>
+      <GridPane layoutX="-1.0" layoutY="2.0" prefHeight="555.0" prefWidth="731.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="140.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="531.0" minWidth="10.0" prefWidth="456.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="447.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="523.0" minHeight="10.0" prefHeight="519.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox prefHeight="34.0" prefWidth="173.0" style="-fx-background-color: #d4ffff;">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="154.0" text="  Admin Pannel">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="34.0" prefWidth="456.0" style="-fx-background-color: #d4ffff;" GridPane.columnIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Log out">
+                     <HBox.margin>
+                        <Insets left="430.0" top="3.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Consolas Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d4ffff;" GridPane.rowIndex="1">
+               <children>
+                  <Button layoutY="179.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="207.0" style="-fx-background-color: none;" text="Dashbord">
+                     <font>
+                        <Font name="Consolas Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="248.0" mnemonicParsing="false" onAction="#PopUpExxam" prefHeight="69.0" prefWidth="207.0" style="-fx-background-color: none;" text="Create Exam">
+                     <font>
+                        <Font name="Consolas Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="317.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="207.0" style="-fx-background-color: none;" text="Results">
+                     <font>
+                        <Font name="Consolas Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="136.0" fitWidth="161.0" layoutX="35.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Admin.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="471.0" style="-fx-background-color: #fff;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Separator layoutX="-2.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="519.0" prefWidth="5.0" />
+                  <AnchorPane fx:id="ExamShowPane" layoutX="18.0" layoutY="13.0" prefHeight="486.0" prefWidth="489.0" />
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <Separator layoutX="3.0" layoutY="35.0" prefHeight="1.0" prefWidth="727.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="34.0" />
+   </children>
+</AnchorPane>
