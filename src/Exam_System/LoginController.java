@@ -43,6 +43,7 @@ public class LoginController implements Login_plane{
     public Label TotalQuizDone;
     public Label lastQuizMask;
     public Pane Chart;
+    public Label UCategoryAxis;
 
     //main plane
     @FXML private AnchorPane Main_plane;
@@ -78,7 +79,6 @@ public class LoginController implements Login_plane{
     @FXML private PasswordField pincode;
 
     @FXML private AnchorPane ExamShowPane;
-    @FXML private Label UserIdcome;
 
     @FXML private AnchorPane Login_plane;
     @FXML private TextField emailIdField;
@@ -158,6 +158,7 @@ public class LoginController implements Login_plane{
             Student_plane.setDisable(false);
             Login_plane.setOpacity(0);
             Login_plane.setDisable(true);
+            UCategoryAxis.setText(jdbcDao.getUserId());
             Chart();
 
 
@@ -331,7 +332,6 @@ public class LoginController implements Login_plane{
         jdb.insertRecord((""+temp) ,(""+(temp2*100)),date.get());
         Closebutton2.setDisable(false);
     }
-
     public void handleTime() {
         if (timeline != null) {
             timeline.stop();
@@ -452,7 +452,6 @@ public class LoginController implements Login_plane{
         ExamShowPane.setOpacity(100);
         ExamShowPane.setDisable(false);
     }
-
     public void  Chart(){
         ArrayList<Product> listOf = new ArrayList<Product>();
 
@@ -462,19 +461,19 @@ public class LoginController implements Login_plane{
             final CategoryAxis yAxis = new CategoryAxis();
             xAxis.setLabel("Quiz");
             yAxis.setLabel("Marks");
+
             final LineChart<String,String> lineChart = new LineChart<String,String>(xAxis,yAxis);
+
             XYChart.Series series = new XYChart.Series();
             series.setName("My Quiz");
             int i;
 
             for(i = 0;i< listOf.size();i++){
-
                 series.getData().add(new XYChart.Data(listOf.get(i).getQuiz(),listOf.get(i).getPercentage()));
-
             }
 
-            lastQuizMask.setText(listOf.get(i).getCorrect());
-            TotalQuizDone.setText(listOf.get(i).getQuiz());
+            lastQuizMask.setText(listOf.get(i-1).getCorrect());
+            TotalQuizDone.setText(listOf.get(i-1).getQuiz());
 
             lineChart.setPrefSize(506,255);
 
