@@ -130,7 +130,6 @@ public class LoginController implements Login_plane{
     }
     public void login(ActionEvent event) throws SQLException, IOException,Exception {
 
-        System.out.println(Login_plane.getHeight()+" "+Login_plane.getHeight());
 
         Window owner = submitButton.getScene().getWindow();
 
@@ -469,7 +468,6 @@ public class LoginController implements Login_plane{
             float temp;
             for(i = 0;i< listitem.size();i++){
                 temp = Float.parseFloat(listitem.get(i).getPercentage());
-                System.out.println((Float.parseFloat(listitem.get(i).getPercentage())));
                 series.getData().add(new XYChart.Data(listitem.get(i).getQuiz(),temp));
 
             }
