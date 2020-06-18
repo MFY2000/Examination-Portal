@@ -78,7 +78,7 @@ public class LoginController implements Login_plane{
     @FXML private AnchorPane pinbox;
     @FXML private PasswordField pincode;
 
-    @FXML private AnchorPane ExamShowPane;
+    @FXML private Pane ExamShowPane;
 
     @FXML private AnchorPane Login_plane;
     @FXML private TextField emailIdField;
@@ -97,7 +97,9 @@ public class LoginController implements Login_plane{
 
 
     private jdbcDao jdb = new jdbcDao();
+
     @FXML private AnchorPane ResultVeiw_plane;
+
     public TableView<Product> table;
 
     public TableColumn<Product,Integer> id;
@@ -126,7 +128,6 @@ public class LoginController implements Login_plane{
         alert.initOwner(owner);
         alert.show();
     }
-
     public void login(ActionEvent event) throws SQLException, IOException,Exception {
 
         System.out.println(Login_plane.getHeight()+" "+Login_plane.getHeight());

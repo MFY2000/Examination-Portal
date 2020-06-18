@@ -200,7 +200,7 @@
             <Button layoutX="34.0" layoutY="22.0" mnemonicParsing="false" onAction="#BackToplane" prefHeight="42.0" prefWidth="108.0" style="-fx-background-color: White ;" text="Back to plane" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Student_plane" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="553.0" prefWidth="762.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" AnchorPane.bottomAnchor="183.0" AnchorPane.leftAnchor="373.0" AnchorPane.rightAnchor="373.0" AnchorPane.topAnchor="183.0">
+      <AnchorPane fx:id="Student_plane" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="553.0" prefWidth="762.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" AnchorPane.bottomAnchor="185.0" AnchorPane.leftAnchor="373.0" AnchorPane.rightAnchor="373.0" AnchorPane.topAnchor="185.0">
          <children>
             <VBox layoutY="67.0" prefHeight="487.0" prefWidth="216.0" style="-fx-background-color: #61DEF9; -fx-background-radius: 0 60 0 0;">
                <children>
@@ -300,7 +300,7 @@
                   </Label>
                </children>
             </Pane>
-            <AnchorPane fx:id="Course_plane" opacity="0.0" prefHeight="478.0" prefWidth="530.0" AnchorPane.rightAnchor="8.600000000000023" AnchorPane.topAnchor="72.0">
+            <AnchorPane fx:id="Course_plane" disable="true" opacity="0.0" prefHeight="478.0" prefWidth="530.0" AnchorPane.rightAnchor="8.600000000000023" AnchorPane.topAnchor="72.0">
                <children>
                   <ComboBox fx:id="combobox" editable="true" layoutX="260.0" layoutY="229.0" onAction="#EnterPin" prefWidth="150.0" promptText="Felid" />
                   <AnchorPane fx:id="pinbox" focusTraversable="true" layoutX="132.0" layoutY="242.0" prefHeight="126.0" prefWidth="284.0" visible="false">
@@ -347,7 +347,7 @@
          </children>
       </AnchorPane>
 
-      <AnchorPane fx:id="Login_plane" disable="true" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="630.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" AnchorPane.bottomAnchor="240.5" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="240.5">
+      <AnchorPane fx:id="Login_plane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="630.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" AnchorPane.bottomAnchor="240.5" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="240.5">
           <children>
             <Pane prefHeight="443.0" prefWidth="290.0" style="-fx-background-color: #61DEF9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="339.6" AnchorPane.topAnchor="0.0">
                <children>
