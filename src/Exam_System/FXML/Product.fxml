@@ -8,10 +8,10 @@
    <children>
       <TableView fx:id="table" prefHeight="519.0" prefWidth="530.0">
          <columns>
-            <TableColumn fx:id="id" prefWidth="90.40002286434174" text="S.NO" />
-            <TableColumn fx:id="UserID" prefWidth="162.39997100830078" text="UserID" />
-            <TableColumn fx:id="Total" prefWidth="90.40002286434174" text="Total" />
-            <TableColumn fx:id="Correct" prefWidth="90.40002286434174" text="Correct" />
+            <TableColumn fx:id="id" prefWidth="90.40002286434174" style="-fx-background-color: #61DEF9;" text="S.NO" />
+            <TableColumn fx:id="UserID" prefWidth="162.39997100830078" style="-fx-background-color: #61DEF9;" text="UserID" />
+            <TableColumn fx:id="Total" prefWidth="90.40002286434174" style="-fx-background-color: #61DEF9;" text="Total" />
+            <TableColumn fx:id="Correct" prefWidth="90.40002286434174" style="-fx-background-color: #61DEF9;" text="Correct" />
          </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
