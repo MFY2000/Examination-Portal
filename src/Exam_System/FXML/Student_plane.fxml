@@ -7,73 +7,54 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Student_plane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="714.0" style="-fx-border-color: #FFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <GridPane layoutX="2.0" layoutY="-351.0" prefHeight="817.0" prefWidth="720.0" style="-fx-background-color: #5F9EA0;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="120.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="531.0" minWidth="10.0" prefWidth="456.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints maxHeight="400.0" minHeight="10.0" percentHeight="6.0" prefHeight="56.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="523.0" minHeight="10.0" prefHeight="519.0" vgrow="SOMETIMES" />
-         </rowConstraints>
+      <AnchorPane fx:id="Course_plane" layoutX="9.0" layoutY="10.0" prefHeight="478.0" prefWidth="530.0">
          <children>
-            <Pane prefHeight="200.0" prefWidth="471.0" style="-fx-background-color: #fff;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ComboBox fx:id="combobox" editable="true" layoutX="260.0" layoutY="229.0" onAction="#EnterPin" prefWidth="150.0" promptText="Felid" />
+            <AnchorPane fx:id="pinbox" focusTraversable="true" layoutX="132.0" layoutY="242.0" prefHeight="126.0" prefWidth="284.0" visible="false">
                <children>
-                  <AnchorPane fx:id="Course_plane" layoutX="-1.0" prefHeight="478.0" prefWidth="530.0">
-                     <children>
-                        <ComboBox fx:id="combobox" editable="true" layoutX="260.0" layoutY="229.0" onAction="#EnterPin" prefWidth="150.0" promptText="Felid" />
-                        <AnchorPane fx:id="pinbox" focusTraversable="true" layoutX="132.0" layoutY="242.0" prefHeight="126.0" prefWidth="284.0" visible="false">
-                           <children>
-                              <Button layoutX="85.0" layoutY="93.0" mnemonicParsing="false" onAction="#checkingPin" style="-fx-background-color: #12a4d9; -fx-border-color: wHITE;" text="Sumbit">
-                                 <font>
-                                    <Font name="System Bold Italic" size="14.0" />
-                                 </font>
-                              </Button>
-                              <Label layoutX="7.0" layoutY="41.0" prefHeight="27.0" prefWidth="101.0" text="Enter the Pin :">
-                                 <font>
-                                    <Font name="System Bold Italic" size="14.0" />
-                                 </font>
-                              </Label>
-                              <PasswordField fx:id="pincode" layoutX="119.0" layoutY="42.0" promptText="Pin code" />
-                           </children>
-                        </AnchorPane>
-                        <Label layoutX="164.0" layoutY="149.0" prefHeight="47.0" prefWidth="208.0" text="Quiz/Exam">
-                           <font>
-                              <Font name="System Bold Italic" size="32.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="131.0" layoutY="231.0" text="Selecte the course">
-                           <font>
-                              <Font name="System Bold Italic" size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="ResultVeiw_plane" disable="true" layoutX="-1.0" opacity="0.0" prefHeight="478.0" prefWidth="527.0">
-                     <children>
-                        <TableView fx:id="table" layoutY="19.0" prefHeight="439.0" prefWidth="527.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <columns>
-                              <TableColumn fx:id="id" prefWidth="42.39999544620514" text="S.NO" />
-                              <TableColumn fx:id="QuizNameOfResult" prefWidth="187.99999237060547" text="Quiz Name" />
-                              <TableColumn fx:id="Total" prefWidth="56.800048828125" text="Total" />
-                              <TableColumn fx:id="Correct" prefWidth="76.79998779296875" text="Correct" />
-                              <TableColumn fx:id="timeofsubmit" prefWidth="93.5999755859375" text="Time" />
-                              <TableColumn fx:id="PercentageOfResult" editable="false" minWidth="0.0" prefWidth="71.20001831054685" sortable="false" text="Percentage" />
-                           </columns>
-                        </TableView>
-                     </children>
-                  </AnchorPane>
+                  <Button layoutX="85.0" layoutY="93.0" mnemonicParsing="false" onAction="#checkingPin" style="-fx-background-color: #12a4d9; -fx-border-color: wHITE;" text="Sumbit">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="7.0" layoutY="41.0" prefHeight="27.0" prefWidth="101.0" text="Enter the Pin :">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="pincode" layoutX="119.0" layoutY="42.0" promptText="Pin code" />
                </children>
-            </Pane>
+            </AnchorPane>
+            <Label layoutX="164.0" layoutY="149.0" prefHeight="47.0" prefWidth="208.0" text="Quiz/Exam">
+               <font>
+                  <Font name="System Bold Italic" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="131.0" layoutY="231.0" text="Selecte the course">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
          </children>
-      </GridPane>
+      </AnchorPane>
+      <AnchorPane fx:id="ResultVeiw_plane" disable="true" layoutX="9.0" layoutY="10.0" opacity="0.0" prefHeight="478.0" prefWidth="527.0">
+         <children>
+            <TableView fx:id="table" layoutY="19.0" prefHeight="439.0" prefWidth="527.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="id" prefWidth="42.39999544620514" text="S.NO" />
+                  <TableColumn fx:id="QuizNameOfResult" prefWidth="187.99999237060547" text="Quiz Name" />
+                  <TableColumn fx:id="Total" prefWidth="56.800048828125" text="Total" />
+                  <TableColumn fx:id="Correct" prefWidth="76.79998779296875" text="Correct" />
+                  <TableColumn fx:id="timeofsubmit" prefWidth="93.5999755859375" text="Time" />
+                  <TableColumn fx:id="PercentageOfResult" editable="false" minWidth="0.0" prefWidth="71.20001831054685" sortable="false" text="Percentage" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
