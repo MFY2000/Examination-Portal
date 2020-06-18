@@ -411,7 +411,6 @@ public class LoginController implements Login_plane{
         ResultVeiw_plane.setOpacity(100);
         ResultVeiw_plane.setDisable(false);
 
-        jdbcDao jdb = new jdbcDao();
         listitem = jdb.getFromDatabase();
         getData();
     }
@@ -454,10 +453,9 @@ public class LoginController implements Login_plane{
         ExamShowPane.setDisable(false);
     }
     public void  Chart(){
-        ArrayList<Product> listOf = new ArrayList<Product>();
 
-        listOf = jdb.getFromDatabase();
-        if(listOf.size() != 0){
+        listitem = jdb.getFromDatabase();
+        if(listitem.size() != 0){
             final CategoryAxis xAxis = new CategoryAxis();
             final NumberAxis yAxis = new NumberAxis();
             xAxis.setLabel("Quiz");
@@ -469,15 +467,15 @@ public class LoginController implements Login_plane{
             series.setName("My Quiz");
             int i;
             float temp;
-            for(i = 0;i< listOf.size();i++){
-                temp = Float.parseFloat(listOf.get(i).getPercentage());
-                System.out.println((Float.parseFloat(listOf.get(i).getPercentage())));
-                series.getData().add(new XYChart.Data(listOf.get(i).getQuiz(),temp));
+            for(i = 0;i< listitem.size();i++){
+                temp = Float.parseFloat(listitem.get(i).getPercentage());
+                System.out.println((Float.parseFloat(listitem.get(i).getPercentage())));
+                series.getData().add(new XYChart.Data(listitem.get(i).getQuiz(),temp));
 
             }
 
-            lastQuizMask.setText(listOf.get(i-1).getCorrect());
-            TotalQuizDone.setText(listOf.get(i-1).getQuiz());
+            lastQuizMask.setText(listitem.get(i-1).getCorrect());
+            TotalQuizDone.setText(listitem.get(i-1).getQuiz());
 
             lineChart.setPrefSize(506,255);
 

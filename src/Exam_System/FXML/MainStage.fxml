@@ -330,7 +330,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="ResultVeiw_plane" opacity="0.0" prefHeight="478.0" prefWidth="530.0" AnchorPane.rightAnchor="8.600000000000023" AnchorPane.topAnchor="72.0">
+            <AnchorPane fx:id="ResultVeiw_plane" disable="true" opacity="0.0" prefHeight="478.0" prefWidth="530.0" AnchorPane.rightAnchor="8.600000000000023" AnchorPane.topAnchor="72.0">
                <children>
                   <TableView fx:id="table" layoutY="19.0" prefHeight="439.0" prefWidth="527.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <columns>
