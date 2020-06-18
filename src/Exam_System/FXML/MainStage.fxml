@@ -330,16 +330,16 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="ResultVeiw_plane" disable="true" opacity="0.0" prefHeight="478.0" prefWidth="530.0" AnchorPane.rightAnchor="8.600000000000023" AnchorPane.topAnchor="72.0">
+            <AnchorPane fx:id="ResultVeiw_plane" disable="true" opacity="0.0" prefHeight="478.0" prefWidth="527.0" AnchorPane.rightAnchor="8.600000000000023" AnchorPane.topAnchor="72.0">
                <children>
                   <TableView fx:id="table" layoutY="19.0" prefHeight="439.0" prefWidth="527.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <columns>
-                        <TableColumn fx:id="id" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="S.NO" />
-                        <TableColumn fx:id="QuizNameOfResult" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Quiz Name" />
-                        <TableColumn fx:id="Total" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Total" />
-                        <TableColumn fx:id="Correct" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Correct" />
-                        <TableColumn fx:id="timeofsubmit" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Time" />
-                        <TableColumn fx:id="PercentageOfResult" editable="false" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" sortable="false" text="Percentage" />
+                        <TableColumn fx:id="id" prefWidth="42.39999544620514" style="-fx-background-color: #61DEF9; -fx-border-width: 0px 2px 2px 0px; -fx-border-color: #333;" text="S.NO" />
+                        <TableColumn fx:id="QuizNameOfResult" prefWidth="187.99999237060547" style="-fx-background-color: #61DEF9; -fx-border-color: #333; -fx-border-width: 0px 2px 2px 0px;" text="Quiz Name" />
+                        <TableColumn fx:id="Total" prefWidth="56.800048828125" style="-fx-background-color: #61DEF9; -fx-border-color: #333; -fx-border-width: 0px 2px 2px 0px;" text="Total" />
+                        <TableColumn fx:id="Correct" prefWidth="76.79998779296875" style="-fx-background-color: #61DEF9 #61DEF9; -fx-border-color: #333; -fx-border-width: 0px 2px 2px 0px;" text="Correct" />
+                        <TableColumn fx:id="timeofsubmit" prefWidth="76.0" style="-fx-background-color: #61DEF9; -fx-border-color: #333; -fx-border-width: 0px 2px 2px 0px;" text="Time" />
+                        <TableColumn fx:id="PercentageOfResult" editable="false" minWidth="0.0" prefWidth="90.0" sortable="false" style="-fx-background-color: #61DEF9; -fx-border-color: #333; -fx-border-width: 0px 2px 2px 0px;" text="Percentage" />
                      </columns>
                   </TableView>
                </children>
