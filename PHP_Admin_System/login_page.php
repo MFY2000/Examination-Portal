@@ -16,7 +16,7 @@
      	<label>User Name</label>
      	<input type="text" name="username" placeholder="User Name"><br>
 
-     	<label>User Name</label>
+     	<label>Password</label>
      	<input type="password" name="password" placeholder="Password"><br>
 
 		
