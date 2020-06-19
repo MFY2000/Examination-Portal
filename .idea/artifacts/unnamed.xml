@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="unnamed">
+    <output-path>$PROJECT_DIR$/out/artifacts/unnamed</output-path>
+    <root id="root">
+      <element id="archive" name="htdocs.jar">
+        <element id="module-output" name="htdocs" />
+        <element id="library" level="application" name="activation" />
+        <element id="library" level="application" name="javafx-swt" />
+        <element id="library" level="application" name="javax.mail1" />
+        <element id="library" level="application" name="mysql-connector-java-8.0.20" />
+      </element>
+    </root>
+  </artifact>
+</component>

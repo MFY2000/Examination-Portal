@@ -200,7 +200,7 @@
             <Button layoutX="34.0" layoutY="22.0" mnemonicParsing="false" onAction="#BackToplane" prefHeight="42.0" prefWidth="108.0" style="-fx-background-color: White ;" text="Back to plane" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Student_plane" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="553.0" prefWidth="762.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" AnchorPane.bottomAnchor="183.0" AnchorPane.leftAnchor="373.0" AnchorPane.rightAnchor="373.0" AnchorPane.topAnchor="183.0">
+      <AnchorPane fx:id="Student_plane" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="553.0" prefWidth="762.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" AnchorPane.bottomAnchor="185.0" AnchorPane.leftAnchor="373.0" AnchorPane.rightAnchor="373.0" AnchorPane.topAnchor="185.0">
          <children>
             <VBox layoutY="67.0" prefHeight="487.0" prefWidth="216.0" style="-fx-background-color: #61DEF9; -fx-background-radius: 0 60 0 0;">
                <children>
@@ -300,7 +300,7 @@
                   </Label>
                </children>
             </Pane>
-            <AnchorPane fx:id="Course_plane" opacity="0.0" prefHeight="478.0" prefWidth="530.0" AnchorPane.rightAnchor="8.600000000000023" AnchorPane.topAnchor="72.0">
+            <AnchorPane fx:id="Course_plane" disable="true" opacity="0.0" prefHeight="478.0" prefWidth="530.0" AnchorPane.rightAnchor="8.600000000000023" AnchorPane.topAnchor="72.0">
                <children>
                   <ComboBox fx:id="combobox" editable="true" layoutX="260.0" layoutY="229.0" onAction="#EnterPin" prefWidth="150.0" promptText="Felid" />
                   <AnchorPane fx:id="pinbox" focusTraversable="true" layoutX="132.0" layoutY="242.0" prefHeight="126.0" prefWidth="284.0" visible="false">
@@ -330,16 +330,16 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="ResultVeiw_plane" opacity="0.0" prefHeight="478.0" prefWidth="530.0" AnchorPane.rightAnchor="8.600000000000023" AnchorPane.topAnchor="72.0">
+            <AnchorPane fx:id="ResultVeiw_plane" disable="true" opacity="0.0" prefHeight="478.0" prefWidth="527.0" AnchorPane.rightAnchor="8.600000000000023" AnchorPane.topAnchor="72.0">
                <children>
                   <TableView fx:id="table" layoutY="19.0" prefHeight="439.0" prefWidth="527.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <columns>
-                        <TableColumn fx:id="id" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="S.NO" />
-                        <TableColumn fx:id="QuizNameOfResult" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Quiz Name" />
-                        <TableColumn fx:id="Total" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Total" />
-                        <TableColumn fx:id="Correct" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Correct" />
-                        <TableColumn fx:id="timeofsubmit" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Time" />
-                        <TableColumn fx:id="PercentageOfResult" editable="false" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" sortable="false" text="Percentage" />
+                        <TableColumn fx:id="id" prefWidth="42.39999544620514" style="-fx-background-color: #61DEF9; -fx-border-width: 0px 2px 2px 0px; -fx-border-color: #333;" text="S.NO" />
+                        <TableColumn fx:id="QuizNameOfResult" prefWidth="187.99999237060547" style="-fx-background-color: #61DEF9; -fx-border-color: #333; -fx-border-width: 0px 2px 2px 0px;" text="Quiz Name" />
+                        <TableColumn fx:id="Total" prefWidth="56.800048828125" style="-fx-background-color: #61DEF9; -fx-border-color: #333; -fx-border-width: 0px 2px 2px 0px;" text="Total" />
+                        <TableColumn fx:id="Correct" prefWidth="76.79998779296875" style="-fx-background-color: #61DEF9 #61DEF9; -fx-border-color: #333; -fx-border-width: 0px 2px 2px 0px;" text="Correct" />
+                        <TableColumn fx:id="timeofsubmit" prefWidth="76.0" style="-fx-background-color: #61DEF9; -fx-border-color: #333; -fx-border-width: 0px 2px 2px 0px;" text="Time" />
+                        <TableColumn fx:id="PercentageOfResult" editable="false" minWidth="0.0" prefWidth="90.0" sortable="false" style="-fx-background-color: #61DEF9; -fx-border-color: #333; -fx-border-width: 0px 2px 2px 0px;" text="Percentage" />
                      </columns>
                   </TableView>
                </children>
@@ -347,7 +347,7 @@
          </children>
       </AnchorPane>
 
-      <AnchorPane fx:id="Login_plane" disable="true" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="630.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" AnchorPane.bottomAnchor="240.5" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="240.5">
+      <AnchorPane fx:id="Login_plane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="630.0" style="-fx-background-color: #fff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" AnchorPane.bottomAnchor="240.5" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="453.0" AnchorPane.topAnchor="240.5">
           <children>
             <Pane prefHeight="443.0" prefWidth="290.0" style="-fx-background-color: #61DEF9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="339.6" AnchorPane.topAnchor="0.0">
                <children>

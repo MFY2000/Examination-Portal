@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="htdocs">
+    <output-path>$PROJECT_DIR$/out/artifacts/htdocs</output-path>
+    <root id="root">
+      <element id="archive" name="htdocs.jar">
+        <element id="module-output" name="htdocs" />
+      </element>
+    </root>
+  </artifact>
+</component>
