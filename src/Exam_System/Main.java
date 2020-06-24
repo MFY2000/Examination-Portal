@@ -1,63 +1,132 @@
 package Exam_System;
+//
 
 
-import Exam_System.db.jdbcDao;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyCodeCombination;
-import javafx.scene.input.KeyCombination;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
 
+class Candidate{
+    private String Name;
+    private int NoOFVote;
 
-public class Main extends Application {
-
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-    // main fxml through all the file are connected
-        AnchorPane root = FXMLLoader.load(getClass().getResource("FXML/MainStage.fxml"));// by-defualt method of javafx
-
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-    //for getting the screen size
-        Screen screen = Screen.getPrimary();
-        Rectangle2D bounds = screen.getVisualBounds();
-
-        primaryStage.setX(bounds.getMinX());//
-        primaryStage.setY(bounds.getMinY());
-        primaryStage.setWidth(bounds.getWidth());
-        primaryStage.setHeight(bounds.getHeight()+100);//
-
-        KeyCombination keyCombinationWin1 = new KeyCodeCombination(KeyCode.TAB, KeyCombination.ALT_ANY);
-        KeyCombination keyCombinationWin2 = new KeyCodeCombination(KeyCode.WINDOWS, KeyCombination.ALT_ANY);
-
-        root.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
-            if (keyCombinationWin1.match(event) || keyCombinationWin2.match(event) ||
-                    event.getCode() == KeyCode.WINDOWS || event.getCode() == KeyCode.ALT ) {
-                if(jdbcDao.getQuizStart()){
-                    primaryStage.close();
-                    Cheating cheat = new Cheating();
-                    cheat.start();
-                }
-                else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Don't go any way");
-                    alert.setHeaderText(null);
-                    alert.setContentText("If you go outside it will be cheating");
-                    alert.showAndWait();
-                }
-            }
-        });
-        Scene scene = new  Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+    public Candidate(String name) {
+        setName(name);
     }
 
-    public static void main(String[] args) throws Exception {launch(args); }
+    public int getNoOFVote() {
+        return NoOFVote;
+    }
+
+    public void setNoOFVote() {
+        ++NoOFVote;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        this.Name = name;
+    }
+
+    public String toString(){
+        return ("Candidate is: "+getName()+" Number of Vote: "+getNoOFVote());
+    }
+
+}
+
+class VotingMachine{
+    public ArrayList<Candidate> listOf;
+
+    public VotingMachine(){
+        listOf = new ArrayList<Candidate>();
+    }
+    public void addCandidate(String Candidatename) throws Exception {
+        for (Candidate candidate : listOf) {
+            if (candidate.getName().equals(Candidatename)) {
+                throw new Exception("Candidate name aleady Exist in the list :)");
+            }
+        }
+        listOf.add(new Candidate(Candidatename));
+    }
+    public void castVote(String name) throws Exception{
+
+        for (Candidate candidate : listOf) {
+            if (candidate.getName().equals(name)) {
+                candidate.setNoOFVote();
+                return;
+            }
+        }
+        throw new Exception("Candidate name not exist in the list :)");
+    }
+    public void Winner(){
+        int HiggestVote = 0;
+        int indexOfWinner = 0;
+        for (int i = 0; i < listOf.size(); i++) {
+            if(listOf.get(i).getNoOFVote() > HiggestVote){
+                HiggestVote = listOf.get(i).getNoOFVote();
+                indexOfWinner = i;
+            }
+        }
+        System.out.println("THe Winner Is:");
+        System.out.println(listOf.get(indexOfWinner).toString());
+    }
+    public String toString(){
+        String Candidate = "";
+        for (Candidate candidate : listOf) {
+            Candidate += candidate.toString()+"\n\n";
+        }
+        return Candidate;
+    }
+    public int candidateList(){
+        return listOf.size();
+    }
+
+
+}
+
+class test{
+    public static void main(String[] args){
+        VotingMachine machine = new VotingMachine();
+        Random randomno = new Random();
+        Scanner scan = new Scanner(System.in);
+
+        try {
+            //hardcode addCandidate
+            machine.addCandidate("Muhammad Fahad");
+            machine.addCandidate("Jaffar Abbas");
+            machine.addCandidate("M.Talha");
+            machine.addCandidate("Talha");
+            int temp = scan.nextInt();
+            System.out.println("Press \n1 -> addCandidate\n2 -> castVote\n3Veiw Result\n0 -> Exit");
+            
+            // program to hard code
+            machine.castVote("Muhammad Fahad");
+            machine.castVote("Jaffar Abbas");
+            machine.castVote("M.Talha");
+            machine.castVote("Talha");
+
+
+            // program to random
+            for (int i = 0; i < 1000; i++) {
+                machine.castVote(machine.listOf.get(randomno.nextInt(machine.candidateList())).getName());
+            }
+
+
+
+            System.out.println("Candidate List is given Below:");
+            System.out.println(machine.toString());
+            machine.Winner();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+public class Main{
+    public static void main(String[] args) throws Exception{
+        test.main(args);
+    }
 }
