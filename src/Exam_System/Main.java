@@ -1,132 +1,48 @@
 package Exam_System;
-//
 
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+import java.time.LocalDate;
 
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
-
-class Candidate{
-    private String Name;
-    private int NoOFVote;
-
-    public Candidate(String name) {
-        setName(name);
-    }
-
-    public int getNoOFVote() {
-        return NoOFVote;
-    }
-
-    public void setNoOFVote() {
-        ++NoOFVote;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        this.Name = name;
-    }
-
-    public String toString(){
-        return ("Candidate is: "+getName()+" Number of Vote: "+getNoOFVote());
+class Result {
+    public static String findDay(int month, int day, int year) {
+        int d = Integer.valueOf(day);
+        int m = Integer.valueOf(month);
+        int y = Integer.valueOf(year);
+        LocalDate date = LocalDate.of(y, m, d);
+        return date.getDayOfWeek().toString();
     }
 
 }
 
-class VotingMachine{
-    public ArrayList<Candidate> listOf;
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-    public VotingMachine(){
-        listOf = new ArrayList<Candidate>();
-    }
-    public void addCandidate(String Candidatename) throws Exception {
-        for (Candidate candidate : listOf) {
-            if (candidate.getName().equals(Candidatename)) {
-                throw new Exception("Candidate name aleady Exist in the list :)");
-            }
-        }
-        listOf.add(new Candidate(Candidatename));
-    }
-    public void castVote(String name) throws Exception{
+        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
-        for (Candidate candidate : listOf) {
-            if (candidate.getName().equals(name)) {
-                candidate.setNoOFVote();
-                return;
-            }
-        }
-        throw new Exception("Candidate name not exist in the list :)");
-    }
-    public void Winner(){
-        int HiggestVote = 0;
-        int indexOfWinner = 0;
-        for (int i = 0; i < listOf.size(); i++) {
-            if(listOf.get(i).getNoOFVote() > HiggestVote){
-                HiggestVote = listOf.get(i).getNoOFVote();
-                indexOfWinner = i;
-            }
-        }
-        System.out.println("THe Winner Is:");
-        System.out.println(listOf.get(indexOfWinner).toString());
-    }
-    public String toString(){
-        String Candidate = "";
-        for (Candidate candidate : listOf) {
-            Candidate += candidate.toString()+"\n\n";
-        }
-        return Candidate;
-    }
-    public int candidateList(){
-        return listOf.size();
-    }
+        int month = Integer.parseInt(firstMultipleInput[0]);
 
+        int day = Integer.parseInt(firstMultipleInput[1]);
 
-}
+        int year = Integer.parseInt(firstMultipleInput[2]);
 
-class test{
-    public static void main(String[] args){
-        VotingMachine machine = new VotingMachine();
-        Random randomno = new Random();
-        Scanner scan = new Scanner(System.in);
+        String res = Result.findDay(month, day, year);
 
-        try {
-            //hardcode addCandidate
-            machine.addCandidate("Muhammad Fahad");
-            machine.addCandidate("Jaffar Abbas");
-            machine.addCandidate("M.Talha");
-            machine.addCandidate("Talha");
-            int temp = scan.nextInt();
-            System.out.println("Press \n1 -> addCandidate\n2 -> castVote\n3Veiw Result\n0 -> Exit");
-            
-            // program to hard code
-            machine.castVote("Muhammad Fahad");
-            machine.castVote("Jaffar Abbas");
-            machine.castVote("M.Talha");
-            machine.castVote("Talha");
+        bufferedWriter.write(res);
+        bufferedWriter.newLine();
 
-
-            // program to random
-            for (int i = 0; i < 1000; i++) {
-                machine.castVote(machine.listOf.get(randomno.nextInt(machine.candidateList())).getName());
-            }
-
-
-
-            System.out.println("Candidate List is given Below:");
-            System.out.println(machine.toString());
-            machine.Winner();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-}
-public class Main{
-    public static void main(String[] args) throws Exception{
-        test.main(args);
+        bufferedReader.close();
+        bufferedWriter.close();
     }
 }
