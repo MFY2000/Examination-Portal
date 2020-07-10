@@ -1,1 +1,492 @@
-cGFja2FnZSBFeGFtX1N5c3RlbTsKCi8vIGxvY2FsIGZpbGVzCmltcG9ydCBFeGFtX1N5c3RlbS5kYi5qZGJjRGFvOwppbXBvcnQgamF2YS5hd3QuKjsKaW1wb3J0IGphdmEuaW8uSU9FeGNlcHRpb247CmltcG9ydCBqYXZhLm5ldC5VUklTeW50YXhFeGNlcHRpb247CmltcG9ydCBqYXZhLm5ldC5VUkw7CmltcG9ydCBqYXZhLnNxbC5TUUxFeGNlcHRpb247CmltcG9ydCBqYXZhLnV0aWwuTGlzdDsKaW1wb3J0IGphdmFmeC5hbmltYXRpb24uS2V5RnJhbWU7CmltcG9ydCBqYXZhZnguYW5pbWF0aW9uLlRpbWVsaW5lOwppbXBvcnQgamF2YWZ4LmNvbGxlY3Rpb25zLkZYQ29sbGVjdGlvbnM7CmltcG9ydCBqYXZhZnguY29sbGVjdGlvbnMuT2JzZXJ2YWJsZUxpc3Q7CmltcG9ydCBqYXZhZnguZXZlbnQuQWN0aW9uRXZlbnQ7CmltcG9ydCBqYXZhZnguZXZlbnQuRXZlbnQ7CmltcG9ydCBqYXZhZnguZXZlbnQuRXZlbnRIYW5kbGVyOwppbXBvcnQgamF2YWZ4LmZ4bWwuRlhNTDsKaW1wb3J0IGphdmFmeC5zY2VuZS5Ob2RlOwppbXBvcnQgamF2YWZ4LnNjZW5lLlNjZW5lOwppbXBvcnQgamF2YWZ4LnNjZW5lLmNoYXJ0LkNhdGVnb3J5QXhpczsKaW1wb3J0IGphdmFmeC5zY2VuZS5jaGFydC5MaW5lQ2hhcnQ7CmltcG9ydCBqYXZhZnguc2NlbmUuY2hhcnQuTnVtYmVyQXhpczsKaW1wb3J0IGphdmFmeC5zY2VuZS5jaGFydC5YWUNoYXJ0OwppbXBvcnQgamF2YWZ4LnNjZW5lLmNvbnRyb2wuKjsKaW1wb3J0IGphdmFmeC5zY2VuZS5jb250cm9sLkFsZXJ0LkFsZXJ0VHlwZTsKaW1wb3J0IGphdmFmeC5zY2VuZS5jb250cm9sLkJ1dHRvbjsKaW1wb3J0IGphdmFmeC5zY2VuZS5jb250cm9sLkxhYmVsOwppbXBvcnQgamF2YWZ4LnNjZW5lLmNvbnRyb2wuVGV4dEZpZWxkOwppbXBvcnQgamF2YWZ4LnNjZW5lLmNvbnRyb2wuY2VsbC5Qcm9wZXJ0eVZhbHVlRmFjdG9yeTsKaW1wb3J0IGphdmFmeC5zY2VuZS5pbnB1dC5Nb3VzZUV2ZW50OwppbXBvcnQgamF2YWZ4LnNjZW5lLmxheW91dC5BbmNob3JQYW5lOwppbXBvcnQgamF2YWZ4LnNjZW5lLmxheW91dC5QYW5lOwppbXBvcnQgamF2YWZ4LnN0YWdlLlN0YWdlOwppbXBvcnQgamF2YWZ4LnN0YWdlLldpbmRvdzsKaW1wb3J0IGphdmFmeC51dGlsLkR1cmF0aW9uOwppbXBvcnQgamF2YWZ4LnNjZW5lLmNvbnRyb2wuVGFibGVDb2x1bW47CmltcG9ydCBqYXZhZnguc2NlbmUuY29udHJvbC5UYWJsZVZpZXc7CmltcG9ydCBqYXZhLnV0aWwuQXJyYXlMaXN0OwoKCnB1YmxpYyBjbGFzcyBMb2dpbkNvbnRyb2xsZXIgaW1wbGVtZW50cyBMb2dpbl9wbGFuZXsKICAgIHB1YmxpYyBMYWJlbCBUb3RhbFF1aXpEb25lOwogICAgcHVibGljIExhYmVsIGxhc3RRdWl6TWFzazsKICAgIHB1YmxpYyBQYW5lIENoYXJ0OwogICAgcHVibGljIExhYmVsIFVDYXRlZ29yeUF4aXM7CgogICAgLy9tYWluIHBsYW5lCiAgICBARlhNTCBwcml2YXRlIEFuY2hvclBhbmUgTWFpbl9wbGFuZTsKICAgIEBGWE1MIHByaXZhdGUgQnV0dG9uIENsb3NlYnV0dG9uOwogICAgQEZYTUwgcHJpdmF0ZSBCdXR0b24gQ2xvc2VidXR0b24yOwoKICAgIEBGWE1MIHByaXZhdGUgQW5jaG9yUGFuZSBRdWl6X3BsYW5lOwogICAgQEZYTUwgcHJpdmF0ZSBMYWJlbCBRdWVzdGlvbk5vOwogICAgQEZYTUwgcHJpdmF0ZSBMYWJlbCBRdWl6VGltZXI7CiAgICBARlhNTCBwcml2YXRlIExhYmVsIHF1ZXN0aW9uOwogICAgQEZYTUwgcHJpdmF0ZSBSYWRpb0J1dHRvbiBCOwogICAgQEZYTUwgcHJpdmF0ZSBSYWRpb0J1dHRvbiBEOwogICAgQEZYTUwgcHJpdmF0ZSBSYWRpb0J1dHRvbiBBOwogICAgQEZYTUwgcHJpdmF0ZSBSYWRpb0J1dHRvbiBDOwogICAgQEZYTUwgcHJpdmF0ZSBCdXR0b24gU3VibWl0OwoKICAgIEBGWE1MIHByaXZhdGUgQW5jaG9yUGFuZSBSZXN1bHRfcGxhbmU7CiAgICBARlhNTCBwcml2YXRlIExhYmVsIGNvcnJlY3RBbnN3ZXI7CiAgICBARlhNTCBwcml2YXRlIExhYmVsIHdyb25nQW5zd2VyOwogICAgQEZYTUwgcHJpdmF0ZSBMYWJlbCBUb3RhbEFuc3dlcjsKICAgIEBGWE1MIHByaXZhdGUgTGFiZWwgUGVyY2VudGFnZTsKCiAgICBARlhNTCBwcml2YXRlIEFuY2hvclBhbmUgRGV0YWlsc19wbGFuZTsKICAgIEBGWE1MIHByaXZhdGUgTGFiZWwgUXVpek5hbWU7CiAgICBARlhNTCBwcml2YXRlIExhYmVsIFF1aXpUaW1lOwogICAgQEZYTUwgcHJpdmF0ZSBMYWJlbCBRdWl6Tm87CgogICAgQEZYTUwgcHJpdmF0ZSBBbmNob3JQYW5lIFN0dWRlbnRfcGxhbmU7CgogICAgQEZYTUwgcHJpdmF0ZSBBbmNob3JQYW5lIENvdXJzZV9wbGFuZTsKICAgIEBGWE1MIHByaXZhdGUgQ29tYm9Cb3ggY29tYm9ib3g7CiAgICBARlhNTCBwcml2YXRlIEFuY2hvclBhbmUgcGluYm94OwogICAgQEZYTUwgcHJpdmF0ZSBQYXNzd29yZEZpZWxkIHBpbmNvZGU7CgogICAgQEZYTUwgcHJpdmF0ZSBQYW5lIEV4YW1TaG93UGFuZTsKCiAgICBARlhNTCBwcml2YXRlIEFuY2hvclBhbmUgTG9naW5fcGxhbmU7CiAgICBARlhNTCBwcml2YXRlIFRleHRGaWVsZCBlbWFpbElkRmllbGQ7CiAgICBARlhNTCBwcml2YXRlIFBhc3N3b3JkRmllbGQgcGFzc3dvcmRGaWVsZDsKICAgIEBGWE1MIHByaXZhdGUgQnV0dG9uIHN1Ym1pdEJ1dHRvbjsKCiAgICAvLyBMb2NhbCB2YXJhaWJsZQogICAgcHJpdmF0ZSBPYnNlcnZhYmxlTGlzdDxTdHJpbmc+IENob2ljZUxpc3Q7CgogICAgcHJpdmF0ZSBBcnJheUxpc3Q8SW50ZWdlcj4gUXVlc3Rpb25OdW1iZXI7CiAgICBwcml2YXRlIEFycmF5TGlzdDxTdHJpbmc+IFF1ZXN0aW9uQW5zd2VyOwogICAgcHJpdmF0ZSBBcnJheUxpc3Q8U3RyaW5nPiBSZWFsQW5zd2VyID0gbmV3IEFycmF5TGlzdDxTdHJpbmc+KCk7CiAgICBwcml2YXRlIGludCBRTk8gPSAwOwogICAgVG9nZ2xlR3JvdXAgdGdHcm91cDsKICAgIEFycmF5TGlzdDxDaGFyYWN0ZXI+IEFuc3dlcjsKCgogICAgcHJpdmF0ZSBqZGJjRGFvIGpkYiA9IG5ldyBqZGJjRGFvKCk7CgogICAgQEZYTUwgcHJpdmF0ZSBBbmNob3JQYW5lIFJlc3VsdFZlaXdfcGxhbmU7CgogICAgcHVibGljIFRhYmxlVmlldzxQcm9kdWN0PiB0YWJsZTsKCiAgICBwdWJsaWMgVGFibGVDb2x1bW48UHJvZHVjdCxJbnRlZ2VyPiBpZDsKICAgIHB1YmxpYyBUYWJsZUNvbHVtbjxQcm9kdWN0LFN0cmluZz4gUGVyY2VudGFnZU9mUmVzdWx0OwogICAgcHVibGljIFRhYmxlQ29sdW1uPFByb2R1Y3QsU3RyaW5nPiBUb3RhbDsKICAgIHB1YmxpYyBUYWJsZUNvbHVtbjxQcm9kdWN0LFN0cmluZz4gQ29ycmVjdDsKICAgIHB1YmxpYyBUYWJsZUNvbHVtbjxQcm9kdWN0LFN0cmluZz4gUXVpek5hbWVPZlJlc3VsdDsKICAgIHB1YmxpYyBUYWJsZUNvbHVtbjxQcm9kdWN0LFN0cmluZz4gdGltZW9mc3VibWl0OwoKICAgIEFycmF5TGlzdDxQcm9kdWN0PiBsaXN0aXRlbSA9IG5ldyBBcnJheUxpc3Q8UHJvZHVjdD4oKTsKICAgIHByaXZhdGUgVGltZWxpbmUgdGltZWxpbmU7CiAgICBwcml2YXRlIEludGVnZXIgaG9yc2UsbWludXRlLHRpbWVTZWNvbmRzOwoKICAgIHByaXZhdGUgc3RhdGljIHZvaWQgaW5mb0JveChTdHJpbmcgaW5mb01lc3NhZ2UsIFN0cmluZyBoZWFkZXJUZXh0LCBTdHJpbmcgdGl0bGUpewogICAgICAgIEFsZXJ0IGFsZXJ0ID0gbmV3IEFsZXJ0KEFsZXJ0VHlwZS5DT05GSVJNQVRJT04pOwogICAgICAgIGFsZXJ0LnNldENvbnRlbnRUZXh0KGluZm9NZXNzYWdlKTsKICAgICAgICBhbGVydC5zZXRUaXRsZSh0aXRsZSk7CiAgICAgICAgYWxlcnQuc2V0SGVhZGVyVGV4dChoZWFkZXJUZXh0KTsKICAgICAgICBhbGVydC5zaG93QW5kV2FpdCgpOwogICAgfQogICAgcHJpdmF0ZSBzdGF0aWMgdm9pZCBzaG93QWxlcnQoQWxlcnQuQWxlcnRUeXBlIGFsZXJ0VHlwZSwgV2luZG93IG93bmVyLCBTdHJpbmcgdGl0bGUsIFN0cmluZyBtZXNzYWdlKSB7CiAgICAgICAgQWxlcnQgYWxlcnQgPSBuZXcgQWxlcnQoYWxlcnRUeXBlKTsKICAgICAgICBhbGVydC5zZXRUaXRsZSh0aXRsZSk7CiAgICAgICAgYWxlcnQuc2V0SGVhZGVyVGV4dChudWxsKTsKICAgICAgICBhbGVydC5zZXRDb250ZW50VGV4dChtZXNzYWdlKTsKICAgICAgICBhbGVydC5pbml0T3duZXIob3duZXIpOwogICAgICAgIGFsZXJ0LnNob3coKTsKICAgIH0KICAgIHB1YmxpYyB2b2lkIGxvZ2luKEFjdGlvbkV2ZW50IGV2ZW50KSB0aHJvd3MgU1FMRXhjZXB0aW9uLCBJT0V4Y2VwdGlvbixFeGNlcHRpb24gewoKCiAgICAgICAgV2luZG93IG93bmVyID0gc3VibWl0QnV0dG9uLmdldFNjZW5lKCkuZ2V0V2luZG93KCk7CgogICAgICAgIGlmKGVtYWlsSWRGaWVsZC5nZXRUZXh0KCkuaXNFbXB0eSgpKSB7CiAgICAgICAgICAgIHNob3dBbGVydChBbGVydFR5cGUuRVJST1IsIG93bmVyLCAiRm9ybSBFcnJvciEiLAogICAgICAgICAgICAgICAgICAgICJQbGVhc2UgZW50ZXIgeW91ciBlbWFpbCBpZCIpOwogICAgICAgICAgICByZXR1cm47CiAgICAgICAgfQogICAgICAgIGlmKHBhc3N3b3JkRmllbGQuZ2V0VGV4dCgpLmlzRW1wdHkoKSkgewogICAgICAgICAgICBzaG93QWxlcnQoQWxlcnRUeXBlLkVSUk9SLCBvd25lciwgIkZvcm0gRXJyb3IhIiwKICAgICAgICAgICAgICAgICAgICAiUGxlYXNlIGVudGVyIGEgcGFzc3dvcmQiKTsKICAgICAgICAgICAgcmV0dXJuOwogICAgICAgIH0KCiAgICAgICAgU3RyaW5nIGVtYWlsSWQgPSBlbWFpbElkRmllbGQuZ2V0VGV4dCgpOwogICAgICAgIFN0cmluZyBwYXNzd29yZCA9IHBhc3N3b3JkRmllbGQuZ2V0VGV4dCgpOwoKICAgICAgICBqZGJjRGFvIGpkYiA9IG5ldyBqZGJjRGFvKCk7CiAgICAgICAgYm9vbGVhbiBmbGFnID0gamRiLnZhbGlkYXRlKGVtYWlsSWQsIHBhc3N3b3JkKTsKCiAgICAgICAgaWYoIWZsYWcpIHsKICAgICAgICAgICAgaW5mb0JveCgiUGxlYXNlIGVudGVyIGNvcnJlY3QgRW1haWwgYW5kIFBhc3N3b3JkIiwgbnVsbCwgIkZhaWxlZCIpOwogICAgICAgIH1lbHNlIHsKICAgICAgICAgICAgaW5mb0JveCgiTG9naW4gU3VjY2Vzc2Z1bCEiLCBudWxsLCAiRmFpbGVkIik7CiAgICAgICAgICAgIFN0dWRlbnRfcGxhbmUuc2V0T3BhY2l0eSgxMDApOwogICAgICAgICAgICBTdHVkZW50X3BsYW5lLnNldERpc2FibGUoZmFsc2UpOwogICAgICAgICAgICBMb2dpbl9wbGFuZS5zZXRPcGFjaXR5KDApOwogICAgICAgICAgICBMb2dpbl9wbGFuZS5zZXREaXNhYmxlKHRydWUpOwogICAgICAgICAgICBVQ2F0ZWdvcnlBeGlzLnNldFRleHQoamRiY0Rhby5nZXRVc2VySWQoKSk7CiAgICAgICAgICAgIENoYXJ0KCk7CgoKICAgICAgICB9CiAgICB9CiAgICBwdWJsaWMgdm9pZCBBRE1JTl9DQUxMRVIoQWN0aW9uRXZlbnQgYWN0aW9uRXZlbnQpIHRocm93cyBJT0V4Y2VwdGlvbiwgVVJJU3ludGF4RXhjZXB0aW9uIHsKICAgICAgICBVUkwgdG9nbyA9IG5ldyBVUkwoImh0dHBzOi8vZ29vZ2xlLmNvbSIpOwogICAgICAgIERlc2t0b3AuZ2V0RGVza3RvcCgpLmJyb3dzZSh0b2dvLnRvVVJJKCkpOwoKICAgIH0KICAgIHB1YmxpYyB2b2lkIENsb3NlQXBwKEFjdGlvbkV2ZW50IGFjdGlvbkV2ZW50KXRocm93cyBFeGNlcHRpb257CiAgICAgICAgV2luZG93IG93bmVyID0gc3VibWl0QnV0dG9uLmdldFNjZW5lKCkuZ2V0V2luZG93KCk7CiAgICAgICAgc2hvd0FsZXJ0KEFsZXJ0LkFsZXJ0VHlwZS5FUlJPUiwgb3duZXIsICJGb3JtIEVycm9yISIsICJQbGVhc2UgZW50ZXIgYSBwYXNzd29yZCIpOwogICAgICAgIFN5c3RlbS5leGl0KDEpOwogICAgfQogICAgcHVibGljIHZvaWQgUXVpekRpc3BsYXkoQWN0aW9uRXZlbnQgZXZlbnQpIHRocm93cyBJT0V4Y2VwdGlvbiB7CiAgICAgICAgRXhhbVNob3dQYW5lLnNldE9wYWNpdHkoMCk7CiAgICAgICAgRXhhbVNob3dQYW5lLnNldERpc2FibGUodHJ1ZSk7CgogICAgICAgIENvdXJzZV9wbGFuZS5zZXRPcGFjaXR5KDEwMCk7CiAgICAgICAgQ291cnNlX3BsYW5lLnNldERpc2FibGUoZmFsc2UpOwoKICAgICAgICBmZWlsZEVudGVyKCk7CiAgICB9CiAgICBwdWJsaWMgdm9pZCBmZWlsZEVudGVyKCl7CiAgICAgICAgTGlzdDxTdHJpbmc+IEZlaWxkID0gamRiLmRpc3BsYXlGZWlsZExpc3QoKTsKICAgICAgICBDaG9pY2VMaXN0ID0gRlhDb2xsZWN0aW9ucy5vYnNlcnZhYmxlQXJyYXlMaXN0KEZlaWxkKTsKICAgICAgICBjb21ib2JveC5zZXRJdGVtcyhDaG9pY2VMaXN0KTsKICAgICAgICBjb21ib2JveC5zZXRWYWx1ZSgiRmVpbGQiKTsKICAgIH0KICAgIHB1YmxpYyB2b2lkIEVudGVyUGluKEFjdGlvbkV2ZW50IGV2ZW50KSB7CiAgICAgICAgcGluYm94LnNldFZpc2libGUodHJ1ZSk7CiAgICB9CiAgICBwdWJsaWMgdm9pZCBjaGVja2luZ1BpbihBY3Rpb25FdmVudCBldmVudCkgewogICAgICAgIGlmIChqZGIuY2hlY2tQaW4ocGluY29kZS5nZXRUZXh0KCksIChTdHJpbmcpIGNvbWJvYm94LmdldFZhbHVlKCkpKXsKICAgICAgICAgICAgLy8gdG8gY2hhbmdlIHRoZSB0aGUgcGxhbmUKICAgICAgICAgICAgU3R1ZGVudF9wbGFuZS5zZXREaXNhYmxlKHRydWUpOwogICAgICAgICAgICBTdHVkZW50X3BsYW5lLnNldE9wYWNpdHkoMCk7CiAgICAgICAgICAgIERldGFpbHNfcGxhbmUuc2V0T3BhY2l0eSgxMDApOwogICAgICAgICAgICBEZXRhaWxzX3BsYW5lLnNldERpc2FibGUoIXRydWUpOwogICAgICAgICAgICAvLwogICAgICAgICAgICBRdWl6RGV0YWlsUGxhbmUoKTsKICAgICAgICB9CiAgICAgICAgZWxzZSB7CiAgICAgICAgICAgIFdpbmRvdyBvd25lciA9IENsb3NlYnV0dG9uLmdldFNjZW5lKCkuZ2V0V2luZG93KCk7CiAgICAgICAgICAgIHNob3dBbGVydChBbGVydFR5cGUuRVJST1Isb3duZXIsIkVudGVyIGEgd3JvbmcgcGluIiwicGxzIEVudGVyIHRoZSBjb3JyZWN0IHBpbiIpOwogICAgICAgIH0KICAgIH0KICAgIHB1YmxpYyB2b2lkIFF1aXpEZXRhaWxQbGFuZSgpewogICAgICAgIFF1aXpOYW1lLnNldFRleHQoamRiLmdldFF1aXpTZWxldGUoKSk7CiAgICAgICAgUXVpek5vLnNldFRleHQoamRiY0Rhby5nZXRRdWl6Tm9vZkF0dGVtdCgpKTsKICAgICAgICBRdWl6VGltZS5zZXRUZXh0KGpkYmNEYW8uZ2V0UXVpelRpbWUoKSk7CiAgICAgICAgZ2V0UXVlc3Rpb25MaXN0KCk7CiAgICAgICAgQW5zd2VyID0gbmV3IEFycmF5TGlzdDxDaGFyYWN0ZXI+KEludGVnZXIucGFyc2VJbnQoamRiY0Rhby5nZXRRdWl6Tm9vZkF0dGVtdCgpKSk7CiAgICB9CiAgICBwdWJsaWMgdm9pZCBnZXRRdWVzdGlvbkxpc3QoKSB7CiAgICAgICAgUXVlc3Rpb25OdW1iZXIgPSAobmV3IFJhbmRvbW15KGpkYmNEYW8uZ2V0VG90YWxRdWl6UXVlc3Rpb24oKSxqZGJjRGFvLmdldFF1aXpOb29mQXR0ZW10KCkpKS5nZXRSYW5kb21BcnJheSgpOy8vIGRpcmVjdCBjcmVhdGUgY2FsbCBhbmQgZ2V0IHRoZSB2YWx1ZQogICAgICAgIENsb3NlYnV0dG9uMi5zZXREaXNhYmxlKHRydWUpOwogICAgfQogICAgcHVibGljIHZvaWQgTmV4dFF1ZXN0aW9uKCkgdGhyb3dzIEludGVycnVwdGVkRXhjZXB0aW9uIHsKICAgICAgICBRdWVzdGlvbk5vLnNldFRleHQoU3RyaW5nLnZhbHVlT2YoUU5PKSk7CiAgICAgICAgaW50IHRlbXAgPSBJbnRlZ2VyLnBhcnNlSW50KGpkYmNEYW8uZ2V0UXVpek5vb2ZBdHRlbXQoKSk7CiAgICAgICAgaWYoUU5PID09IHRlbXAtMSl7CiAgICAgICAgICAgIFN1Ym1pdC5zZXRUZXh0KCJTdWJtaXQgUXVpeiIpOwogICAgICAgICAgICBTdWJtaXQuc2V0T25BY3Rpb24oZXZlbnQgLT4gewogICAgICAgICAgICAgICAgdHJ5IHsKICAgICAgICAgICAgICAgICAgICBTdWJtaXRfQ2hlY2tBbnN3ZXIoZXZlbnQpOwogICAgICAgICAgICAgICAgfSBjYXRjaCAoU1FMRXhjZXB0aW9uIHRocm93YWJsZXMpIHsKICAgICAgICAgICAgICAgICAgICB0aHJvd2FibGVzLnByaW50U3RhY2tUcmFjZSgpOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9KTsKICAgICAgICB9CiAgICAgICAgaWYgKHRlbXAgPiBRTk8pewogICAgICAgICAgICBRdWVzdGlvbkFuc3dlciA9IG5ldyBBcnJheUxpc3Q8U3RyaW5nPigpOwogICAgICAgICAgICBRdWVzdGlvbkFuc3dlciA9IGpkYi5nZXRRdWl6RGV0YWlscyhRdWVzdGlvbk51bWJlci5nZXQoUU5PKSk7CiAgICAgICAgICAgIFJlYWxBbnN3ZXIuYWRkKFF1ZXN0aW9uQW5zd2VyLmdldCg1KSk7CiAgICAgICAgICAgIHNldFF1ZXN0aW9uKCk7CiAgICAgICAgfQogICAgfQogICAgcHVibGljIHZvaWQgc2V0UXVlc3Rpb24oKSB7CiAgICAgICAgUXVpek5vLnNldFRleHQoIiAiICsoUU5PKzEpKTsKICAgICAgICBxdWVzdGlvbi5zZXRUZXh0KCJRIC4iK1F1ZXN0aW9uQW5zd2VyLmdldCgwKSk7CiAgICAgICAgQS5zZXRUZXh0KCJBKSAiK1F1ZXN0aW9uQW5zd2VyLmdldCgxKSk7CiAgICAgICAgQi5zZXRUZXh0KCJCKSAiK1F1ZXN0aW9uQW5zd2VyLmdldCgyKSk7CiAgICAgICAgQy5zZXRUZXh0KCJDKSAiK1F1ZXN0aW9uQW5zd2VyLmdldCgzKSk7CiAgICAgICAgRC5zZXRUZXh0KCJEKSAiK1F1ZXN0aW9uQW5zd2VyLmdldCg0KSk7CgogICAgICAgIEEuZ2V0VGV4dCgpLnN1YnN0cmluZyg0KTsKICAgICAgICBCLmdldFRleHQoKS5zdWJzdHJpbmcoNCk7CiAgICAgICAgQy5nZXRUZXh0KCkuc3Vic3RyaW5nKDQpOwogICAgICAgIEQuZ2V0VGV4dCgpLnN1YnN0cmluZyg0KTsKCiAgICAgICAgQS5zZXRTZWxlY3RlZChmYWxzZSk7CiAgICAgICAgQi5zZXRTZWxlY3RlZChmYWxzZSk7CiAgICAgICAgQy5zZXRTZWxlY3RlZChmYWxzZSk7CiAgICAgICAgRC5zZXRTZWxlY3RlZChmYWxzZSk7CgogICAgfQogICAgcHVibGljIHZvaWQgU2VsZWN0ZWQoKXsKICAgICAgICBjaGFyIHNlbGV0ZSA9ICcgJzsKCiAgICAgICAgICAgIGlmKEEuaXNTZWxlY3RlZCgpKQogICAgICAgICAgICAgICAgc2VsZXRlID0gJ0EnOwoKICAgICAgICAgICAgZWxzZSBpZihCLmlzU2VsZWN0ZWQoKSkKICAgICAgICAgICAgICAgIHNlbGV0ZSA9ICdCJzsKCgogICAgICAgICAgICBlbHNlIGlmKEMuaXNTZWxlY3RlZCgpKQogICAgICAgICAgICAgICAgc2VsZXRlID0gJ0MnOwoKICAgICAgICAgICAgZWxzZSBpZihELmlzU2VsZWN0ZWQoKSkgewogICAgICAgICAgICAgICAgc2VsZXRlID0gJ0QnOwogICAgICAgICAgICB9CiAgICAgICAgICAgIEFuc3dlci5hZGQoKFFOTyksc2VsZXRlKTsKICAgIH0KICAgIHB1YmxpYyB2b2lkIFN0YXJ0UXVpeihBY3Rpb25FdmVudCBldmVudCkgdGhyb3dzIEludGVycnVwdGVkRXhjZXB0aW9uLCBTUUxFeGNlcHRpb24gewogICAgICAgIGlmIChqZGIuUXVpekFscmVhZHlHaXZlbigpKXsKICAgICAgICAgICAgV2luZG93IG93bmVyID0gQ2xvc2VidXR0b24uZ2V0U2NlbmUoKS5nZXRXaW5kb3coKTsKICAgICAgICAgICAgc2hvd0FsZXJ0KEFsZXJ0VHlwZS5FUlJPUixvd25lciwiQWxyZWFkeSBnaXZlbiIsIllvdSBoYXZlIGFscmVkeSBnaXZlIHRoaXMgUXVpeiIpOwogICAgICAgIH1lbHNlIHsKICAgICAgICAgICAgdGdHcm91cCA9IG5ldyBUb2dnbGVHcm91cCgpOwogICAgICAgIEEuc2V0VG9nZ2xlR3JvdXAodGdHcm91cCk7CiAgICAgICAgQi5zZXRUb2dnbGVHcm91cCh0Z0dyb3VwKTsKICAgICAgICBDLnNldFRvZ2dsZUdyb3VwKHRnR3JvdXApOwogICAgICAgIEQuc2V0VG9nZ2xlR3JvdXAodGdHcm91cCk7CgogICAgICAgIERldGFpbHNfcGxhbmUuc2V0T3BhY2l0eSgwKTsKICAgICAgICBEZXRhaWxzX3BsYW5lLnNldERpc2FibGUodHJ1ZSk7CgogICAgICAgIFF1aXpfcGxhbmUuc2V0RGlzYWJsZShmYWxzZSk7CiAgICAgICAgUXVpel9wbGFuZS5zZXRPcGFjaXR5KDEwMCk7CiAgICAgICAgQ2xvc2VidXR0b24yLnNldERpc2FibGUodHJ1ZSk7CiAgICAgICAgZ2V0VGltZSgpOwogICAgICAgIE5leHRRdWVzdGlvbigpOwogICAgICAgIH0KICAgIH0KICAgIHB1YmxpYyB2b2lkIFN1Ym1pdE5leHRRdWVzdGlvbigpIHRocm93cyBJbnRlcnJ1cHRlZEV4Y2VwdGlvbiB7CiAgICAgICAgUXVlc3Rpb25BbnN3ZXIuY2xlYXIoKTsKICAgICAgICBTZWxlY3RlZCgpOwogICAgICAgIFFOTysrOwogICAgICAgIE5leHRRdWVzdGlvbigpOwogICAgfQogICAgcHVibGljIHZvaWQgU3VibWl0X0NoZWNrQW5zd2VyKEFjdGlvbkV2ZW50IGV2ZW50KSB0aHJvd3MgU1FMRXhjZXB0aW9uIHsKICAgICAgICBRdWl6X3BsYW5lLnNldE9wYWNpdHkoMCk7CiAgICAgICAgUXVpel9wbGFuZS5zZXREaXNhYmxlKHRydWUpOwogICAgICAgIFJlc3VsdF9wbGFuZS5zZXRPcGFjaXR5KDEwMCk7CiAgICAgICAgUmVzdWx0X3BsYW5lLnNldERpc2FibGUoIXRydWUpOwogICAgICAgIFF1ZXN0aW9uQW5zd2VyLmNsZWFyKCk7CiAgICAgICAgU2VsZWN0ZWQoKTsKICAgICAgICBRTk8rKzsKCiAgICAgICAgY2hlY2soKTsKICAgIH0KICAgIHB1YmxpYyB2b2lkIGNoZWNrKCkgdGhyb3dzIFNRTEV4Y2VwdGlvbiB7CiAgICAgICAgaW50IHRlbXA9MDsKICAgICAgICBmb3IgKGludCBpID0gMDsgaSA8IFJlYWxBbnN3ZXIuc2l6ZSgpOyBpKyspIHsKICAgICAgICAgICAgaWYoUmVhbEFuc3dlci5nZXQoaSkubWF0Y2hlcyhTdHJpbmcudmFsdWVPZihBbnN3ZXIuZ2V0KGkpKSkpewogICAgICAgICAgICAgICAgdGVtcCsrOwogICAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIGZsb2F0IHRlbXAyID0gKChmbG9hdCkgdGVtcCAvIChmbG9hdCkgUU5PKTsKCiAgICAgICAgY29ycmVjdEFuc3dlci5zZXRUZXh0KCIiK3RlbXApOwogICAgICAgIHdyb25nQW5zd2VyLnNldFRleHQoIiIrKFFOTy10ZW1wKSk7CiAgICAgICAgVG90YWxBbnN3ZXIuc2V0VGV4dCgiIitRTk8pOwogICAgICAgIFBlcmNlbnRhZ2Uuc2V0VGV4dCgiIisodGVtcDIqMTAwKSk7CgogICAgICAgIEdldERhdGUgZGF0ZSA9IG5ldyBHZXREYXRlKCk7CiAgICAgICAgLy8KICAgICAgICBqZGIuaW5zZXJ0UmVjb3JkKCgiIit0ZW1wKSAsKCIiKyh0ZW1wMioxMDApKSxkYXRlLmdldCgpKTsKICAgICAgICBDbG9zZWJ1dHRvbjIuc2V0RGlzYWJsZShmYWxzZSk7CiAgICB9CiAgICBwdWJsaWMgdm9pZCBoYW5kbGVUaW1lKCkgewogICAgICAgIGlmICh0aW1lbGluZSAhPSBudWxsKSB7CiAgICAgICAgICAgIHRpbWVsaW5lLnN0b3AoKTsKICAgICAgICB9CgogICAgICAgIHRpbWVsaW5lID0gbmV3IFRpbWVsaW5lKCk7CiAgICAgICAgdGltZWxpbmUuc2V0Q3ljbGVDb3VudChUaW1lbGluZS5JTkRFRklOSVRFKTsKCgogICAgICAgIHRpbWVsaW5lLmdldEtleUZyYW1lcygpLmFkZCgKICAgICAgICAgICAgICAgIG5ldyBLZXlGcmFtZShEdXJhdGlvbi5zZWNvbmRzKDEpLAogICAgICAgICAgICAgICAgICAgICAgICBuZXcgRXZlbnRIYW5kbGVyKCkgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgQE92ZXJyaWRlCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBwdWJsaWMgdm9pZCBoYW5kbGUoRXZlbnQgZXZlbnQpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpZiAodGltZVNlY29uZHMgPT0gMSl7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmKG1pbnV0ZSA9PSAwKXsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRyeSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgQ2xvc2VBcHAoKTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0gY2F0Y2ggKFNRTEV4Y2VwdGlvbiB0aHJvd2FibGVzKSB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdGhyb3dhYmxlcy5wcmludFN0YWNrVHJhY2UoKTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRpbWVsaW5lLnN0b3AoKTsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbHNlewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS1taW51dGU7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0aW1lU2Vjb25kcyA9IDYwOwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGVsc2UKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS10aW1lU2Vjb25kczsKCgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8vIHVwZGF0ZSB0aW1lckxhYmVsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUXVpelRpbWVyLnNldFRleHQoIiIraG9yc2UrIiA6ICIrbWludXRlKyIgOiAiK3RpbWVTZWNvbmRzKTsKCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgICAgIH0pKTsKICAgICAgICB0aW1lbGluZS5wbGF5RnJvbVN0YXJ0KCk7CiAgICB9CiAgICBwdWJsaWMgdm9pZCBnZXRUaW1lKCl7CiAgICAgICAgaG9yc2UgPSAwMDsKICAgICAgICB0aW1lU2Vjb25kcyA9IDYwOwogICAgICAgIG1pbnV0ZSA9IEludGVnZXIucGFyc2VJbnQoamRiY0Rhby5nZXRRdWl6VGltZSgpKTsKICAgICAgICBoYW5kbGVUaW1lKCk7CiAgICB9CiAgICBwdWJsaWMgdm9pZCBDbG9zZUFwcCgpIHRocm93cyBTUUxFeGNlcHRpb24gewogICAgICAgIGludCBUb3RhbEFuc3dlciA9IEludGVnZXIucGFyc2VJbnQoamRiY0Rhby5nZXRRdWl6Tm9vZkF0dGVtdCgpKTsKICAgICAgICBpbnQgbGVmdCA9IFRvdGFsQW5zd2VyIC0gUU5POwogICAgICAgIGZvciAoaW50IGkgPSAwOyBpIDwgbGVmdDsgaSsrKSB7CiAgICAgICAgICAgIFJlYWxBbnN3ZXIuYWRkKGpkYi5nZXRPbmx5QW5zd2VyKFF1ZXN0aW9uTnVtYmVyLmdldChRTk8pKSk7CiAgICAgICAgICAgIEFuc3dlci5hZGQoJyAnKTsKICAgICAgICB9CiAgICAgICAgY2hlY2soKTsKICAgIH0KICAgIHB1YmxpYyB2b2lkIG1pbmltaXplKEV2ZW50IGV2dCkgewogICAgICAgIFN0YWdlIHN0YWdlID0gKFN0YWdlKSgoQnV0dG9uKSBldnQuZ2V0U291cmNlKCkpLmdldFNjZW5lKCkuZ2V0V2luZG93KCk7CiAgICAgICAgc3RhZ2Uuc2V0SWNvbmlmaWVkKHRydWUpOwogICAgfQogICAgcHVibGljIHZvaWQgRm9yZ2V0KEV2ZW50IGV2dCkgdGhyb3dzIEV4Y2VwdGlvbiB7CiAgICAgICAgTWFpbFNlbmRlciBtYWlsU2VuZGVyID0gbmV3IE1haWxTZW5kZXIoKTsKICAgICAgICBpZiAoIShlbWFpbElkRmllbGQuZ2V0VGV4dCgpKS5pc0VtcHR5KCkpewogICAgICAgICAgICBpbmZvQm94KCJXZSBhcmUgc2VuZGluZyB0aGUgbWFpbCB0byAiK2VtYWlsSWRGaWVsZC5nZXRUZXh0KCkrIkBtYWp1LmVkdS5wayIsIldlIGFyZSBzZW5kIG1haWwiLCJGb3JnZXQgUGFzc3dvcmRzIik7CiAgICAgICAgICAgIG1haWxTZW5kZXIuU2VuZE1haWwoZW1haWxJZEZpZWxkLmdldFRleHQoKSsiQG1hanUuZWR1LnBrIik7CiAgICAgICAgICAgIGpkYi5mb3JnZXRQYXNzd29yZChlbWFpbElkRmllbGQuZ2V0VGV4dCgpLE1haWxTZW5kZXIuUmFuZG9tKTsKICAgICAgICB9CgogICAgfQogICAgcHVibGljIE9ic2VydmFibGVMaXN0PFByb2R1Y3Q+IGdldFByb2R1Y3QoQXJyYXlMaXN0PFByb2R1Y3Q+IHBvKSB7CiAgICAgICAgT2JzZXJ2YWJsZUxpc3Q8UHJvZHVjdD4gbGlzdCA9IEZYQ29sbGVjdGlvbnMub2JzZXJ2YWJsZUFycmF5TGlzdChwbyk7CiAgICAgICAgcmV0dXJuIGxpc3Q7CiAgICB9CiAgICBwdWJsaWMgdm9pZCBzdGFydChBY3Rpb25FdmVudCBlKSB7CiAgICAgICAgRXhhbVNob3dQYW5lLnNldE9wYWNpdHkoMCk7CiAgICAgICAgRXhhbVNob3dQYW5lLnNldERpc2FibGUodHJ1ZSk7CgogICAgICAgIFJlc3VsdFZlaXdfcGxhbmUuc2V0T3BhY2l0eSgxMDApOwogICAgICAgIFJlc3VsdFZlaXdfcGxhbmUuc2V0RGlzYWJsZShmYWxzZSk7CgogICAgICAgIGxpc3RpdGVtID0gamRiLmdldEZyb21EYXRhYmFzZSgpOwogICAgICAgIGdldERhdGEoKTsKICAgIH0KICAgIHB1YmxpYyB2b2lkIGdldERhdGEoKXsKICAgICAgICBpZC5zZXRDZWxsVmFsdWVGYWN0b3J5KG5ldyBQcm9wZXJ0eVZhbHVlRmFjdG9yeTxQcm9kdWN0LEludGVnZXI+KCJTTk8iKSk7CiAgICAgICAgVG90YWwuc2V0Q2VsbFZhbHVlRmFjdG9yeShuZXcgUHJvcGVydHlWYWx1ZUZhY3Rvcnk8UHJvZHVjdCxTdHJpbmc+KCJUb3RhbCIpKTsKICAgICAgICBDb3JyZWN0LnNldENlbGxWYWx1ZUZhY3RvcnkobmV3IFByb3BlcnR5VmFsdWVGYWN0b3J5PFByb2R1Y3QsU3RyaW5nPigiQ29ycmVjdCIpKTsKICAgICAgICBRdWl6TmFtZU9mUmVzdWx0LnNldENlbGxWYWx1ZUZhY3RvcnkobmV3IFByb3BlcnR5VmFsdWVGYWN0b3J5PFByb2R1Y3QsU3RyaW5nPigiUXVpeiIpKTsKICAgICAgICBQZXJjZW50YWdlT2ZSZXN1bHQuc2V0Q2VsbFZhbHVlRmFjdG9yeShuZXcgUHJvcGVydHlWYWx1ZUZhY3Rvcnk8UHJvZHVjdCxTdHJpbmc+KCJQZXJjZW50YWdlIikpOwogICAgICAgIHRpbWVvZnN1Ym1pdC5zZXRDZWxsVmFsdWVGYWN0b3J5KG5ldyBQcm9wZXJ0eVZhbHVlRmFjdG9yeTxQcm9kdWN0LFN0cmluZz4oInRpbWUiKSk7CgogICAgICAgIHRhYmxlLnNldEl0ZW1zKGdldFByb2R1Y3QobGlzdGl0ZW0pKTsKICAgIH0KICAgIHB1YmxpYyB2b2lkIGxvZ291dChBY3Rpb25FdmVudCBlKXsKICAgICAgICBqZGJjRGFvLnNldFVzZXJJZCgpOwogICAgICAgIFN0dWRlbnRfcGxhbmUuc2V0T3BhY2l0eSgwKTsKICAgICAgICBTdHVkZW50X3BsYW5lLnNldERpc2FibGUodHJ1ZSk7CiAgICAgICAgTG9naW5fcGxhbmUuc2V0T3BhY2l0eSgxMDApOwogICAgICAgIExvZ2luX3BsYW5lLnNldERpc2FibGUoZmFsc2UpOwogICAgfQogICAgcHVibGljIHZvaWQgZGlzcGxheURhc2hib3JhZChBY3Rpb25FdmVudCBldmVudCkgewoKICAgICAgICBFeGFtU2hvd1BhbmUuc2V0T3BhY2l0eSgxMDApOwogICAgICAgIEV4YW1TaG93UGFuZS5zZXREaXNhYmxlKGZhbHNlKTsKCiAgICAgICAgUmVzdWx0VmVpd19wbGFuZS5zZXRPcGFjaXR5KDApOwogICAgICAgIFJlc3VsdFZlaXdfcGxhbmUuc2V0RGlzYWJsZSh0cnVlKTsKCiAgICAgICAgQ291cnNlX3BsYW5lLnNldE9wYWNpdHkoMCk7CiAgICAgICAgQ291cnNlX3BsYW5lLnNldERpc2FibGUodHJ1ZSk7CiAgICB9CiAgICBwdWJsaWMgdm9pZCBCYWNrVG9wbGFuZShBY3Rpb25FdmVudCBldmVudCl7CiAgICAgICAgRGV0YWlsc19wbGFuZS5zZXREaXNhYmxlKHRydWUpOwogICAgICAgIERldGFpbHNfcGxhbmUuc2V0T3BhY2l0eSgwKTsKCiAgICAgICAgUXVpel9wbGFuZS5zZXREaXNhYmxlKHRydWUpOwogICAgICAgIFF1aXpfcGxhbmUuc2V0T3BhY2l0eSgwKTsKCiAgICAgICAgRXhhbVNob3dQYW5lLnNldE9wYWNpdHkoMTAwKTsKICAgICAgICBFeGFtU2hvd1BhbmUuc2V0RGlzYWJsZShmYWxzZSk7CiAgICB9CiAgICBwdWJsaWMgdm9pZCAgQ2hhcnQoKXsKCiAgICAgICAgbGlzdGl0ZW0gPSBqZGIuZ2V0RnJvbURhdGFiYXNlKCk7CiAgICAgICAgaWYobGlzdGl0ZW0uc2l6ZSgpICE9IDApewogICAgICAgICAgICBmaW5hbCBDYXRlZ29yeUF4aXMgeEF4aXMgPSBuZXcgQ2F0ZWdvcnlBeGlzKCk7CiAgICAgICAgICAgIGZpbmFsIE51bWJlckF4aXMgeUF4aXMgPSBuZXcgTnVtYmVyQXhpcygpOwogICAgICAgICAgICB4QXhpcy5zZXRMYWJlbCgiUXVpeiIpOwogICAgICAgICAgICB5QXhpcy5zZXRMYWJlbCgiTWFya3MiKTsKCiAgICAgICAgICAgIGZpbmFsIExpbmVDaGFydDxTdHJpbmcsTnVtYmVyPiBsaW5lQ2hhcnQgPSBuZXcgTGluZUNoYXJ0PFN0cmluZyxOdW1iZXI+KHhBeGlzLHlBeGlzKTsKCiAgICAgICAgICAgIFhZQ2hhcnQuU2VyaWVzIHNlcmllcyA9IG5ldyBYWUNoYXJ0LlNlcmllcygpOwogICAgICAgICAgICBzZXJpZXMuc2V0TmFtZSgiTXkgUXVpeiIpOwogICAgICAgICAgICBpbnQgaTsKICAgICAgICAgICAgZmxvYXQgdGVtcDsKICAgICAgICAgICAgZm9yKGkgPSAwO2k8IGxpc3RpdGVtLnNpemUoKTtpKyspewogICAgICAgICAgICAgICAgdGVtcCA9IEZsb2F0LnBhcnNlRmxvYXQobGlzdGl0ZW0uZ2V0KGkpLmdldFBlcmNlbnRhZ2UoKSk7CiAgICAgICAgICAgICAgICBzZXJpZXMuZ2V0RGF0YSgpLmFkZChuZXcgWFlDaGFydC5EYXRhKGxpc3RpdGVtLmdldChpKS5nZXRRdWl6KCksdGVtcCkpOwoKICAgICAgICAgICAgfQoKICAgICAgICAgICAgbGFzdFF1aXpNYXNrLnNldFRleHQobGlzdGl0ZW0uZ2V0KGktMSkuZ2V0Q29ycmVjdCgpKTsKICAgICAgICAgICAgVG90YWxRdWl6RG9uZS5zZXRUZXh0KGxpc3RpdGVtLmdldChpLTEpLmdldFF1aXooKSk7CgogICAgICAgICAgICBsaW5lQ2hhcnQuc2V0UHJlZlNpemUoNTA2LDI1NSk7CgogICAgICAgICAgICBDaGFydC5nZXRDaGlsZHJlbigpLnNldEFsbChsaW5lQ2hhcnQpOwogICAgICAgICAgICBsaW5lQ2hhcnQuZ2V0RGF0YSgpLmFkZChzZXJpZXMpOwoKICAgICAgICB9CiAgICAgICAgZWxzZSB7CiAgICAgICAgICAgIExhYmVsIGIgPSBuZXcgTGFiZWwoIk5vIHJlY29yZCBmb3VuZCA6KSIpOwogICAgICAgICAgICBDaGFydC5nZXRDaGlsZHJlbigpLnNldEFsbChiKTsKICAgICAgICAgICAgbGFzdFF1aXpNYXNrLnNldFRleHQoIk5vIHJlY29yZCBmb3VuZCIpOwogICAgICAgICAgICBUb3RhbFF1aXpEb25lLnNldFRleHQoIk5vIHJlY29yZCBmb3VuZCIpOwogICAgICAgIH0KICAgIH0KCn0K
+package Exam_System;
+
+// local files
+import Exam_System.db.jdbcDao;
+import java.awt.*;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import javafx.stage.Window;
+import javafx.util.Duration;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import java.util.ArrayList;
+
+
+public class LoginController implements Login_plane{
+    public Label TotalQuizDone;
+    public Label lastQuizMask;
+    public Pane Chart;
+    public Label UCategoryAxis;
+
+    //main plane
+    @FXML private AnchorPane Main_plane;
+    @FXML private Button Closebutton;
+    @FXML private Button Closebutton2;
+
+    @FXML private AnchorPane Quiz_plane;
+    @FXML private Label QuestionNo;
+    @FXML private Label QuizTimer;
+    @FXML private Label question;
+    @FXML private RadioButton B;
+    @FXML private RadioButton D;
+    @FXML private RadioButton A;
+    @FXML private RadioButton C;
+    @FXML private Button Submit;
+
+    @FXML private AnchorPane Result_plane;
+    @FXML private Label correctAnswer;
+    @FXML private Label wrongAnswer;
+    @FXML private Label TotalAnswer;
+    @FXML private Label Percentage;
+
+    @FXML private AnchorPane Details_plane;
+    @FXML private Label QuizName;
+    @FXML private Label QuizTime;
+    @FXML private Label QuizNo;
+
+    @FXML private AnchorPane Student_plane;
+
+    @FXML private AnchorPane Course_plane;
+    @FXML private ComboBox combobox;
+    @FXML private AnchorPane pinbox;
+    @FXML private PasswordField pincode;
+
+    @FXML private Pane ExamShowPane;
+
+    @FXML private AnchorPane Login_plane;
+    @FXML private TextField emailIdField;
+    @FXML private PasswordField passwordField;
+    @FXML private Button submitButton;
+
+    // Local varaible
+    private ObservableList<String> ChoiceList;
+
+    private ArrayList<Integer> QuestionNumber;
+    private ArrayList<String> QuestionAnswer;
+    private ArrayList<String> RealAnswer = new ArrayList<String>();
+    private int QNO = 0;
+    ToggleGroup tgGroup;
+    ArrayList<Character> Answer;
+
+
+    private jdbcDao jdb = new jdbcDao();
+
+    @FXML private AnchorPane ResultVeiw_plane;
+
+    public TableView<Product> table;
+
+    public TableColumn<Product,Integer> id;
+    public TableColumn<Product,String> PercentageOfResult;
+    public TableColumn<Product,String> Total;
+    public TableColumn<Product,String> Correct;
+    public TableColumn<Product,String> QuizNameOfResult;
+    public TableColumn<Product,String> timeofsubmit;
+
+    ArrayList<Product> listitem = new ArrayList<Product>();
+    private Timeline timeline;
+    private Integer horse,minute,timeSeconds;
+
+    private static void infoBox(String infoMessage, String headerText, String title){
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setContentText(infoMessage);
+        alert.setTitle(title);
+        alert.setHeaderText(headerText);
+        alert.showAndWait();
+    }
+    private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.initOwner(owner);
+        alert.show();
+    }
+    public void login(ActionEvent event) throws SQLException, IOException,Exception {
+
+
+        Window owner = submitButton.getScene().getWindow();
+
+        if(emailIdField.getText().isEmpty()) {
+            showAlert(AlertType.ERROR, owner, "Form Error!",
+                    "Please enter your email id");
+            return;
+        }
+        if(passwordField.getText().isEmpty()) {
+            showAlert(AlertType.ERROR, owner, "Form Error!",
+                    "Please enter a password");
+            return;
+        }
+
+        String emailId = emailIdField.getText();
+        String password = passwordField.getText();
+
+        jdbcDao jdb = new jdbcDao();
+        boolean flag = jdb.validate(emailId, password);
+
+        if(!flag) {
+            infoBox("Please enter correct Email and Password", null, "Failed");
+        }else {
+            infoBox("Login Successful!", null, "Failed");
+            Student_plane.setOpacity(100);
+            Student_plane.setDisable(false);
+            Login_plane.setOpacity(0);
+            Login_plane.setDisable(true);
+            UCategoryAxis.setText(jdbcDao.getUserId());
+            Chart();
+
+
+        }
+    }
+    public void ADMIN_CALLER(ActionEvent actionEvent) throws IOException, URISyntaxException {
+        URL togo = new URL("https://google.com");
+        Desktop.getDesktop().browse(togo.toURI());
+
+    }
+    public void CloseApp(ActionEvent actionEvent)throws Exception{
+        Window owner = submitButton.getScene().getWindow();
+        showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter a password");
+        System.exit(1);
+    }
+    public void QuizDisplay(ActionEvent event) throws IOException {
+        ExamShowPane.setOpacity(0);
+        ExamShowPane.setDisable(true);
+
+        Course_plane.setOpacity(100);
+        Course_plane.setDisable(false);
+
+        feildEnter();
+    }
+    public void feildEnter(){
+        List<String> Feild = jdb.displayFeildList();
+        ChoiceList = FXCollections.observableArrayList(Feild);
+        combobox.setItems(ChoiceList);
+        combobox.setValue("Feild");
+    }
+    public void EnterPin(ActionEvent event) {
+        pinbox.setVisible(true);
+    }
+    public void checkingPin(ActionEvent event) {
+        if (jdb.checkPin(pincode.getText(), (String) combobox.getValue())){
+            // to change the the plane
+            Student_plane.setDisable(true);
+            Student_plane.setOpacity(0);
+            Details_plane.setOpacity(100);
+            Details_plane.setDisable(!true);
+            //
+            QuizDetailPlane();
+        }
+        else {
+            Window owner = Closebutton.getScene().getWindow();
+            showAlert(AlertType.ERROR,owner,"Enter a wrong pin","pls Enter the correct pin");
+        }
+    }
+    public void QuizDetailPlane(){
+        QuizName.setText(jdb.getQuizSelete());
+        QuizNo.setText(jdbcDao.getQuizNoofAttemt());
+        QuizTime.setText(jdbcDao.getQuizTime());
+        getQuestionList();
+        Answer = new ArrayList<Character>(Integer.parseInt(jdbcDao.getQuizNoofAttemt()));
+    }
+    public void getQuestionList() {
+        QuestionNumber = (new Randommy(jdbcDao.getTotalQuizQuestion(),jdbcDao.getQuizNoofAttemt())).getRandomArray();// direct create call and get the value
+        Closebutton2.setDisable(true);
+    }
+    public void NextQuestion() throws InterruptedException {
+        QuestionNo.setText(String.valueOf(QNO));
+        int temp = Integer.parseInt(jdbcDao.getQuizNoofAttemt());
+        if(QNO == temp-1){
+            Submit.setText("Submit Quiz");
+            Submit.setOnAction(event -> {
+                try {
+                    Submit_CheckAnswer(event);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            });
+        }
+        if (temp > QNO){
+            QuestionAnswer = new ArrayList<String>();
+            QuestionAnswer = jdb.getQuizDetails(QuestionNumber.get(QNO));
+            RealAnswer.add(QuestionAnswer.get(5));
+            setQuestion();
+        }
+    }
+    public void setQuestion() {
+        QuizNo.setText(" " +(QNO+1));
+        question.setText("Q ."+QuestionAnswer.get(0));
+        A.setText("A) "+QuestionAnswer.get(1));
+        B.setText("B) "+QuestionAnswer.get(2));
+        C.setText("C) "+QuestionAnswer.get(3));
+        D.setText("D) "+QuestionAnswer.get(4));
+
+        A.getText().substring(4);
+        B.getText().substring(4);
+        C.getText().substring(4);
+        D.getText().substring(4);
+
+        A.setSelected(false);
+        B.setSelected(false);
+        C.setSelected(false);
+        D.setSelected(false);
+
+    }
+    public void Selected(){
+        char selete = ' ';
+
+        if(A.isSelected())
+            selete = 'A';
+
+        else if(B.isSelected())
+            selete = 'B';
+
+
+        else if(C.isSelected())
+            selete = 'C';
+
+        else if(D.isSelected()) {
+            selete = 'D';
+        }
+        Answer.add((QNO),selete);
+    }
+    public void StartQuiz(ActionEvent event) throws InterruptedException, SQLException {
+        if (jdb.QuizAlreadyGiven()){
+            Window owner = Closebutton.getScene().getWindow();
+            showAlert(AlertType.ERROR,owner,"Already given","You have alredy give this Quiz");
+        }else {
+            tgGroup = new ToggleGroup();
+            A.setToggleGroup(tgGroup);
+            B.setToggleGroup(tgGroup);
+            C.setToggleGroup(tgGroup);
+            D.setToggleGroup(tgGroup);
+
+            Details_plane.setOpacity(0);
+            Details_plane.setDisable(true);
+
+            Quiz_plane.setDisable(false);
+            Quiz_plane.setOpacity(100);
+            Closebutton2.setDisable(true);
+            getTime();
+            NextQuestion();
+        }
+    }
+    public void SubmitNextQuestion() throws InterruptedException {
+        QuestionAnswer.clear();
+        Selected();
+        QNO++;
+        NextQuestion();
+    }
+    public void Submit_CheckAnswer(ActionEvent event) throws SQLException {
+        Quiz_plane.setOpacity(0);
+        Quiz_plane.setDisable(true);
+        Result_plane.setOpacity(100);
+        Result_plane.setDisable(!true);
+        QuestionAnswer.clear();
+        Selected();
+        QNO++;
+
+        check();
+    }
+    public void check() throws SQLException {
+        int temp=0;
+        for (int i = 0; i < RealAnswer.size(); i++) {
+            if(RealAnswer.get(i).matches(String.valueOf(Answer.get(i)))){
+                temp++;
+            }
+        }
+        float temp2 = ((float) temp / (float) QNO);
+
+        correctAnswer.setText(""+temp);
+        wrongAnswer.setText(""+(QNO-temp));
+        TotalAnswer.setText(""+QNO);
+        Percentage.setText(""+(temp2*100));
+
+        GetDate date = new GetDate();
+        //
+        jdb.insertRecord((""+temp) ,(""+(temp2*100)),date.get());
+        Closebutton2.setDisable(false);
+    }
+    public void handleTime() {
+        if (timeline != null) {
+            timeline.stop();
+        }
+
+        timeline = new Timeline();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+
+
+        timeline.getKeyFrames().add(
+                new KeyFrame(Duration.seconds(1),
+                        new EventHandler() {
+                            @Override
+                            public void handle(Event event) {
+                                if (timeSeconds == 1){
+                                    if(minute == 0){
+                                        try {
+                                            CloseApp();
+                                        } catch (SQLException throwables) {
+                                            throwables.printStackTrace();
+                                        }
+                                        timeline.stop();
+                                    }
+                                    else{
+                                        --minute;
+                                        timeSeconds = 60;
+                                    }
+                                }
+                                else
+                                    --timeSeconds;
+
+
+                                // update timerLabel
+                                QuizTimer.setText(""+horse+" : "+minute+" : "+timeSeconds);
+
+                            }
+                        }));
+        timeline.playFromStart();
+    }
+    public void getTime(){
+        horse = 00;
+        timeSeconds = 60;
+        minute = Integer.parseInt(jdbcDao.getQuizTime());
+        handleTime();
+    }
+    public void CloseApp() throws SQLException {
+        int TotalAnswer = Integer.parseInt(jdbcDao.getQuizNoofAttemt());
+        int left = TotalAnswer - QNO;
+        for (int i = 0; i < left; i++) {
+            RealAnswer.add(jdb.getOnlyAnswer(QuestionNumber.get(QNO)));
+            Answer.add(' ');
+        }
+        check();
+    }
+    public void minimize(Event evt) {
+        Stage stage = (Stage)((Button) evt.getSource()).getScene().getWindow();
+        stage.setIconified(true);
+    }
+    public void Forget(Event evt) throws Exception {
+        MailSender mailSender = new MailSender();
+        if (!(emailIdField.getText()).isEmpty()){
+            infoBox("We are sending the mail to "+emailIdField.getText()+"@maju.edu.pk","We are send mail","Forget Passwords");
+            mailSender.SendMail(emailIdField.getText()+"@maju.edu.pk");
+            jdb.forgetPassword(emailIdField.getText(),MailSender.Random);
+        }
+
+    }
+    public ObservableList<Product> getProduct(ArrayList<Product> po) {
+        ObservableList<Product> list = FXCollections.observableArrayList(po);
+        return list;
+    }
+    public void start(ActionEvent e) {
+        ExamShowPane.setOpacity(0);
+        ExamShowPane.setDisable(true);
+
+        ResultVeiw_plane.setOpacity(100);
+        ResultVeiw_plane.setDisable(false);
+
+        listitem = jdb.getFromDatabase();
+        getData();
+    }
+    public void getData(){
+        id.setCellValueFactory(new PropertyValueFactory<Product,Integer>("SNO"));
+        Total.setCellValueFactory(new PropertyValueFactory<Product,String>("Total"));
+        Correct.setCellValueFactory(new PropertyValueFactory<Product,String>("Correct"));
+        QuizNameOfResult.setCellValueFactory(new PropertyValueFactory<Product,String>("Quiz"));
+        PercentageOfResult.setCellValueFactory(new PropertyValueFactory<Product,String>("Percentage"));
+        timeofsubmit.setCellValueFactory(new PropertyValueFactory<Product,String>("time"));
+
+        table.setItems(getProduct(listitem));
+    }
+    public void logout(ActionEvent e){
+        jdbcDao.setUserId();
+        Student_plane.setOpacity(0);
+        Student_plane.setDisable(true);
+        Login_plane.setOpacity(100);
+        Login_plane.setDisable(false);
+    }
+    public void displayDashborad(ActionEvent event) {
+
+        ExamShowPane.setOpacity(100);
+        ExamShowPane.setDisable(false);
+
+        ResultVeiw_plane.setOpacity(0);
+        ResultVeiw_plane.setDisable(true);
+
+        Course_plane.setOpacity(0);
+        Course_plane.setDisable(true);
+    }
+    public void BackToplane(ActionEvent event){
+        Details_plane.setDisable(true);
+        Details_plane.setOpacity(0);
+
+        Quiz_plane.setDisable(true);
+        Quiz_plane.setOpacity(0);
+
+        ExamShowPane.setOpacity(100);
+        ExamShowPane.setDisable(false);
+    }
+    public void  Chart(){
+
+        listitem = jdb.getFromDatabase();
+        if(listitem.size() != 0){
+            final CategoryAxis xAxis = new CategoryAxis();
+            final NumberAxis yAxis = new NumberAxis();
+            xAxis.setLabel("Quiz");
+            yAxis.setLabel("Marks");
+
+            final LineChart<String,Number> lineChart = new LineChart<String,Number>(xAxis,yAxis);
+
+            XYChart.Series series = new XYChart.Series();
+            series.setName("My Quiz");
+            int i;
+            float temp;
+            for(i = 0;i< listitem.size();i++){
+                temp = Float.parseFloat(listitem.get(i).getPercentage());
+                series.getData().add(new XYChart.Data(listitem.get(i).getQuiz(),temp));
+
+            }
+
+            lastQuizMask.setText(listitem.get(i-1).getCorrect());
+            TotalQuizDone.setText(listitem.get(i-1).getQuiz());
+
+            lineChart.setPrefSize(506,255);
+
+            Chart.getChildren().setAll(lineChart);
+            lineChart.getData().add(series);
+
+        }
+        else {
+            Label b = new Label("No record found :)");
+            Chart.getChildren().setAll(b);
+            lastQuizMask.setText("No record found");
+            TotalQuizDone.setText("No record found");
+        }
+    }
+
+}

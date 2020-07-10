@@ -1,1 +1,97 @@
-cGFja2FnZSBFeGFtX1N5c3RlbTsKCmltcG9ydCBqYXZhLnV0aWwuUHJvcGVydGllczsKaW1wb3J0IGphdmF4Lm1haWwuKjsKaW1wb3J0IGphdmF4Lm1haWwuaW50ZXJuZXQuSW50ZXJuZXRBZGRyZXNzOwppbXBvcnQgamF2YXgubWFpbC5pbnRlcm5ldC5NaW1lTWVzc2FnZTsKaW1wb3J0IGphdmF4Lm1haWwuTWVzc2FnZTsKaW1wb3J0IGphdmF4Lm1haWwuU2Vzc2lvbjsKaW1wb3J0IGphdmF4Lm1haWwuUGFzc3dvcmRBdXRoZW50aWNhdGlvbjsKaW1wb3J0IGphdmEudXRpbC5SYW5kb207CmltcG9ydCBqYXZhLnV0aWwubG9nZ2luZy5MZXZlbDsKaW1wb3J0IGphdmEudXRpbC5sb2dnaW5nLkxvZ2dlcjsKaW1wb3J0IGphdmEuc3FsLkNvbm5lY3Rpb247CmltcG9ydCBqYXZhLnNxbC5Ecml2ZXJNYW5hZ2VyOwppbXBvcnQgamF2YS5zcWwuU1FMRXhjZXB0aW9uOwoKCnB1YmxpYyBjbGFzcyBNYWlsU2VuZGVyIHsKcHVibGljIHN0YXRpYyBTdHJpbmcgUmFuZG9tOwpwdWJsaWMgc3RhdGljIHZvaWQgU2VuZE1haWwoU3RyaW5nIHJlY2VwaWVudCkgdGhyb3dzIEV4Y2VwdGlvbiB7CiAgICAgICAgUHJvcGVydGllcyBwcm9wZXJ0aWVzID0gbmV3IFByb3BlcnRpZXMoKTsKICAgICAgICBwcm9wZXJ0aWVzLnB1dCgibWFpbC5zbXRwLmF1dGgiLCJ0cnVlIik7CiAgICAgICAgcHJvcGVydGllcy5wdXQoIm1haWwuc210cC5zdGFydHRscy5lbmFibGUiLCJ0cnVlIik7CiAgICAgICAgcHJvcGVydGllcy5wdXQoIm1haWwuc210cC5ob3N0Iiwic210cC5nbWFpbC5jb20iKTsKICAgICAgICBwcm9wZXJ0aWVzLnB1dCgibWFpbC5zbXRwLnBvcnQiLCI1ODciKTsKCiAgICAgICAgU3RyaW5nIG15QWNjb3V0RW1haWwgPSAiZ2FtYXBvcnRhbDhAZ21haWwuY29tIjsKICAgICAgICBTdHJpbmcgcGFzc3dvcmQgPSAiREFSS0xPUkQxMzk5IjsKCiAgICAgICAgU2Vzc2lvbiBzZXNzaW9uID0gU2Vzc2lvbi5nZXRJbnN0YW5jZShwcm9wZXJ0aWVzLCBuZXcgQXV0aGVudGljYXRvcigpIHsKICAgICAgICAgICAgQE92ZXJyaWRlCiAgICAgICAgICAgIHByb3RlY3RlZCBQYXNzd29yZEF1dGhlbnRpY2F0aW9uIGdldFBhc3N3b3JkQXV0aGVudGljYXRpb24oKSB7CiAgICAgICAgICAgICAgICByZXR1cm4gbmV3IFBhc3N3b3JkQXV0aGVudGljYXRpb24obXlBY2NvdXRFbWFpbCxwYXNzd29yZCk7CiAgICAgICAgICAgIH0KICAgICAgICB9KTsKCiAgICAgICAgTWVzc2FnZSBtZXNzYWdlID0gcHJlcGFyZU1lc3NhZ2Uoc2Vzc2lvbixteUFjY291dEVtYWlsLHJlY2VwaWVudCk7CiAgICAgICAgVHJhbnNwb3J0LnNlbmQobWVzc2FnZSk7CiAgICAgICAgU3lzdGVtLm91dC5wcmludGxuKCJDb21wbGV0ZSB0aGUgcHJvY2Nlc3MiKTsKICAgIH0KCiAgICBwdWJsaWMgc3RhdGljIFN0cmluZyBSYW5kb21QYXNzd29yZCgpewoKICAgICAgICBSYW5kb20gcmFuZCA9IG5ldyBSYW5kb20oKTsKCiAgICAgICAgaW50IGNoZWNrOwoKICAgICAgICBpbnQgTUFYID0gMjY7CgogICAgICAgIGNoYXIgW11hbHBoYWJldCA9IHsgJ2EnLCAnYicsICdjJywgJ2QnLCAnZScsICdmJywgJ2cnLAogICAgICAgICAgICAgICAgJ2gnLCAnaScsICdqJywgJ2snLCAnbCcsICdtJywgJ24nLAogICAgICAgICAgICAgICAgJ28nLCAncCcsICdxJywgJ3InLCAncycsICd0JywgJ3UnLAogICAgICAgICAgICAgICAgJ3YnLCAndycsICd4JywgJ3knLCAneicgfTsKCiAgICAgICAgU3RyaW5nIHJlcyA9ICIiOwogICAgICAgIGZvciAoaW50IGkgPSAwOyBpIDwgMzsgaSsrKSB7CiAgICAgICAgICAgIHJlcyA9IHJlcyArIGFscGhhYmV0W3JhbmQubmV4dEludCgzKSAlIE1BWF07CiAgICAgICAgfQogICAgICAgIC8vKGludCkgKE1hdGgucmFuZG9tKCkgKiAzICUgTUFYKQogICAgICAgIC8vYWxwaGFiZXQKICAgICAgICBTdHJpbmcgYyA9IHJlcy50b1VwcGVyQ2FzZSgpOwogICAgICAgIFN5c3RlbS5vdXQucHJpbnQoIk51bWJlciBwbGF0ZSBpcyA6ICIpOwogICAgICAgIFN5c3RlbS5vdXQucHJpbnQoYysiICIpOwogICAgICAgIC8vbnVtYmVyCiAgICAgICAgaW50W10gYXJyID0gbmV3IGludFszXTsKICAgICAgICBmb3IgKGludCBpID0wIDtpIDw9IDIgOyBpKyspCiAgICAgICAgewogICAgICAgICAgICBhcnJbaV0gPSByYW5kLm5leHRJbnQoMTApOwogICAgICAgIH0KICAgICAgICBmb3IgKGludCBpID0wIDtpIDw9IDIgOyBpKyspCiAgICAgICAgewogICAgICAgICAgICBTeXN0ZW0ub3V0LnByaW50bG4oYXJyW2ldKTsKICAgICAgICB9CiAgICAgICAgaW50IGEgPXJhbmQubmV4dEludCgxMCk7CiAgICAgICAgaW50IGIgPSByYW5kLm5leHRJbnQoMTApOwogICAgICAgIGludCBkID0gcmFuZC5uZXh0SW50KDEwKTsKICAgICAgICBSYW5kb20gPSBjKyJAIithKyIiK2IrIiIrZDsKICAgICAgICByZXR1cm4gUmFuZG9tOwogICAgfQoKCiAgICBwdWJsaWMgc3RhdGljIE1lc3NhZ2UgcHJlcGFyZU1lc3NhZ2UoU2Vzc2lvbiBzZXNzaW9uLFN0cmluZyBteUFjY291dEVtYWlsLFN0cmluZyByZWNlcGllbnQpewogICAgICAgIFN5c3RlbS5vdXQucHJpbnRsbigiUGVycGFyZWluZyBtYWlsIik7CiAgICAgICAgTWVzc2FnZSBtZXNzYWdlICA9IG5ldyBNaW1lTWVzc2FnZShzZXNzaW9uKTsKICAgICAgICB0cnkgewogICAgICAgICAgICBtZXNzYWdlLnNldEZyb20obmV3IEludGVybmV0QWRkcmVzcyhteUFjY291dEVtYWlsKSk7CiAgICAgICAgICAgIG1lc3NhZ2Uuc2V0UmVjaXBpZW50KE1lc3NhZ2UuUmVjaXBpZW50VHlwZS5UTyxuZXcgSW50ZXJuZXRBZGRyZXNzKHJlY2VwaWVudCkpOwogICAgICAgICAgICBtZXNzYWdlLnNldFN1YmplY3QoIkZvcmdldCBQYXNzd29yZCBlbWFpbCIpOwogICAgICAgICAgICBtZXNzYWdlLnNldFRleHQoUmFuZG9tUGFzc3dvcmQoKSk7CiAgICAgICAgICAgIHJldHVybiBtZXNzYWdlOwogICAgICAgIH0gY2F0Y2ggKEV4Y2VwdGlvbiBlKSB7CiAgICAgICAgICAgIExvZ2dlci5nZXRMb2dnZXIoTWFpbi5jbGFzcy5nZXROYW1lKCkpLmxvZyhMZXZlbC5TRVZFUkUsbnVsbCxlKTsKICAgICAgICB9CgogICAgICAgIHJldHVybiBudWxsOwogICAgfQp9CgoK
+package Exam_System;
+
+import java.util.Properties;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.PasswordAuthentication;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+public class MailSender {
+    public static String Random;
+    public static void SendMail(String recepient) throws Exception {
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth","true");
+        properties.put("mail.smtp.starttls.enable","true");
+        properties.put("mail.smtp.host","smtp.gmail.com");
+        properties.put("mail.smtp.port","587");
+
+        String myAccoutEmail = "gamaportal8@gmail.com";
+        String password = "DARKLORD1399";
+
+        Session session = Session.getInstance(properties, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(myAccoutEmail,password);
+            }
+        });
+
+        Message message = prepareMessage(session,myAccoutEmail,recepient);
+        Transport.send(message);
+        System.out.println("Complete the proccess");
+    }
+
+    public static String RandomPassword(){
+
+        Random rand = new Random();
+
+        int check;
+
+        int MAX = 26;
+
+        char []alphabet = { 'a', 'b', 'c', 'd', 'e', 'f', 'g',
+                'h', 'i', 'j', 'k', 'l', 'm', 'n',
+                'o', 'p', 'q', 'r', 's', 't', 'u',
+                'v', 'w', 'x', 'y', 'z' };
+
+        String res = "";
+        for (int i = 0; i < 3; i++) {
+            res = res + alphabet[rand.nextInt(3) % MAX];
+        }
+        //(int) (Math.random() * 3 % MAX)
+        //alphabet
+        String c = res.toUpperCase();
+        System.out.print("Number plate is : ");
+        System.out.print(c+" ");
+        //number
+        int[] arr = new int[3];
+        for (int i =0 ;i <= 2 ; i++)
+        {
+            arr[i] = rand.nextInt(10);
+        }
+        for (int i =0 ;i <= 2 ; i++)
+        {
+            System.out.println(arr[i]);
+        }
+        int a =rand.nextInt(10);
+        int b = rand.nextInt(10);
+        int d = rand.nextInt(10);
+        Random = c+"@"+a+""+b+""+d;
+        return Random;
+    }
+
+
+    public static Message prepareMessage(Session session,String myAccoutEmail,String recepient){
+        System.out.println("Perpareing mail");
+        Message message  = new MimeMessage(session);
+        try {
+            message.setFrom(new InternetAddress(myAccoutEmail));
+            message.setRecipient(Message.RecipientType.TO,new InternetAddress(recepient));
+            message.setSubject("Forget Password email");
+            message.setText(RandomPassword());
+            return message;
+        } catch (Exception e) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE,null,e);
+        }
+
+        return null;
+    }
+}
