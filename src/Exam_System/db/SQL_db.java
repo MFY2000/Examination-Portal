@@ -6,11 +6,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import Exam_System.Product;
 
-        import java.io.*;
-        import java.sql.*;
-        import javax.sql.*;
+import java.sql.*;
 
-        import java.util.*;
+import java.util.*;
 
 abstract class varabile{
     //Database varaible
