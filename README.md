@@ -1,6 +1,6 @@
 INTRODUCTION 1.1 Project Objectives To make the educational system online that is conducting of exams in online which results in minimum cost the examination can be done, which can prove to be very cost effective.
 
-Admin(Java system)
+Student Portal(Java system)
 ![alt text](https://github.com/MFY2000/Examination-Portal/blob/master/Picture%26ScreenShot/Student(Desktop%20%20app)/2.JPG)
 
 
